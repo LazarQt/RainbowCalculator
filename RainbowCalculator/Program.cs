@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using ManaBase;
+
+var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-app.MapGet("/api/user", () => new { id = 1, name = "John Doe" });
+app.MapGet("/api/user", () => new { id = 1, name = new Test().TestValue() });
 app.Run();
