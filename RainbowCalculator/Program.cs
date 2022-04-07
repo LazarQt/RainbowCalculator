@@ -1,7 +1,4 @@
-﻿using RainbowCalculator.Core;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-app.MapGet("/api/user", () => new { id = 1, name = Test.GetThis() });
+app.MapGet("/api/user", () => new { id = 1, name = "John Doe" });
 app.Run();
-

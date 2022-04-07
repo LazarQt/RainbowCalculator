@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RainbowCalculator.Api", "RainbowCalculator\RainbowCalculator.Api.csproj", "{1783A750-F2C4-416A-9FFA-DA53CA8B48D4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainbowCalculator.Core", "RainbowCalculator.Core\RainbowCalculator.Core.csproj", "{442EF185-F611-40BA-ABA5-A9744C807161}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainbowCalculator", "RainbowCalculator\RainbowCalculator.csproj", "{1783A750-F2C4-416A-9FFA-DA53CA8B48D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{1783A750-F2C4-416A-9FFA-DA53CA8B48D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1783A750-F2C4-416A-9FFA-DA53CA8B48D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1783A750-F2C4-416A-9FFA-DA53CA8B48D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{442EF185-F611-40BA-ABA5-A9744C807161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{442EF185-F611-40BA-ABA5-A9744C807161}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{442EF185-F611-40BA-ABA5-A9744C807161}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{442EF185-F611-40BA-ABA5-A9744C807161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
