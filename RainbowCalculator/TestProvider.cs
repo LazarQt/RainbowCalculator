@@ -2,9 +2,9 @@
 {
     public class TestProvider : ITestProvider
     {
-        public User[] Get()
+        public User[] Get(string x)
         {
-            return new[] { new User() { Id = 1, Name = "asdfxd" } };
+            return new[] { new User() { Id = 1, Name = "my name is" + x } };
         }
     }
 }

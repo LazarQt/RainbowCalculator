@@ -2,6 +2,6 @@
 {
     public interface ITestProvider
     {
-        User[] Get();
+        User[] Get(string x);
     }
 }
