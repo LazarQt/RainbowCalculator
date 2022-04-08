@@ -1,0 +1,1666 @@
+Badlands;BR;BR;lea
+Bayou;BG;BG;lea
+Plateau;RW;RW;lea
+Savannah;GW;GW;lea
+Scrubland;BW;BW;lea
+Taiga;GR;GR;lea
+Tropical Island;GU;GU;lea
+Tundra;UW;UW;lea
+Underground Sea;BU;BU;lea
+Plains;W;W;lea
+Island;U;U;lea
+Swamp;B;B;lea
+Mountain;R;R;lea
+Forest;G;G;lea
+Volcanic Island;RU;RU;leb
+Bazaar of Baghdad;;;arn
+City of Brass;;BGRUW;arn
+Desert;;C;arn
+Diamond Valley;;;arn
+Elephant Graveyard;;C;arn
+Island of Wak-Wak;;;arn
+Library of Alexandria;;C;arn
+Oasis;;;arn
+Mishra's Factory;;C;atq
+Mishra's Workshop;;C;atq
+Strip Mine;;C;atq
+Urza's Mine;;C;atq
+Urza's Power Plant;;C;atq
+Urza's Tower;;C;atq
+Adventurers' Guildhouse;;;leg
+Cathedral of Serra;;;leg
+Hammerheim;R;R;leg
+Karakas;W;W;leg
+Mountain Stronghold;;;leg
+Pendelhaven;G;G;leg
+Seafarer's Quay;;;leg
+The Tabernacle at Pendrell Vale;;;leg
+Tolaria;U;U;leg
+Unholy Citadel;;;leg
+Urborg;B;B;leg
+City of Shadows;;C;drk
+Maze of Ith;;;drk
+Safe Haven;;;drk
+Sorrow's Path;;;drk
+Arena;;;phpr
+Bottomless Vault;B;B;fem
+Dwarven Hold;R;R;fem
+Dwarven Ruins;R;R;fem
+Ebon Stronghold;B;B;fem
+Havenwood Battleground;G;G;fem
+Hollow Trees;G;G;fem
+Icatian Store;W;W;fem
+Rainbow Vale;;BGRUW;fem
+Ruins of Trokair;W;W;fem
+Sand Silos;U;U;fem
+Svyelunite Temple;U;U;fem
+Adarkar Wastes;UW;CUW;ice
+Brushland;GW;CGW;ice
+Glacial Chasm;;;ice
+Halls of Mist;;;ice
+Ice Floe;;;ice
+Karplusan Forest;GR;CGR;ice
+Land Cap;UW;UW;ice
+Lava Tubes;BR;BR;ice
+River Delta;BU;BU;ice
+Sulfurous Springs;BR;BCR;ice
+Timberline Ridge;GR;GR;ice
+Underground River;BU;BCU;ice
+Veldt;GW;GW;ice
+Snow-Covered Plains;W;W;ice
+Snow-Covered Island;U;U;ice
+Snow-Covered Swamp;B;B;ice
+Snow-Covered Mountain;R;R;ice
+Snow-Covered Forest;G;G;ice
+An-Havva Township;GRW;CGRW;hml
+Aysen Abbey;GUW;CGUW;hml
+Castle Sengir;BRU;BCRU;hml
+Koskun Keep;BGR;BCGR;hml
+Wizards' School;BUW;BCUW;hml
+Balduvian Trading Post;R;CR;all
+Heart of Yavimaya;G;G;all
+Kjeldoran Outpost;W;W;all
+Lake of the Dead;B;B;all
+School of the Unseen;;BCGRUW;all
+Sheltered Valley;;C;all
+Soldevi Excavations;U;CU;all
+Thawing Glaciers;;;all
+Bad River;;;mir
+Crystal Vein;;C;mir
+Flood Plain;;;mir
+Grasslands;;;mir
+Mountain Valley;;;mir
+Rocky Tar Pit;;;mir
+Teferi's Isle;U;U;mir
+Coral Atoll;U;CU;vis
+Dormant Volcano;R;CR;vis
+Everglades;B;BC;vis
+Griffin Canyon;;C;vis
+Jungle Basin;G;CG;vis
+Karoo;W;CW;vis
+Quicksand;;C;vis
+Undiscovered Paradise;;BGRUW;vis
+Gemstone Mine;;BGRUW;wth
+Lotus Vale;;BGRUW;wth
+Scorched Ruins;;C;wth
+Winding Canyons;;C;wth
+Ancient Tomb;;C;tmp
+Caldera Lake;RU;CRU;tmp
+Cinder Marsh;BR;BCR;tmp
+Ghost Town;;C;tmp
+Maze of Shadows;;C;tmp
+Mogg Hollows;GR;CGR;tmp
+Pine Barrens;BG;BCG;tmp
+Reflecting Pool;;BGRUW;tmp
+Rootwater Depths;BU;BCU;tmp
+Salt Flats;BW;BCW;tmp
+Scabland;RW;CRW;tmp
+Skyshroud Forest;GU;CGU;tmp
+Stalking Stones;;C;tmp
+Thalakos Lowlands;UW;CUW;tmp
+Vec Townships;GW;CGW;tmp
+Wasteland;;C;tmp
+Volrath's Stronghold;B;C;sth
+City of Traitors;;C;exo
+Blasted Landscape;;C;usg
+Drifting Meadow;W;W;usg
+Gaea's Cradle;G;G;usg
+Phyrexian Tower;B;BC;usg
+Polluted Mire;B;B;usg
+Remote Isle;U;U;usg
+Serra's Sanctum;W;W;usg
+Shivan Gorge;R;C;usg
+Slippery Karst;G;G;usg
+Smoldering Crater;R;R;usg
+Thran Quarry;;BGRUW;usg
+Tolarian Academy;U;U;usg
+Faerie Conclave;U;U;ulg
+Forbidding Watchtower;W;W;ulg
+Ghitu Encampment;R;R;ulg
+Spawning Pool;B;B;ulg
+Treetop Village;G;G;ulg
+Yavimaya Hollow;G;C;uds
+Dust Bowl;;C;mmq
+Fountain of Cho;W;W;mmq
+Henge of Ramos;;BCGRUW;mmq
+Hickory Woodlot;G;G;mmq
+High Market;;C;mmq
+Mercadian Bazaar;R;R;mmq
+Peat Bog;B;B;mmq
+Remote Farm;W;W;mmq
+Rishadan Port;;C;mmq
+Rushwood Grove;G;G;mmq
+Sandstone Needle;R;R;mmq
+Saprazzan Cove;U;U;mmq
+Saprazzan Skerry;U;U;mmq
+Subterranean Hangar;B;B;mmq
+Tower of the Magistrate;;C;mmq
+Kor Haven;W;C;nem
+Rath's Edge;;C;nem
+Terrain Generator;;C;nem
+Rhystic Cave;;BGRUW;pcy
+Wintermoon Mesa;;C;pcy
+Ancient Spring;BUW;BUW;inv
+Archaeological Dig;;BCGRUW;inv
+Coastal Tower;UW;UW;inv
+Elfhame Palace;GW;GW;inv
+Geothermal Crevice;BGR;BGR;inv
+Irrigation Ditch;GUW;GUW;inv
+Keldon Necropolis;R;C;inv
+Salt Marsh;BU;BU;inv
+Shivan Oasis;GR;GR;inv
+Sulfur Vent;BRU;BRU;inv
+Tinder Farm;GRW;GRW;inv
+Urborg Volcano;BR;BR;inv
+Crosis's Catacombs;BRU;BRU;pls
+Darigaaz's Caldera;BGR;BGR;pls
+Dromar's Cavern;BUW;BUW;pls
+Forsaken City;;BGRUW;pls
+Meteor Crater;;BGRUW;pls
+Rith's Grove;GRW;GRW;pls
+Terminal Moraine;;C;pls
+Treva's Ruins;GUW;GUW;pls
+Battlefield Forge;RW;CRW;apc
+Caves of Koilos;BW;BCW;apc
+Llanowar Wastes;BG;BCG;apc
+Shivan Reef;RU;CRU;apc
+Yavimaya Coast;GU;CGU;apc
+Abandoned Outpost;W;BGRUW;ody
+Barbarian Ring;R;R;ody
+Bog Wreckage;B;BGRUW;ody
+Cabal Pit;B;B;ody
+Centaur Garden;G;G;ody
+Cephalid Coliseum;U;U;ody
+Crystal Quarry;BGRUW;BCGRUW;ody
+Darkwater Catacombs;BU;BU;ody
+Deserted Temple;;C;ody
+Mossfire Valley;GR;GR;ody
+Nomad Stadium;W;W;ody
+Petrified Field;;C;ody
+Ravaged Highlands;R;BGRUW;ody
+Seafloor Debris;U;BGRUW;ody
+Shadowblood Ridge;BR;BR;ody
+Skycloud Expanse;UW;UW;ody
+Sungrass Prairie;GW;GW;ody
+Tarnished Citadel;;BCGRUW;ody
+Timberland Ruins;G;BGRUW;ody
+Cabal Coffers;B;B;tor
+Tainted Field;BW;BCW;tor
+Tainted Isle;BU;BCU;tor
+Tainted Peak;BR;BCR;tor
+Tainted Wood;BG;BCG;tor
+Krosan Verge;;C;jud
+Nantuko Monastery;GW;C;jud
+Riftstone Portal;GW;CGW;jud
+Barren Moor;B;B;ons
+Bloodstained Mire;;;ons
+Contested Cliffs;GR;C;ons
+Daru Encampment;W;C;ons
+Flooded Strand;;;ons
+Forgotten Cave;R;R;ons
+Goblin Burrows;R;C;ons
+Grand Coliseum;;BCGRUW;ons
+Lonely Sandbar;U;U;ons
+Polluted Delta;;;ons
+Riptide Laboratory;U;C;ons
+Seaside Haven;UW;C;ons
+Secluded Steppe;W;W;ons
+Starlit Sanctum;BW;C;ons
+Tranquil Thicket;G;G;ons
+Unholy Grotto;B;C;ons
+Windswept Heath;;;ons
+Wirewood Lodge;G;C;ons
+Wooded Foothills;;;ons
+Temple of the False God;;C;scg
+Ancient Den;W;W;mrd
+Blinkmoth Well;;C;mrd
+Cloudpost;;C;mrd
+Glimmervoid;;BGRUW;mrd
+Great Furnace;R;R;mrd
+Seat of the Synod;U;U;mrd
+Tree of Tales;G;G;mrd
+Vault of Whispers;B;B;mrd
+Blinkmoth Nexus;;C;dst
+Darksteel Citadel;;C;dst
+Mirrodin's Core;;BCGRUW;dst
+Boseiju, Who Shelters All;;C;chk
+Cloudcrest Lake;UW;CUW;chk
+Eiganjo Castle;W;W;chk
+Forbidden Orchard;;BGRUW;chk
+Hall of the Bandit Lord;;C;chk
+Lantern-Lit Graveyard;BR;BCR;chk
+Minamo, School at Water's Edge;U;U;chk
+Okina, Temple to the Grandfathers;G;G;chk
+Pinecrest Ridge;GR;CGR;chk
+Shinka, the Bloodsoaked Keep;R;R;chk
+Shizo, Death's Storehouse;B;B;chk
+Tranquil Garden;GW;CGW;chk
+Untaidake, the Cloud Keeper;;C;chk
+Waterveil Cavern;BU;BCU;chk
+City of Ass;;BGRUW;unh
+R&D's Secret Lair;;C;unh
+Gods' Eye, Gate to the Reikai;;C;bok
+Tendo Ice Bridge;;BCGRUW;bok
+Mikokoro, Center of the Sea;;C;sok
+Miren, the Moaning Well;;C;sok
+Oboro, Palace in the Clouds;U;U;sok
+Tomb of Urami;B;B;sok
+Boros Garrison;RW;RW;rav
+Dimir Aqueduct;BU;BU;rav
+Duskmantle, House of Shadow;BU;C;rav
+Golgari Rot Farm;BG;BG;rav
+Overgrown Tomb;BG;BG;rav
+Sacred Foundry;RW;RW;rav
+Selesnya Sanctuary;GW;GW;rav
+Sunhome, Fortress of the Legion;RW;C;rav
+Svogthos, the Restless Tomb;BG;C;rav
+Temple Garden;GW;GW;rav
+Vitu-Ghazi, the City-Tree;GW;C;rav
+Watery Grave;BU;BU;rav
+Godless Shrine;BW;BW;gpt
+Gruul Turf;GR;GR;gpt
+Izzet Boilerworks;RU;RU;gpt
+Nivix, Aerie of the Firemind;RU;C;gpt
+Orzhov Basilica;BW;BW;gpt
+Orzhova, the Church of Deals;BW;C;gpt
+Skarrg, the Rage Pits;GR;C;gpt
+Steam Vents;RU;RU;gpt
+Stomping Ground;GR;GR;gpt
+Azorius Chancery;UW;UW;dis
+Blood Crypt;BR;BR;dis
+Breeding Pool;GU;GU;dis
+Ghost Quarter;;C;dis
+Hallowed Fountain;UW;UW;dis
+Novijen, Heart of Progress;GU;C;dis
+Pillar of the Paruns;;BGRUW;dis
+Prahv, Spires of Order;UW;C;dis
+Rakdos Carnarium;BR;BR;dis
+Rix Maadi, Dungeon Palace;BR;C;dis
+Simic Growth Chamber;GU;GU;dis
+Arctic Flats;GW;GW;csp
+Boreal Shelf;UW;UW;csp
+Dark Depths;;;csp
+Frost Marsh;BU;BU;csp
+Highland Weald;GR;GR;csp
+Mouth of Ronom;;C;csp
+Scrying Sheets;;C;csp
+Tresserhorn Sinks;BR;BR;csp
+Academy Ruins;U;C;tsp
+Calciform Pools;UW;CUW;tsp
+Dreadship Reef;BU;BCU;tsp
+Flagstones of Trokair;W;W;tsp
+Fungal Reaches;GR;CGR;tsp
+Gemstone Caverns;;BCGRUW;tsp
+Kher Keep;R;C;tsp
+Molten Slagheap;BR;BCR;tsp
+Saltcrusted Steppe;GW;CGW;tsp
+Swarmyard;;C;tsp
+Terramorphic Expanse;;;tsp
+Urza's Factory;;C;tsp
+Vesuva;;;tsp
+Urborg, Tomb of Yawgmoth;;B;plc
+Dakmor Salvage;B;B;fut
+Keldon Megaliths;R;R;fut
+Llanowar Reborn;G;G;fut
+New Benalia;W;W;fut
+Tolaria West;U;U;fut
+Dryad Arbor;G;G;fut
+Graven Cairns;BR;BCR;fut
+Grove of the Burnwillows;GR;CGR;fut
+Horizon Canopy;GW;GW;fut
+Nimbus Maze;UW;CUW;fut
+River of Tears;BU;U;fut
+Zoetic Cavern;;C;fut
+Ancient Amphitheater;RW;RW;lrw
+Auntie's Hovel;BR;BR;lrw
+Gilt-Leaf Palace;BG;BG;lrw
+Howltooth Hollow;B;B;lrw
+Mosswort Bridge;G;G;lrw
+Secluded Glen;BU;BU;lrw
+Shelldock Isle;U;U;lrw
+Shimmering Grotto;;BCGRUW;lrw
+Spinerock Knoll;R;R;lrw
+Vivid Crag;R;BGRUW;lrw
+Vivid Creek;U;BGRUW;lrw
+Vivid Grove;G;BGRUW;lrw
+Vivid Marsh;B;BGRUW;lrw
+Vivid Meadow;W;BGRUW;lrw
+Wanderwine Hub;UW;UW;lrw
+Windbrisk Heights;W;W;lrw
+Murmuring Bosk;BGW;BGW;mor
+Mutavault;;C;mor
+Primal Beyond;;BCGRUW;mor
+Rustic Clachan;W;W;mor
+Fire-Lit Thicket;GR;CGR;shm
+Leechridden Swamp;B;B;shm
+Madblind Mountain;R;R;shm
+Mistveil Plains;W;W;shm
+Moonring Island;U;U;shm
+Mystic Gate;UW;CUW;shm
+Sapseep Forest;G;G;shm
+Sunken Ruins;BU;BCU;shm
+Wooded Bastion;GW;CGW;shm
+Cascade Bluffs;RU;CRU;eve
+Fetid Heath;BW;BCW;eve
+Flooded Grove;GU;CGU;eve
+Rugged Prairie;RW;CRW;eve
+Springjack Pasture;;BCGRUW;eve
+Twilight Mire;BG;BCG;eve
+Arcane Sanctum;BUW;BUW;ala
+Bant Panorama;;C;ala
+Crumbling Necropolis;BRU;BRU;ala
+Esper Panorama;;C;ala
+Grixis Panorama;;C;ala
+Jund Panorama;;C;ala
+Jungle Shrine;GRW;GRW;ala
+Naya Panorama;;C;ala
+Savage Lands;BGR;BGR;ala
+Seaside Citadel;GUW;GUW;ala
+Ancient Ziggurat;;BGRUW;con
+Exotic Orchard;;BGRUW;con
+Reliquary Tower;;C;con
+Rupture Spire;;BGRUW;con
+Unstable Frontier;;C;con
+Dragonskull Summit;BR;BR;m10
+Drowned Catacomb;BU;BU;m10
+Gargoyle Castle;;C;m10
+Glacial Fortress;UW;UW;m10
+Rootbound Crag;GR;GR;m10
+Sunpetal Grove;GW;GW;m10
+Akoum Refuge;BR;BR;zen
+Arid Mesa;;;zen
+Crypt of Agadeem;B;B;zen
+Emeria, the Sky Ruin;W;W;zen
+Graypelt Refuge;GW;GW;zen
+Jwar Isle Refuge;BU;BU;zen
+Kabira Crossroads;W;W;zen
+Kazandu Refuge;GR;GR;zen
+Magosi, the Waterveil;U;U;zen
+Marsh Flats;;;zen
+Misty Rainforest;;;zen
+Oran-Rief, the Vastwood;G;G;zen
+Piranha Marsh;B;B;zen
+Scalding Tarn;;;zen
+Sejiri Refuge;UW;UW;zen
+Soaring Seacliff;U;U;zen
+Teetering Peaks;R;R;zen
+Turntimber Grove;G;G;zen
+Valakut, the Molten Pinnacle;R;R;zen
+Verdant Catacombs;;;zen
+Bojuka Bog;B;B;wwk
+Celestial Colonnade;UW;UW;wwk
+Creeping Tar Pit;BU;BU;wwk
+Dread Statuary;;C;wwk
+Eye of Ugin;;;wwk
+Halimar Depths;U;U;wwk
+Khalni Garden;G;G;wwk
+Lavaclaw Reaches;BR;BR;wwk
+Raging Ravine;GR;GR;wwk
+Sejiri Steppe;W;W;wwk
+Smoldering Spires;R;R;wwk
+Stirring Wildwood;GW;GW;wwk
+Tectonic Edge;;C;wwk
+Eldrazi Temple;;C;roe
+Evolving Wilds;;;roe
+Mystifying Maze;;C;m11
+Blackcleave Cliffs;BR;BR;som
+Copperline Gorge;GR;GR;som
+Darkslick Shores;BU;BU;som
+Glimmerpost;;C;som
+Razorverge Thicket;GW;GW;som
+Seachrome Coast;UW;UW;som
+Contested War Zone;;C;mbs
+Inkmoth Nexus;;C;mbs
+Phyrexia's Core;;C;nph
+Command Tower;;BGRUW;cmd
+Homeward Path;;C;cmd
+Buried Ruin;;C;m12
+Clifftop Retreat;RW;RW;isd
+Gavony Township;GW;C;isd
+Hinterland Harbor;GU;GU;isd
+Isolated Chapel;BW;BW;isd
+Kessig Wolf Run;GR;C;isd
+Moorland Haunt;UW;C;isd
+Nephalia Drownyard;BU;C;isd
+Stensia Bloodhall;BR;C;isd
+Sulfur Falls;RU;RU;isd
+Woodland Cemetery;BG;BG;isd
+Grim Backwoods;BG;C;dka
+Haunted Fengraf;;C;dka
+Vault of the Archangel;BW;C;dka
+Alchemist's Refuge;GU;C;avr
+Cavern of Souls;;BCGRUW;avr
+Desolate Lighthouse;RU;C;avr
+Seraph Sanctuary;;C;avr
+Slayers' Stronghold;RW;C;avr
+Cathedral of War;;C;m13
+Hellion Crucible;R;C;m13
+Azorius Guildgate;UW;UW;rtr
+Golgari Guildgate;BG;BG;rtr
+Grove of the Guardian;GW;C;rtr
+Izzet Guildgate;RU;RU;rtr
+Rakdos Guildgate;BR;BR;rtr
+Rogue's Passage;;C;rtr
+Selesnya Guildgate;GW;GW;rtr
+Transguild Promenade;;BGRUW;rtr
+Boros Guildgate;RW;RW;gtc
+Dimir Guildgate;BU;BU;gtc
+Gruul Guildgate;GR;GR;gtc
+Orzhov Guildgate;BW;BW;gtc
+Simic Guildgate;GU;GU;gtc
+Thespian's Stage;;C;gtc
+Maze's End;;C;dgm
+Encroaching Wastes;;C;m14
+Nykthos, Shrine to Nyx;;BCGRUW;ths
+Temple of Abandon;GR;GR;ths
+Temple of Deceit;BU;BU;ths
+Temple of Mystery;GU;GU;ths
+Temple of Silence;BW;BW;ths
+Temple of Triumph;RW;RW;ths
+Unknown Shores;;BCGRUW;ths
+Opal Palace;;BCGRUW;c13
+Temple of Enlightenment;UW;UW;bng
+Temple of Malice;BR;BR;bng
+Temple of Plenty;GW;GW;bng
+Mana Confluence;;BGRUW;jou
+Temple of Epiphany;RU;RU;jou
+Temple of Malady;BG;BG;jou
+Paliano, the High City;;BGRUW;cns
+Radiant Fountain;;C;m15
+Sliver Hive;;BCGRUW;m15
+Bloodfell Caves;BR;BR;ktk
+Blossoming Sands;GW;GW;ktk
+Dismal Backwater;BU;BU;ktk
+Frontier Bivouac;GRU;GRU;ktk
+Jungle Hollow;BG;BG;ktk
+Mystic Monastery;RUW;RUW;ktk
+Nomad Outpost;BRW;BRW;ktk
+Opulent Palace;BGU;BGU;ktk
+Rugged Highlands;GR;GR;ktk
+Sandsteppe Citadel;BGW;BGW;ktk
+Scoured Barrens;BW;BW;ktk
+Swiftwater Cliffs;RU;RU;ktk
+Thornwood Falls;GU;GU;ktk
+Tomb of the Spirit Dragon;;C;ktk
+Tranquil Cove;UW;UW;ktk
+Wind-Scarred Crag;RW;RW;ktk
+Arcane Lighthouse;;C;c14
+Flamekin Village;R;R;c14
+Myriad Landscape;;C;c14
+Crucible of the Spirit Dragon;;BCGRUW;frf
+Haven of the Spirit Dragon;;BCGRUW;dtk
+Foundry of the Consuls;;C;ori
+Mage-Ring Network;;C;ori
+Ally Encampment;;BCGRUW;bfz
+Blighted Cataract;U;C;bfz
+Blighted Fen;B;C;bfz
+Blighted Gorge;R;C;bfz
+Blighted Steppe;W;C;bfz
+Blighted Woodland;G;C;bfz
+Canopy Vista;GW;GW;bfz
+Cinder Glade;GR;GR;bfz
+Fertile Thicket;G;G;bfz
+Looming Spires;R;R;bfz
+Lumbering Falls;GU;GU;bfz
+Mortuary Mire;B;B;bfz
+Prairie Stream;UW;UW;bfz
+Sanctum of Ugin;;C;bfz
+Sandstone Bridge;W;W;bfz
+Shambling Vent;BW;BW;bfz
+Shrine of the Forsaken Gods;;C;bfz
+Skyline Cascade;U;U;bfz
+Smoldering Marsh;BR;BR;bfz
+Spawning Bed;;C;bfz
+Sunken Hollow;BU;BU;bfz
+Command Beacon;;C;c15
+Cinder Barrens;BR;BR;ogw
+Corrupted Crossroads;;BCGRUW;ogw
+Crumbling Vestige;;BCGRUW;ogw
+Hissing Quagmire;BG;BG;ogw
+Holdout Settlement;;BCGRUW;ogw
+Meandering River;UW;UW;ogw
+Mirrorpool;;C;ogw
+Needle Spires;RW;RW;ogw
+Ruins of Oran-Rief;;C;ogw
+Sea Gate Wreckage;;C;ogw
+Submerged Boneyard;BU;BU;ogw
+Timber Gorge;GR;GR;ogw
+Tranquil Expanse;GW;GW;ogw
+Wandering Fumarole;RU;RU;ogw
+Wastes;;C;ogw
+Choked Estuary;BU;BU;soi
+Drownyard Temple;;C;soi
+Foreboding Ruins;BR;BR;soi
+Forsaken Sanctuary;BW;BW;soi
+Fortified Village;GW;GW;soi
+Foul Orchard;BG;BG;soi
+Game Trail;GR;GR;soi
+Highland Lake;RU;RU;soi
+Port Town;UW;UW;soi
+Stone Quarry;RW;RW;soi
+Warped Landscape;;C;soi
+Westvale Abbey // Ormendahl, Profane Prince;B;C;soi
+Woodland Stream;GU;GU;soi
+Geier Reach Sanitarium;;C;emn
+Hanweir Battlements;R;C;emn
+Nephalia Academy;;C;emn
+Throne of the High City;;C;cn2
+Aether Hub;;BCGRUW;kld
+Blooming Marsh;BG;BG;kld
+Botanical Sanctum;GU;GU;kld
+Concealed Courtyard;BW;BW;kld
+Inspiring Vantage;RW;RW;kld
+Inventors' Fair;;C;kld
+Sequestered Stash;;C;kld
+Spirebluff Canal;RU;RU;kld
+Ash Barrens;;C;c16
+Spire of Industry;;BCGRUW;aer
+Canyon Slough;BR;BR;akh
+Cascading Cataracts;;BCGRUW;akh
+Cradle of the Accursed;;C;akh
+Fetid Pools;BU;BU;akh
+Grasping Dunes;;C;akh
+Irrigated Farmland;UW;UW;akh
+Painted Bluffs;;BCGRUW;akh
+Scattered Groves;GW;GW;akh
+Sheltered Thicket;GR;GR;akh
+Sunscorched Desert;;C;akh
+Crypt of the Eternals;BRU;BCRU;hou
+Desert of the Fervent;R;R;hou
+Desert of the Glorified;B;B;hou
+Desert of the Indomitable;G;G;hou
+Desert of the Mindful;U;U;hou
+Desert of the True;W;W;hou
+Dunes of the Dead;;C;hou
+Endless Sands;;C;hou
+Hashep Oasis;G;CG;hou
+Hostile Desert;;C;hou
+Ifnir Deadlands;B;BC;hou
+Ipnu Rivulet;U;CU;hou
+Ramunap Ruins;R;CR;hou
+Scavenger Grounds;;C;hou
+Shefet Dunes;W;CW;hou
+Survivors' Encampment;;BCGRUW;hou
+Path of Ancestry;;BGRUW;c17
+Legion's Landing // Adanto, the First Fort;W;W;xln
+Search for Azcanta // Azcanta, the Sunken Ruin;U;U;xln
+Arguel's Blood Fast // Temple of Aclazotz;B;B;xln
+Vance's Blasting Cannons // Spitfire Bastion;R;R;xln
+Growing Rites of Itlimoc // Itlimoc, Cradle of the Sun;G;G;xln
+Conqueror's Galleon // Conqueror's Foothold;;C;xln
+Dowsing Dagger // Lost Vale;;BGRUW;xln
+Primal Amulet // Primal Wellspring;;BGRUW;xln
+Thaumatic Compass // Spires of Orazca;;C;xln
+Treasure Map // Treasure Cove;;BCGRUW;xln
+Field of Ruin;;C;xln
+Unclaimed Territory;;BCGRUW;xln
+Secret Base;;BCGRUW;ust
+Watermarket;;C;ust
+Hadana's Climb // Winged Temple of Orazca;GU;BGRUW;rix
+Journey to Eternity // Atzal, Cave of Eternity;BG;BGRUW;rix
+Path of Mettle // Metzali, Tower of Triumph;RW;BGRUW;rix
+Profane Procession // Tomb of the Dusk Rose;BW;BGRUW;rix
+Storm the Vault // Vault of Catlacan;RU;BGRUW;rix
+Azor's Gateway // Sanctum of the Sun;;BGRUW;rix
+Golden Guardian // Gold-Forge Garrison;;BGRUW;rix
+Arch of Orazca;;C;rix
+Cabal Stronghold;B;BC;dom
+Memorial to Folly;B;B;dom
+Memorial to Genius;U;U;dom
+Memorial to Glory;W;W;dom
+Memorial to Unity;G;G;dom
+Memorial to War;R;R;dom
+Zhalfirin Void;;C;dom
+Bountiful Promenade;GW;GW;bbd
+Luxury Suite;BR;BR;bbd
+Morphic Pool;BU;BU;bbd
+Sea of Clouds;UW;UW;bbd
+Spire Garden;GR;GR;bbd
+Detection Tower;;C;m19
+Forge of Heroes;;C;c18
+Isolated Watchtower;;C;c18
+Gateway Plaza;;BGRUW;grn
+Guildmages' Forum;;BCGRUW;grn
+Plaza of Harmony;;BCGRUW;rna
+Blast Zone;;C;war
+Emergence Zone;;C;war
+Interplanar Beacon;;BCGRUW;war
+Karn's Bastion;;C;war
+Mobilized District;;C;war
+Cave of Temptation;;BCGRUW;mh1
+Fiery Islet;RU;RU;mh1
+Frostwalk Bastion;;C;mh1
+Hall of Heliod's Generosity;W;C;mh1
+Nurturing Peatland;BG;BG;mh1
+Prismatic Vista;;;mh1
+Silent Clearing;BW;BW;mh1
+Sunbaked Canyon;RW;RW;mh1
+Waterlogged Grove;GU;GU;mh1
+Cryptic Caves;;C;m20
+Field of the Dead;;C;m20
+Lotus Field;;BGRUW;m20
+Sanctum of Eternity;;C;c19
+Castle Ardenvale;W;W;eld
+Castle Embereth;R;R;eld
+Castle Garenbrig;G;G;eld
+Castle Locthwain;B;B;eld
+Castle Vantress;U;U;eld
+Dwarven Mine;R;R;eld
+Fabled Passage;;;eld
+Gingerbread Cabin;G;G;eld
+Idyllic Grange;W;W;eld
+Mystic Sanctuary;U;U;eld
+Tournament Grounds;BRW;BCRW;eld
+Witch's Cottage;B;B;eld
+Labyrinth of Skophos;;C;thb
+Underdome;;BCGRUW;und
+Nesting Grounds;;C;c20
+Bonders' Enclave;;C;iko
+Indatha Triome;BGW;BGW;iko
+Ketria Triome;GRU;GRU;iko
+Raugrin Triome;RUW;RUW;iko
+Savai Triome;BRW;BRW;iko
+Zagoth Triome;BGU;BGU;iko
+Animal Sanctuary;;C;m21
+Thriving Bluff;R;BGRUW;jmp
+Thriving Grove;G;BGRUW;jmp
+Thriving Heath;W;BGRUW;jmp
+Thriving Isle;U;BGRUW;jmp
+Thriving Moor;B;BGRUW;jmp
+Emeria's Call // Emeria, Shattered Skyclave;W;W;znr
+Kabira Takedown // Kabira Plateau;W;W;znr
+Makindi Stampede // Makindi Mesas;W;W;znr
+Ondu Inversion // Ondu Skyruins;W;W;znr
+Sejiri Shelter // Sejiri Glacier;W;W;znr
+Skyclave Cleric // Skyclave Basilica;W;W;znr
+Beyeen Veil // Beyeen Coast;U;U;znr
+Glasspool Mimic // Glasspool Shore;U;U;znr
+Jwari Disruption // Jwari Ruins;U;U;znr
+Sea Gate Restoration // Sea Gate, Reborn;U;U;znr
+Silundi Vision // Silundi Isle;U;U;znr
+Umara Wizard // Umara Skyfalls;U;U;znr
+Agadeem's Awakening // Agadeem, the Undercrypt;B;B;znr
+Blackbloom Rogue // Blackbloom Bog;B;B;znr
+Hagra Mauling // Hagra Broodpit;B;B;znr
+Malakir Rebirth // Malakir Mire;B;B;znr
+Pelakka Predation // Pelakka Caverns;B;B;znr
+Zof Consumption // Zof Bloodbog;B;B;znr
+Akoum Warrior // Akoum Teeth;R;R;znr
+Kazuul's Fury // Kazuul's Cliffs;R;R;znr
+Shatterskull Smashing // Shatterskull, the Hammer Pass;R;R;znr
+Song-Mad Treachery // Song-Mad Ruins;R;R;znr
+Spikefield Hazard // Spikefield Cave;R;R;znr
+Valakut Awakening // Valakut Stoneforge;R;R;znr
+Bala Ged Recovery // Bala Ged Sanctuary;G;G;znr
+Kazandu Mammoth // Kazandu Valley;G;G;znr
+Khalni Ambush // Khalni Territory;G;G;znr
+Tangled Florahedron // Tangled Vale;G;G;znr
+Turntimber Symbiosis // Turntimber, Serpentine Wood;G;G;znr
+Vastwood Fortification // Vastwood Thicket;G;G;znr
+Base Camp;;BCGRUW;znr
+A-Base Camp;;BCGRUW;znr
+Branchloft Pathway // Boulderloft Pathway;GW;G;znr
+Brightclimb Pathway // Grimclimb Pathway;BW;W;znr
+Clearwater Pathway // Murkwater Pathway;BU;U;znr
+Cragcrown Pathway // Timbercrown Pathway;GR;R;znr
+Crawling Barrens;;C;znr
+Needleverge Pathway // Pillarverge Pathway;RW;R;znr
+Riverglide Pathway // Lavaglide Pathway;RU;U;znr
+Throne of Makindi;;BCGRUW;znr
+Guildless Commons;;C;cmr
+Rejuvenating Springs;GU;GU;cmr
+Spectator Seating;RW;RW;cmr
+Training Center;RU;RU;cmr
+Undergrowth Stadium;BG;BG;cmr
+Vault of Champions;BW;BW;cmr
+War Room;;C;cmr
+Alpine Meadow;RW;RW;khm
+Arctic Treeline;GW;GW;khm
+Axgard Armory;RW;W;khm
+Barkchannel Pathway // Tidechannel Pathway;GU;G;khm
+Blightstep Pathway // Searstep Pathway;BR;B;khm
+Bretagard Stronghold;GW;G;khm
+Darkbore Pathway // Slitherbore Pathway;BG;B;khm
+Faceless Haven;;C;khm
+A-Faceless Haven;;C;khm
+Gates of Istfell;UW;W;khm
+Glacial Floodplain;UW;UW;khm
+Gnottvold Slumbermound;GR;R;khm
+Great Hall of Starnheim;BW;B;khm
+Hengegate Pathway // Mistgate Pathway;UW;W;khm
+Highland Forest;GR;GR;khm
+Ice Tunnel;BU;BU;khm
+Immersturm Skullcairn;BR;B;khm
+Littjara Mirrorlake;GU;U;khm
+Port of Karfell;BU;U;khm
+Rimewood Falls;GU;GU;khm
+Shimmerdrift Vale;;BGRUW;khm
+Skemfar Elderhall;BG;G;khm
+A-Skemfar Elderhall;BG;G;khm
+Snowfield Sinkhole;BW;BW;khm
+Sulfurous Mire;BR;BR;khm
+Surtland Frostpyre;RU;R;khm
+Tyrite Sanctum;;C;khm
+Volatile Fjord;RU;RU;khm
+Woodland Chasm;BG;BG;khm
+The World Tree;BGRUW;BGRUW;khm
+Study Hall;;BCGRUW;c21
+Witch's Clinic;;C;c21
+Access Tunnel;;C;stx
+Archway Commons;;BGRUW;stx
+The Biblioplex;;C;stx
+Frostboil Snarl;RU;RU;stx
+Furycalm Snarl;RW;RW;stx
+Hall of Oracles;;BCGRUW;stx
+Lorehold Campus;RW;RW;stx
+Necroblossom Snarl;BG;BG;stx
+Prismari Campus;RU;RU;stx
+Quandrix Campus;GU;GU;stx
+Shineshadow Snarl;BW;BW;stx
+Silverquill Campus;BW;BW;stx
+Vineglimmer Snarl;GU;GU;stx
+Witherbloom Campus;BG;BG;stx
+Darkmoss Bridge;BG;BG;mh2
+Drossforge Bridge;BR;BR;mh2
+Goldmire Bridge;BW;BW;mh2
+Mistvault Bridge;BU;BU;mh2
+Power Depot;;BCGRUW;mh2
+Razortide Bridge;UW;UW;mh2
+Rustvale Bridge;RW;RW;mh2
+Silverbluff Bridge;RU;RU;mh2
+Slagwoods Bridge;GR;GR;mh2
+Tanglepool Bridge;GU;GU;mh2
+Thornglint Bridge;GW;GW;mh2
+Urza's Saga;;C;mh2
+Yavimaya, Cradle of Growth;;G;mh2
+Cave of the Frost Dragon;W;W;afr
+Den of the Bugbear;R;R;afr
+Dungeon Descent;;C;afr
+A-Dungeon Descent;;C;afr
+Hall of Storm Giants;U;U;afr
+Hive of the Eye Tyrant;B;B;afr
+Lair of the Hydra;G;G;afr
+Temple of the Dragon Queen;;BGRUW;afr
+Treasure Vault;;C;afr
+Underdark Rift;;C;afc
+Deserted Beach;UW;UW;mid
+Haunted Ridge;BR;BR;mid
+Hostile Hostel // Creeping Inn;B;C;mid
+Overgrown Farmland;GW;GW;mid
+Rockfall Vale;GR;GR;mid
+Shipwreck Marsh;BU;BU;mid
+Havengul Laboratory // Havengul Mystery;B;BC;sld
+Deathcap Glade;BG;BG;vow
+Dreamroot Cascade;GU;GU;vow
+Shattered Sanctum;BW;BW;vow
+Stormcarved Coast;RU;RU;vow
+Sundown Pass;RW;RW;vow
+Voldaren Estate;;BCGRUW;vow
+Forsaken Crossroads;;BGRUW;ymid
+Boseiju, Who Endures;G;G;neo
+Eiganjo, Seat of the Empire;W;W;neo
+Mech Hangar;;BCGRUW;neo
+Otawara, Soaring City;U;U;neo
+Roadside Reliquary;;C;neo
+Secluded Courtyard;;BCGRUW;neo
+Sokenzan, Crucible of Defiance;R;R;neo
+Takenuma, Abandoned Mire;B;B;neo
+Uncharted Haven;;BGRUW;neo
+Jetmir's Garden;GRW;GRW;snc
+Raffine's Tower;BUW;BUW;snc
+Spara's Headquarters;GUW;GUW;snc
+Xander's Lounge;BRU;BRU;snc
+Ziatora's Proving Ground;BGR;BGR;snc
+Badlands;BR;BR;lea
+Bayou;BG;BG;lea
+Plateau;RW;RW;lea
+Savannah;GW;GW;lea
+Scrubland;BW;BW;lea
+Taiga;GR;GR;lea
+Tropical Island;GU;GU;lea
+Tundra;UW;UW;lea
+Underground Sea;BU;BU;lea
+Plains;W;W;lea
+Island;U;U;lea
+Swamp;B;B;lea
+Mountain;R;R;lea
+Forest;G;G;lea
+Volcanic Island;RU;RU;leb
+Bazaar of Baghdad;;;arn
+City of Brass;;BGRUW;arn
+Desert;;C;arn
+Diamond Valley;;;arn
+Elephant Graveyard;;C;arn
+Island of Wak-Wak;;;arn
+Library of Alexandria;;C;arn
+Oasis;;;arn
+Mishra's Factory;;C;atq
+Mishra's Workshop;;C;atq
+Strip Mine;;C;atq
+Urza's Mine;;C;atq
+Urza's Power Plant;;C;atq
+Urza's Tower;;C;atq
+Adventurers' Guildhouse;;;leg
+Cathedral of Serra;;;leg
+Hammerheim;R;R;leg
+Karakas;W;W;leg
+Mountain Stronghold;;;leg
+Pendelhaven;G;G;leg
+Seafarer's Quay;;;leg
+The Tabernacle at Pendrell Vale;;;leg
+Tolaria;U;U;leg
+Unholy Citadel;;;leg
+Urborg;B;B;leg
+City of Shadows;;C;drk
+Maze of Ith;;;drk
+Safe Haven;;;drk
+Sorrow's Path;;;drk
+Arena;;;phpr
+Bottomless Vault;B;B;fem
+Dwarven Hold;R;R;fem
+Dwarven Ruins;R;R;fem
+Ebon Stronghold;B;B;fem
+Havenwood Battleground;G;G;fem
+Hollow Trees;G;G;fem
+Icatian Store;W;W;fem
+Rainbow Vale;;BGRUW;fem
+Ruins of Trokair;W;W;fem
+Sand Silos;U;U;fem
+Svyelunite Temple;U;U;fem
+Adarkar Wastes;UW;CUW;ice
+Brushland;GW;CGW;ice
+Glacial Chasm;;;ice
+Halls of Mist;;;ice
+Ice Floe;;;ice
+Karplusan Forest;GR;CGR;ice
+Land Cap;UW;UW;ice
+Lava Tubes;BR;BR;ice
+River Delta;BU;BU;ice
+Sulfurous Springs;BR;BCR;ice
+Timberline Ridge;GR;GR;ice
+Underground River;BU;BCU;ice
+Veldt;GW;GW;ice
+Snow-Covered Plains;W;W;ice
+Snow-Covered Island;U;U;ice
+Snow-Covered Swamp;B;B;ice
+Snow-Covered Mountain;R;R;ice
+Snow-Covered Forest;G;G;ice
+An-Havva Township;GRW;CGRW;hml
+Aysen Abbey;GUW;CGUW;hml
+Castle Sengir;BRU;BCRU;hml
+Koskun Keep;BGR;BCGR;hml
+Wizards' School;BUW;BCUW;hml
+Balduvian Trading Post;R;CR;all
+Heart of Yavimaya;G;G;all
+Kjeldoran Outpost;W;W;all
+Lake of the Dead;B;B;all
+School of the Unseen;;BCGRUW;all
+Sheltered Valley;;C;all
+Soldevi Excavations;U;CU;all
+Thawing Glaciers;;;all
+Bad River;;;mir
+Crystal Vein;;C;mir
+Flood Plain;;;mir
+Grasslands;;;mir
+Mountain Valley;;;mir
+Rocky Tar Pit;;;mir
+Teferi's Isle;U;U;mir
+Coral Atoll;U;CU;vis
+Dormant Volcano;R;CR;vis
+Everglades;B;BC;vis
+Griffin Canyon;;C;vis
+Jungle Basin;G;CG;vis
+Karoo;W;CW;vis
+Quicksand;;C;vis
+Undiscovered Paradise;;BGRUW;vis
+Gemstone Mine;;BGRUW;wth
+Lotus Vale;;BGRUW;wth
+Scorched Ruins;;C;wth
+Winding Canyons;;C;wth
+Ancient Tomb;;C;tmp
+Caldera Lake;RU;CRU;tmp
+Cinder Marsh;BR;BCR;tmp
+Ghost Town;;C;tmp
+Maze of Shadows;;C;tmp
+Mogg Hollows;GR;CGR;tmp
+Pine Barrens;BG;BCG;tmp
+Reflecting Pool;;BGRUW;tmp
+Rootwater Depths;BU;BCU;tmp
+Salt Flats;BW;BCW;tmp
+Scabland;RW;CRW;tmp
+Skyshroud Forest;GU;CGU;tmp
+Stalking Stones;;C;tmp
+Thalakos Lowlands;UW;CUW;tmp
+Vec Townships;GW;CGW;tmp
+Wasteland;;C;tmp
+Volrath's Stronghold;B;C;sth
+City of Traitors;;C;exo
+Blasted Landscape;;C;usg
+Drifting Meadow;W;W;usg
+Gaea's Cradle;G;G;usg
+Phyrexian Tower;B;BC;usg
+Polluted Mire;B;B;usg
+Remote Isle;U;U;usg
+Serra's Sanctum;W;W;usg
+Shivan Gorge;R;C;usg
+Slippery Karst;G;G;usg
+Smoldering Crater;R;R;usg
+Thran Quarry;;BGRUW;usg
+Tolarian Academy;U;U;usg
+Faerie Conclave;U;U;ulg
+Forbidding Watchtower;W;W;ulg
+Ghitu Encampment;R;R;ulg
+Spawning Pool;B;B;ulg
+Treetop Village;G;G;ulg
+Yavimaya Hollow;G;C;uds
+Dust Bowl;;C;mmq
+Fountain of Cho;W;W;mmq
+Henge of Ramos;;BCGRUW;mmq
+Hickory Woodlot;G;G;mmq
+High Market;;C;mmq
+Mercadian Bazaar;R;R;mmq
+Peat Bog;B;B;mmq
+Remote Farm;W;W;mmq
+Rishadan Port;;C;mmq
+Rushwood Grove;G;G;mmq
+Sandstone Needle;R;R;mmq
+Saprazzan Cove;U;U;mmq
+Saprazzan Skerry;U;U;mmq
+Subterranean Hangar;B;B;mmq
+Tower of the Magistrate;;C;mmq
+Kor Haven;W;C;nem
+Rath's Edge;;C;nem
+Terrain Generator;;C;nem
+Rhystic Cave;;BGRUW;pcy
+Wintermoon Mesa;;C;pcy
+Ancient Spring;BUW;BUW;inv
+Archaeological Dig;;BCGRUW;inv
+Coastal Tower;UW;UW;inv
+Elfhame Palace;GW;GW;inv
+Geothermal Crevice;BGR;BGR;inv
+Irrigation Ditch;GUW;GUW;inv
+Keldon Necropolis;R;C;inv
+Salt Marsh;BU;BU;inv
+Shivan Oasis;GR;GR;inv
+Sulfur Vent;BRU;BRU;inv
+Tinder Farm;GRW;GRW;inv
+Urborg Volcano;BR;BR;inv
+Crosis's Catacombs;BRU;BRU;pls
+Darigaaz's Caldera;BGR;BGR;pls
+Dromar's Cavern;BUW;BUW;pls
+Forsaken City;;BGRUW;pls
+Meteor Crater;;BGRUW;pls
+Rith's Grove;GRW;GRW;pls
+Terminal Moraine;;C;pls
+Treva's Ruins;GUW;GUW;pls
+Battlefield Forge;RW;CRW;apc
+Caves of Koilos;BW;BCW;apc
+Llanowar Wastes;BG;BCG;apc
+Shivan Reef;RU;CRU;apc
+Yavimaya Coast;GU;CGU;apc
+Abandoned Outpost;W;BGRUW;ody
+Barbarian Ring;R;R;ody
+Bog Wreckage;B;BGRUW;ody
+Cabal Pit;B;B;ody
+Centaur Garden;G;G;ody
+Cephalid Coliseum;U;U;ody
+Crystal Quarry;BGRUW;BCGRUW;ody
+Darkwater Catacombs;BU;BU;ody
+Deserted Temple;;C;ody
+Mossfire Valley;GR;GR;ody
+Nomad Stadium;W;W;ody
+Petrified Field;;C;ody
+Ravaged Highlands;R;BGRUW;ody
+Seafloor Debris;U;BGRUW;ody
+Shadowblood Ridge;BR;BR;ody
+Skycloud Expanse;UW;UW;ody
+Sungrass Prairie;GW;GW;ody
+Tarnished Citadel;;BCGRUW;ody
+Timberland Ruins;G;BGRUW;ody
+Cabal Coffers;B;B;tor
+Tainted Field;BW;BCW;tor
+Tainted Isle;BU;BCU;tor
+Tainted Peak;BR;BCR;tor
+Tainted Wood;BG;BCG;tor
+Krosan Verge;;C;jud
+Nantuko Monastery;GW;C;jud
+Riftstone Portal;GW;CGW;jud
+Barren Moor;B;B;ons
+Bloodstained Mire;;;ons
+Contested Cliffs;GR;C;ons
+Daru Encampment;W;C;ons
+Flooded Strand;;;ons
+Forgotten Cave;R;R;ons
+Goblin Burrows;R;C;ons
+Grand Coliseum;;BCGRUW;ons
+Lonely Sandbar;U;U;ons
+Polluted Delta;;;ons
+Riptide Laboratory;U;C;ons
+Seaside Haven;UW;C;ons
+Secluded Steppe;W;W;ons
+Starlit Sanctum;BW;C;ons
+Tranquil Thicket;G;G;ons
+Unholy Grotto;B;C;ons
+Windswept Heath;;;ons
+Wirewood Lodge;G;C;ons
+Wooded Foothills;;;ons
+Temple of the False God;;C;scg
+Ancient Den;W;W;mrd
+Blinkmoth Well;;C;mrd
+Cloudpost;;C;mrd
+Glimmervoid;;BGRUW;mrd
+Great Furnace;R;R;mrd
+Seat of the Synod;U;U;mrd
+Tree of Tales;G;G;mrd
+Vault of Whispers;B;B;mrd
+Blinkmoth Nexus;;C;dst
+Darksteel Citadel;;C;dst
+Mirrodin's Core;;BCGRUW;dst
+Boseiju, Who Shelters All;;C;chk
+Cloudcrest Lake;UW;CUW;chk
+Eiganjo Castle;W;W;chk
+Forbidden Orchard;;BGRUW;chk
+Hall of the Bandit Lord;;C;chk
+Lantern-Lit Graveyard;BR;BCR;chk
+Minamo, School at Water's Edge;U;U;chk
+Okina, Temple to the Grandfathers;G;G;chk
+Pinecrest Ridge;GR;CGR;chk
+Shinka, the Bloodsoaked Keep;R;R;chk
+Shizo, Death's Storehouse;B;B;chk
+Tranquil Garden;GW;CGW;chk
+Untaidake, the Cloud Keeper;;C;chk
+Waterveil Cavern;BU;BCU;chk
+City of Ass;;BGRUW;unh
+R&D's Secret Lair;;C;unh
+Gods' Eye, Gate to the Reikai;;C;bok
+Tendo Ice Bridge;;BCGRUW;bok
+Mikokoro, Center of the Sea;;C;sok
+Miren, the Moaning Well;;C;sok
+Oboro, Palace in the Clouds;U;U;sok
+Tomb of Urami;B;B;sok
+Boros Garrison;RW;RW;rav
+Dimir Aqueduct;BU;BU;rav
+Duskmantle, House of Shadow;BU;C;rav
+Golgari Rot Farm;BG;BG;rav
+Overgrown Tomb;BG;BG;rav
+Sacred Foundry;RW;RW;rav
+Selesnya Sanctuary;GW;GW;rav
+Sunhome, Fortress of the Legion;RW;C;rav
+Svogthos, the Restless Tomb;BG;C;rav
+Temple Garden;GW;GW;rav
+Vitu-Ghazi, the City-Tree;GW;C;rav
+Watery Grave;BU;BU;rav
+Godless Shrine;BW;BW;gpt
+Gruul Turf;GR;GR;gpt
+Izzet Boilerworks;RU;RU;gpt
+Nivix, Aerie of the Firemind;RU;C;gpt
+Orzhov Basilica;BW;BW;gpt
+Orzhova, the Church of Deals;BW;C;gpt
+Skarrg, the Rage Pits;GR;C;gpt
+Steam Vents;RU;RU;gpt
+Stomping Ground;GR;GR;gpt
+Azorius Chancery;UW;UW;dis
+Blood Crypt;BR;BR;dis
+Breeding Pool;GU;GU;dis
+Ghost Quarter;;C;dis
+Hallowed Fountain;UW;UW;dis
+Novijen, Heart of Progress;GU;C;dis
+Pillar of the Paruns;;BGRUW;dis
+Prahv, Spires of Order;UW;C;dis
+Rakdos Carnarium;BR;BR;dis
+Rix Maadi, Dungeon Palace;BR;C;dis
+Simic Growth Chamber;GU;GU;dis
+Arctic Flats;GW;GW;csp
+Boreal Shelf;UW;UW;csp
+Dark Depths;;;csp
+Frost Marsh;BU;BU;csp
+Highland Weald;GR;GR;csp
+Mouth of Ronom;;C;csp
+Scrying Sheets;;C;csp
+Tresserhorn Sinks;BR;BR;csp
+Academy Ruins;U;C;tsp
+Calciform Pools;UW;CUW;tsp
+Dreadship Reef;BU;BCU;tsp
+Flagstones of Trokair;W;W;tsp
+Fungal Reaches;GR;CGR;tsp
+Gemstone Caverns;;BCGRUW;tsp
+Kher Keep;R;C;tsp
+Molten Slagheap;BR;BCR;tsp
+Saltcrusted Steppe;GW;CGW;tsp
+Swarmyard;;C;tsp
+Terramorphic Expanse;;;tsp
+Urza's Factory;;C;tsp
+Vesuva;;;tsp
+Urborg, Tomb of Yawgmoth;;B;plc
+Dakmor Salvage;B;B;fut
+Keldon Megaliths;R;R;fut
+Llanowar Reborn;G;G;fut
+New Benalia;W;W;fut
+Tolaria West;U;U;fut
+Dryad Arbor;G;G;fut
+Graven Cairns;BR;BCR;fut
+Grove of the Burnwillows;GR;CGR;fut
+Horizon Canopy;GW;GW;fut
+Nimbus Maze;UW;CUW;fut
+River of Tears;BU;U;fut
+Zoetic Cavern;;C;fut
+Ancient Amphitheater;RW;RW;lrw
+Auntie's Hovel;BR;BR;lrw
+Gilt-Leaf Palace;BG;BG;lrw
+Howltooth Hollow;B;B;lrw
+Mosswort Bridge;G;G;lrw
+Secluded Glen;BU;BU;lrw
+Shelldock Isle;U;U;lrw
+Shimmering Grotto;;BCGRUW;lrw
+Spinerock Knoll;R;R;lrw
+Vivid Crag;R;BGRUW;lrw
+Vivid Creek;U;BGRUW;lrw
+Vivid Grove;G;BGRUW;lrw
+Vivid Marsh;B;BGRUW;lrw
+Vivid Meadow;W;BGRUW;lrw
+Wanderwine Hub;UW;UW;lrw
+Windbrisk Heights;W;W;lrw
+Murmuring Bosk;BGW;BGW;mor
+Mutavault;;C;mor
+Primal Beyond;;BCGRUW;mor
+Rustic Clachan;W;W;mor
+Fire-Lit Thicket;GR;CGR;shm
+Leechridden Swamp;B;B;shm
+Madblind Mountain;R;R;shm
+Mistveil Plains;W;W;shm
+Moonring Island;U;U;shm
+Mystic Gate;UW;CUW;shm
+Sapseep Forest;G;G;shm
+Sunken Ruins;BU;BCU;shm
+Wooded Bastion;GW;CGW;shm
+Cascade Bluffs;RU;CRU;eve
+Fetid Heath;BW;BCW;eve
+Flooded Grove;GU;CGU;eve
+Rugged Prairie;RW;CRW;eve
+Springjack Pasture;;BCGRUW;eve
+Twilight Mire;BG;BCG;eve
+Arcane Sanctum;BUW;BUW;ala
+Bant Panorama;;C;ala
+Crumbling Necropolis;BRU;BRU;ala
+Esper Panorama;;C;ala
+Grixis Panorama;;C;ala
+Jund Panorama;;C;ala
+Jungle Shrine;GRW;GRW;ala
+Naya Panorama;;C;ala
+Savage Lands;BGR;BGR;ala
+Seaside Citadel;GUW;GUW;ala
+Ancient Ziggurat;;BGRUW;con
+Exotic Orchard;;BGRUW;con
+Reliquary Tower;;C;con
+Rupture Spire;;BGRUW;con
+Unstable Frontier;;C;con
+Dragonskull Summit;BR;BR;m10
+Drowned Catacomb;BU;BU;m10
+Gargoyle Castle;;C;m10
+Glacial Fortress;UW;UW;m10
+Rootbound Crag;GR;GR;m10
+Sunpetal Grove;GW;GW;m10
+Akoum Refuge;BR;BR;zen
+Arid Mesa;;;zen
+Crypt of Agadeem;B;B;zen
+Emeria, the Sky Ruin;W;W;zen
+Graypelt Refuge;GW;GW;zen
+Jwar Isle Refuge;BU;BU;zen
+Kabira Crossroads;W;W;zen
+Kazandu Refuge;GR;GR;zen
+Magosi, the Waterveil;U;U;zen
+Marsh Flats;;;zen
+Misty Rainforest;;;zen
+Oran-Rief, the Vastwood;G;G;zen
+Piranha Marsh;B;B;zen
+Scalding Tarn;;;zen
+Sejiri Refuge;UW;UW;zen
+Soaring Seacliff;U;U;zen
+Teetering Peaks;R;R;zen
+Turntimber Grove;G;G;zen
+Valakut, the Molten Pinnacle;R;R;zen
+Verdant Catacombs;;;zen
+Bojuka Bog;B;B;wwk
+Celestial Colonnade;UW;UW;wwk
+Creeping Tar Pit;BU;BU;wwk
+Dread Statuary;;C;wwk
+Eye of Ugin;;;wwk
+Halimar Depths;U;U;wwk
+Khalni Garden;G;G;wwk
+Lavaclaw Reaches;BR;BR;wwk
+Raging Ravine;GR;GR;wwk
+Sejiri Steppe;W;W;wwk
+Smoldering Spires;R;R;wwk
+Stirring Wildwood;GW;GW;wwk
+Tectonic Edge;;C;wwk
+Eldrazi Temple;;C;roe
+Evolving Wilds;;;roe
+Mystifying Maze;;C;m11
+Blackcleave Cliffs;BR;BR;som
+Copperline Gorge;GR;GR;som
+Darkslick Shores;BU;BU;som
+Glimmerpost;;C;som
+Razorverge Thicket;GW;GW;som
+Seachrome Coast;UW;UW;som
+Contested War Zone;;C;mbs
+Inkmoth Nexus;;C;mbs
+Phyrexia's Core;;C;nph
+Command Tower;;BGRUW;cmd
+Homeward Path;;C;cmd
+Buried Ruin;;C;m12
+Clifftop Retreat;RW;RW;isd
+Gavony Township;GW;C;isd
+Hinterland Harbor;GU;GU;isd
+Isolated Chapel;BW;BW;isd
+Kessig Wolf Run;GR;C;isd
+Moorland Haunt;UW;C;isd
+Nephalia Drownyard;BU;C;isd
+Stensia Bloodhall;BR;C;isd
+Sulfur Falls;RU;RU;isd
+Woodland Cemetery;BG;BG;isd
+Grim Backwoods;BG;C;dka
+Haunted Fengraf;;C;dka
+Vault of the Archangel;BW;C;dka
+Alchemist's Refuge;GU;C;avr
+Cavern of Souls;;BCGRUW;avr
+Desolate Lighthouse;RU;C;avr
+Seraph Sanctuary;;C;avr
+Slayers' Stronghold;RW;C;avr
+Cathedral of War;;C;m13
+Hellion Crucible;R;C;m13
+Azorius Guildgate;UW;UW;rtr
+Golgari Guildgate;BG;BG;rtr
+Grove of the Guardian;GW;C;rtr
+Izzet Guildgate;RU;RU;rtr
+Rakdos Guildgate;BR;BR;rtr
+Rogue's Passage;;C;rtr
+Selesnya Guildgate;GW;GW;rtr
+Transguild Promenade;;BGRUW;rtr
+Boros Guildgate;RW;RW;gtc
+Dimir Guildgate;BU;BU;gtc
+Gruul Guildgate;GR;GR;gtc
+Orzhov Guildgate;BW;BW;gtc
+Simic Guildgate;GU;GU;gtc
+Thespian's Stage;;C;gtc
+Maze's End;;C;dgm
+Encroaching Wastes;;C;m14
+Nykthos, Shrine to Nyx;;BCGRUW;ths
+Temple of Abandon;GR;GR;ths
+Temple of Deceit;BU;BU;ths
+Temple of Mystery;GU;GU;ths
+Temple of Silence;BW;BW;ths
+Temple of Triumph;RW;RW;ths
+Unknown Shores;;BCGRUW;ths
+Opal Palace;;BCGRUW;c13
+Temple of Enlightenment;UW;UW;bng
+Temple of Malice;BR;BR;bng
+Temple of Plenty;GW;GW;bng
+Mana Confluence;;BGRUW;jou
+Temple of Epiphany;RU;RU;jou
+Temple of Malady;BG;BG;jou
+Paliano, the High City;;BGRUW;cns
+Radiant Fountain;;C;m15
+Sliver Hive;;BCGRUW;m15
+Bloodfell Caves;BR;BR;ktk
+Blossoming Sands;GW;GW;ktk
+Dismal Backwater;BU;BU;ktk
+Frontier Bivouac;GRU;GRU;ktk
+Jungle Hollow;BG;BG;ktk
+Mystic Monastery;RUW;RUW;ktk
+Nomad Outpost;BRW;BRW;ktk
+Opulent Palace;BGU;BGU;ktk
+Rugged Highlands;GR;GR;ktk
+Sandsteppe Citadel;BGW;BGW;ktk
+Scoured Barrens;BW;BW;ktk
+Swiftwater Cliffs;RU;RU;ktk
+Thornwood Falls;GU;GU;ktk
+Tomb of the Spirit Dragon;;C;ktk
+Tranquil Cove;UW;UW;ktk
+Wind-Scarred Crag;RW;RW;ktk
+Arcane Lighthouse;;C;c14
+Flamekin Village;R;R;c14
+Myriad Landscape;;C;c14
+Crucible of the Spirit Dragon;;BCGRUW;frf
+Haven of the Spirit Dragon;;BCGRUW;dtk
+Foundry of the Consuls;;C;ori
+Mage-Ring Network;;C;ori
+Ally Encampment;;BCGRUW;bfz
+Blighted Cataract;U;C;bfz
+Blighted Fen;B;C;bfz
+Blighted Gorge;R;C;bfz
+Blighted Steppe;W;C;bfz
+Blighted Woodland;G;C;bfz
+Canopy Vista;GW;GW;bfz
+Cinder Glade;GR;GR;bfz
+Fertile Thicket;G;G;bfz
+Looming Spires;R;R;bfz
+Lumbering Falls;GU;GU;bfz
+Mortuary Mire;B;B;bfz
+Prairie Stream;UW;UW;bfz
+Sanctum of Ugin;;C;bfz
+Sandstone Bridge;W;W;bfz
+Shambling Vent;BW;BW;bfz
+Shrine of the Forsaken Gods;;C;bfz
+Skyline Cascade;U;U;bfz
+Smoldering Marsh;BR;BR;bfz
+Spawning Bed;;C;bfz
+Sunken Hollow;BU;BU;bfz
+Command Beacon;;C;c15
+Cinder Barrens;BR;BR;ogw
+Corrupted Crossroads;;BCGRUW;ogw
+Crumbling Vestige;;BCGRUW;ogw
+Hissing Quagmire;BG;BG;ogw
+Holdout Settlement;;BCGRUW;ogw
+Meandering River;UW;UW;ogw
+Mirrorpool;;C;ogw
+Needle Spires;RW;RW;ogw
+Ruins of Oran-Rief;;C;ogw
+Sea Gate Wreckage;;C;ogw
+Submerged Boneyard;BU;BU;ogw
+Timber Gorge;GR;GR;ogw
+Tranquil Expanse;GW;GW;ogw
+Wandering Fumarole;RU;RU;ogw
+Wastes;;C;ogw
+Choked Estuary;BU;BU;soi
+Drownyard Temple;;C;soi
+Foreboding Ruins;BR;BR;soi
+Forsaken Sanctuary;BW;BW;soi
+Fortified Village;GW;GW;soi
+Foul Orchard;BG;BG;soi
+Game Trail;GR;GR;soi
+Highland Lake;RU;RU;soi
+Port Town;UW;UW;soi
+Stone Quarry;RW;RW;soi
+Warped Landscape;;C;soi
+Westvale Abbey // Ormendahl, Profane Prince;B;C;soi
+Woodland Stream;GU;GU;soi
+Geier Reach Sanitarium;;C;emn
+Hanweir Battlements;R;C;emn
+Nephalia Academy;;C;emn
+Throne of the High City;;C;cn2
+Aether Hub;;BCGRUW;kld
+Blooming Marsh;BG;BG;kld
+Botanical Sanctum;GU;GU;kld
+Concealed Courtyard;BW;BW;kld
+Inspiring Vantage;RW;RW;kld
+Inventors' Fair;;C;kld
+Sequestered Stash;;C;kld
+Spirebluff Canal;RU;RU;kld
+Ash Barrens;;C;c16
+Spire of Industry;;BCGRUW;aer
+Canyon Slough;BR;BR;akh
+Cascading Cataracts;;BCGRUW;akh
+Cradle of the Accursed;;C;akh
+Fetid Pools;BU;BU;akh
+Grasping Dunes;;C;akh
+Irrigated Farmland;UW;UW;akh
+Painted Bluffs;;BCGRUW;akh
+Scattered Groves;GW;GW;akh
+Sheltered Thicket;GR;GR;akh
+Sunscorched Desert;;C;akh
+Crypt of the Eternals;BRU;BCRU;hou
+Desert of the Fervent;R;R;hou
+Desert of the Glorified;B;B;hou
+Desert of the Indomitable;G;G;hou
+Desert of the Mindful;U;U;hou
+Desert of the True;W;W;hou
+Dunes of the Dead;;C;hou
+Endless Sands;;C;hou
+Hashep Oasis;G;CG;hou
+Hostile Desert;;C;hou
+Ifnir Deadlands;B;BC;hou
+Ipnu Rivulet;U;CU;hou
+Ramunap Ruins;R;CR;hou
+Scavenger Grounds;;C;hou
+Shefet Dunes;W;CW;hou
+Survivors' Encampment;;BCGRUW;hou
+Path of Ancestry;;BGRUW;c17
+Legion's Landing // Adanto, the First Fort;W;W;xln
+Search for Azcanta // Azcanta, the Sunken Ruin;U;U;xln
+Arguel's Blood Fast // Temple of Aclazotz;B;B;xln
+Vance's Blasting Cannons // Spitfire Bastion;R;R;xln
+Growing Rites of Itlimoc // Itlimoc, Cradle of the Sun;G;G;xln
+Conqueror's Galleon // Conqueror's Foothold;;C;xln
+Dowsing Dagger // Lost Vale;;BGRUW;xln
+Primal Amulet // Primal Wellspring;;BGRUW;xln
+Thaumatic Compass // Spires of Orazca;;C;xln
+Treasure Map // Treasure Cove;;BCGRUW;xln
+Field of Ruin;;C;xln
+Unclaimed Territory;;BCGRUW;xln
+Secret Base;;BCGRUW;ust
+Watermarket;;C;ust
+Hadana's Climb // Winged Temple of Orazca;GU;BGRUW;rix
+Journey to Eternity // Atzal, Cave of Eternity;BG;BGRUW;rix
+Path of Mettle // Metzali, Tower of Triumph;RW;BGRUW;rix
+Profane Procession // Tomb of the Dusk Rose;BW;BGRUW;rix
+Storm the Vault // Vault of Catlacan;RU;BGRUW;rix
+Azor's Gateway // Sanctum of the Sun;;BGRUW;rix
+Golden Guardian // Gold-Forge Garrison;;BGRUW;rix
+Arch of Orazca;;C;rix
+Cabal Stronghold;B;BC;dom
+Memorial to Folly;B;B;dom
+Memorial to Genius;U;U;dom
+Memorial to Glory;W;W;dom
+Memorial to Unity;G;G;dom
+Memorial to War;R;R;dom
+Zhalfirin Void;;C;dom
+Bountiful Promenade;GW;GW;bbd
+Luxury Suite;BR;BR;bbd
+Morphic Pool;BU;BU;bbd
+Sea of Clouds;UW;UW;bbd
+Spire Garden;GR;GR;bbd
+Detection Tower;;C;m19
+Forge of Heroes;;C;c18
+Isolated Watchtower;;C;c18
+Gateway Plaza;;BGRUW;grn
+Guildmages' Forum;;BCGRUW;grn
+Plaza of Harmony;;BCGRUW;rna
+Blast Zone;;C;war
+Emergence Zone;;C;war
+Interplanar Beacon;;BCGRUW;war
+Karn's Bastion;;C;war
+Mobilized District;;C;war
+Cave of Temptation;;BCGRUW;mh1
+Fiery Islet;RU;RU;mh1
+Frostwalk Bastion;;C;mh1
+Hall of Heliod's Generosity;W;C;mh1
+Nurturing Peatland;BG;BG;mh1
+Prismatic Vista;;;mh1
+Silent Clearing;BW;BW;mh1
+Sunbaked Canyon;RW;RW;mh1
+Waterlogged Grove;GU;GU;mh1
+Cryptic Caves;;C;m20
+Field of the Dead;;C;m20
+Lotus Field;;BGRUW;m20
+Sanctum of Eternity;;C;c19
+Castle Ardenvale;W;W;eld
+Castle Embereth;R;R;eld
+Castle Garenbrig;G;G;eld
+Castle Locthwain;B;B;eld
+Castle Vantress;U;U;eld
+Dwarven Mine;R;R;eld
+Fabled Passage;;;eld
+Gingerbread Cabin;G;G;eld
+Idyllic Grange;W;W;eld
+Mystic Sanctuary;U;U;eld
+Tournament Grounds;BRW;BCRW;eld
+Witch's Cottage;B;B;eld
+Labyrinth of Skophos;;C;thb
+Underdome;;BCGRUW;und
+Nesting Grounds;;C;c20
+Bonders' Enclave;;C;iko
+Indatha Triome;BGW;BGW;iko
+Ketria Triome;GRU;GRU;iko
+Raugrin Triome;RUW;RUW;iko
+Savai Triome;BRW;BRW;iko
+Zagoth Triome;BGU;BGU;iko
+Animal Sanctuary;;C;m21
+Thriving Bluff;R;BGRUW;jmp
+Thriving Grove;G;BGRUW;jmp
+Thriving Heath;W;BGRUW;jmp
+Thriving Isle;U;BGRUW;jmp
+Thriving Moor;B;BGRUW;jmp
+Emeria's Call // Emeria, Shattered Skyclave;W;W;znr
+Kabira Takedown // Kabira Plateau;W;W;znr
+Makindi Stampede // Makindi Mesas;W;W;znr
+Ondu Inversion // Ondu Skyruins;W;W;znr
+Sejiri Shelter // Sejiri Glacier;W;W;znr
+Skyclave Cleric // Skyclave Basilica;W;W;znr
+Beyeen Veil // Beyeen Coast;U;U;znr
+Glasspool Mimic // Glasspool Shore;U;U;znr
+Jwari Disruption // Jwari Ruins;U;U;znr
+Sea Gate Restoration // Sea Gate, Reborn;U;U;znr
+Silundi Vision // Silundi Isle;U;U;znr
+Umara Wizard // Umara Skyfalls;U;U;znr
+Agadeem's Awakening // Agadeem, the Undercrypt;B;B;znr
+Blackbloom Rogue // Blackbloom Bog;B;B;znr
+Hagra Mauling // Hagra Broodpit;B;B;znr
+Malakir Rebirth // Malakir Mire;B;B;znr
+Pelakka Predation // Pelakka Caverns;B;B;znr
+Zof Consumption // Zof Bloodbog;B;B;znr
+Akoum Warrior // Akoum Teeth;R;R;znr
+Kazuul's Fury // Kazuul's Cliffs;R;R;znr
+Shatterskull Smashing // Shatterskull, the Hammer Pass;R;R;znr
+Song-Mad Treachery // Song-Mad Ruins;R;R;znr
+Spikefield Hazard // Spikefield Cave;R;R;znr
+Valakut Awakening // Valakut Stoneforge;R;R;znr
+Bala Ged Recovery // Bala Ged Sanctuary;G;G;znr
+Kazandu Mammoth // Kazandu Valley;G;G;znr
+Khalni Ambush // Khalni Territory;G;G;znr
+Tangled Florahedron // Tangled Vale;G;G;znr
+Turntimber Symbiosis // Turntimber, Serpentine Wood;G;G;znr
+Vastwood Fortification // Vastwood Thicket;G;G;znr
+Base Camp;;BCGRUW;znr
+A-Base Camp;;BCGRUW;znr
+Branchloft Pathway // Boulderloft Pathway;GW;G;znr
+Brightclimb Pathway // Grimclimb Pathway;BW;W;znr
+Clearwater Pathway // Murkwater Pathway;BU;U;znr
+Cragcrown Pathway // Timbercrown Pathway;GR;R;znr
+Crawling Barrens;;C;znr
+Needleverge Pathway // Pillarverge Pathway;RW;R;znr
+Riverglide Pathway // Lavaglide Pathway;RU;U;znr
+Throne of Makindi;;BCGRUW;znr
+Guildless Commons;;C;cmr
+Rejuvenating Springs;GU;GU;cmr
+Spectator Seating;RW;RW;cmr
+Training Center;RU;RU;cmr
+Undergrowth Stadium;BG;BG;cmr
+Vault of Champions;BW;BW;cmr
+War Room;;C;cmr
+Alpine Meadow;RW;RW;khm
+Arctic Treeline;GW;GW;khm
+Axgard Armory;RW;W;khm
+Barkchannel Pathway // Tidechannel Pathway;GU;G;khm
+Blightstep Pathway // Searstep Pathway;BR;B;khm
+Bretagard Stronghold;GW;G;khm
+Darkbore Pathway // Slitherbore Pathway;BG;B;khm
+Faceless Haven;;C;khm
+A-Faceless Haven;;C;khm
+Gates of Istfell;UW;W;khm
+Glacial Floodplain;UW;UW;khm
+Gnottvold Slumbermound;GR;R;khm
+Great Hall of Starnheim;BW;B;khm
+Hengegate Pathway // Mistgate Pathway;UW;W;khm
+Highland Forest;GR;GR;khm
+Ice Tunnel;BU;BU;khm
+Immersturm Skullcairn;BR;B;khm
+Littjara Mirrorlake;GU;U;khm
+Port of Karfell;BU;U;khm
+Rimewood Falls;GU;GU;khm
+Shimmerdrift Vale;;BGRUW;khm
+Skemfar Elderhall;BG;G;khm
+A-Skemfar Elderhall;BG;G;khm
+Snowfield Sinkhole;BW;BW;khm
+Sulfurous Mire;BR;BR;khm
+Surtland Frostpyre;RU;R;khm
+Tyrite Sanctum;;C;khm
+Volatile Fjord;RU;RU;khm
+Woodland Chasm;BG;BG;khm
+The World Tree;BGRUW;BGRUW;khm
+Study Hall;;BCGRUW;c21
+Witch's Clinic;;C;c21
+Access Tunnel;;C;stx
+Archway Commons;;BGRUW;stx
+The Biblioplex;;C;stx
+Frostboil Snarl;RU;RU;stx
+Furycalm Snarl;RW;RW;stx
+Hall of Oracles;;BCGRUW;stx
+Lorehold Campus;RW;RW;stx
+Necroblossom Snarl;BG;BG;stx
+Prismari Campus;RU;RU;stx
+Quandrix Campus;GU;GU;stx
+Shineshadow Snarl;BW;BW;stx
+Silverquill Campus;BW;BW;stx
+Vineglimmer Snarl;GU;GU;stx
+Witherbloom Campus;BG;BG;stx
+Darkmoss Bridge;BG;BG;mh2
+Drossforge Bridge;BR;BR;mh2
+Goldmire Bridge;BW;BW;mh2
+Mistvault Bridge;BU;BU;mh2
+Power Depot;;BCGRUW;mh2
+Razortide Bridge;UW;UW;mh2
+Rustvale Bridge;RW;RW;mh2
+Silverbluff Bridge;RU;RU;mh2
+Slagwoods Bridge;GR;GR;mh2
+Tanglepool Bridge;GU;GU;mh2
+Thornglint Bridge;GW;GW;mh2
+Urza's Saga;;C;mh2
+Yavimaya, Cradle of Growth;;G;mh2
+Cave of the Frost Dragon;W;W;afr
+Den of the Bugbear;R;R;afr
+Dungeon Descent;;C;afr
+A-Dungeon Descent;;C;afr
+Hall of Storm Giants;U;U;afr
+Hive of the Eye Tyrant;B;B;afr
+Lair of the Hydra;G;G;afr
+Temple of the Dragon Queen;;BGRUW;afr
+Treasure Vault;;C;afr
+Underdark Rift;;C;afc
+Deserted Beach;UW;UW;mid
+Haunted Ridge;BR;BR;mid
+Hostile Hostel // Creeping Inn;B;C;mid
+Overgrown Farmland;GW;GW;mid
+Rockfall Vale;GR;GR;mid
+Shipwreck Marsh;BU;BU;mid
+Havengul Laboratory // Havengul Mystery;B;BC;sld
+Deathcap Glade;BG;BG;vow
+Dreamroot Cascade;GU;GU;vow
+Shattered Sanctum;BW;BW;vow
+Stormcarved Coast;RU;RU;vow
+Sundown Pass;RW;RW;vow
+Voldaren Estate;;BCGRUW;vow
+Forsaken Crossroads;;BGRUW;ymid
+Boseiju, Who Endures;G;G;neo
+Eiganjo, Seat of the Empire;W;W;neo
+Mech Hangar;;BCGRUW;neo
+Otawara, Soaring City;U;U;neo
+Roadside Reliquary;;C;neo
+Secluded Courtyard;;BCGRUW;neo
+Sokenzan, Crucible of Defiance;R;R;neo
+Takenuma, Abandoned Mire;B;B;neo
+Uncharted Haven;;BGRUW;neo
+Jetmir's Garden;GRW;GRW;snc
+Raffine's Tower;BUW;BUW;snc
+Spara's Headquarters;GUW;GUW;snc
+Xander's Lounge;BRU;BRU;snc
+Ziatora's Proving Ground;BGR;BGR;snc
