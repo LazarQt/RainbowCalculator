@@ -5,7 +5,7 @@ namespace RainbowCalculator
 {
     public class ManabaseProvider : IManabaseProvider
     {
-        public Land[] Retrieve(string deckString)
+        public LandSuggestion[] Retrieve(string deckString)
         {
             List<Category> categories = new List<Category>();
             var categoryLines = CsvUtil.ReadLines(@"Categories.csv");
@@ -36,7 +36,7 @@ namespace RainbowCalculator
                 });
             }
 
-            return new[] { new Land() { Name = "my name is" + deckString.Substring(0,1) } };
+            return new[] { new LandSuggestion() { Name = "my name is" + deckString.Substring(0,1) } };
         }
     }
 }

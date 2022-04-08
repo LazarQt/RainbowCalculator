@@ -1,6 +1,6 @@
 ﻿namespace RainbowCalculator
 {
-    public class Land
+    public class LandSuggestion
     {
         public string Name { get; set; }
     }

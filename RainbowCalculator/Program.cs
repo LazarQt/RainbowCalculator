@@ -16,7 +16,7 @@ builder.Services.AddSingleton<IManabaseProvider, ManabaseProvider>();
 
 var app = builder.Build();
 
-app.MapGet("/api/manabase/{deck}", (string deck, [FromServices] IManabaseProvider manabaseProvider) => manabaseProvider.Retrieve(deck));
+app.MapGet("/api/manabase/{deckString}", (string deckString, [FromServices] IManabaseProvider manabaseProvider) => manabaseProvider.Retrieve(deckString));
 app.Run();
 
 //static async Task<List<ScryfallCard>> GetLands(string request, List<ScryfallCard> lands = null)
