@@ -5,7 +5,7 @@
         public static List<string[]> ReadLines(string path)
         {
             List<string[]> lines = new List<string[]>();
-            using (var reader = new StreamReader(@path))
+            using (var reader = new StreamReader(path))
             {
                 while (!reader.EndOfStream)
                 {

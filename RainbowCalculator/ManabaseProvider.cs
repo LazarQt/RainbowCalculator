@@ -7,8 +7,8 @@ namespace RainbowCalculator
     {
         public LandSuggestion[] Retrieve(string deckString)
         {
-            //List<Category> categories = new List<Category>();
-            //var categoryLines = CsvUtil.ReadLines(@"Categories.csv");
+            List<Category> categories = new List<Category>();
+            var categoryLines = CsvUtil.ReadLines(@"Categories.csv");
             //foreach(var line in categoryLines)
             //{
             //    categories.Add(new Category()
