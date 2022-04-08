@@ -12,11 +12,11 @@ using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ITestProvider, TestProvider>();
+builder.Services.AddSingleton<IManabaseProvider, ManabaseProvider>();
 
 var app = builder.Build();
 
-app.MapGet("/api/user/{userId}", (string userId, [FromServices] ITestProvider testProvider) => testProvider.Get(userId));
+app.MapGet("/api/manabase/{deck}", (string deck, [FromServices] IManabaseProvider manabaseProvider) => manabaseProvider.Retrieve(deck));
 app.Run();
 
 //static async Task<List<ScryfallCard>> GetLands(string request, List<ScryfallCard> lands = null)
