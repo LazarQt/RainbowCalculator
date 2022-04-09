@@ -54,6 +54,39 @@ namespace RainbowCalculator
             return exclude;
         }
 
+        public List<PipSources> GetPipsAndSources()
+        {
+            List<PipSources> pipSources = new List<PipSources>();
+            var lines = CsvUtil.ReadLines(@"PipsSources.csv");
+            foreach (var line in lines)
+            {
+                pipSources.Add(new PipSources()
+                {
+                    Cost = Convert.ToInt32(line[0]),
+                    Pips = Convert.ToInt32(line[1]),
+                    Sources = Convert.ToInt32(line[2])
+                });
+            }
+            return pipSources;
+        }
+
+        public List<LandsAndRocksReq> GetLandsAndRocks()
+        {
+            List<LandsAndRocksReq> landsAndRocksSources = new List<LandsAndRocksReq>();
+            var lines = CsvUtil.ReadLines(@"LandsAndRocks.csv");
+            foreach (var line in lines)
+            {
+                landsAndRocksSources.Add(new LandsAndRocksReq()
+                {
+                    MinMv = Convert.ToDouble(line[1]),
+                    MaxMv = Convert.ToDouble(line[2]),
+                    ManaRocks = Convert.ToInt32(line[3]),
+                    Lands = Convert.ToInt32(line[4]),
+                });
+            }
+            return landsAndRocksSources;
+        }
+
         public async Task<List<ScryfallCard>> GetCards(List<string> sourceCardList)
         {
             var result = new List<ScryfallCard>();
