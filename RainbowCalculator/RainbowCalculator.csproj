@@ -16,6 +16,9 @@
     <None Update="Categories.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="exclude.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Lands_Filtered.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

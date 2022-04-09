@@ -7,34 +7,56 @@ namespace RainbowCalculator
     {
         public LandSuggestion[] Retrieve(string deckString)
         {
-            List<Category> categories = new List<Category>();
-            var categoryLines = CsvUtil.ReadLines(@"Categories.csv");
-            foreach (var line in categoryLines)
+            var reader = new CalculationFilesReader();
+
+            var lands = reader.GetLands();
+
+            var excludedCards = reader.GetExcluded();
+
+            var deckList = new List<string>();
+            var deckStringList = deckString.Split('|');
+            foreach(var s in deckStringList)
             {
-                categories.Add(new Category()
+                var cardName = s;
+                
+                // trim
+                cardName = cardName.Trim();
+
+                // skip empty entries
+                if (cardName.Equals(string.Empty)) continue;
+
+                // remove leading numbers (in case someone enters '15 Island')
+                while (int.TryParse(cardName.FirstOrDefault().ToString(), out _))
                 {
-                    Cycle = line[0],
-                    Enters = line[1],
-                    Order = Convert.ToDouble(line[2]),
-                    Cutoff = Convert.ToInt32(line[3])
-                });
+                    cardName = cardName.Remove(0, 1);
+                }
+
+                deckList.Add(cardName.Trim());
             }
 
-            List<Land> lands = new List<Land>();
-            var landLines = CsvUtil.ReadLines(@"Lands_Filtered.csv");
-            foreach (var line in landLines)
+            var cards = Task.Run(() => reader.GetCards(deckList)).Result;
+
+            var missing = new List<string>();
+            foreach(var cardString in deckList)
             {
-                var category = categories.FirstOrDefault(c => c.Cycle == line[4]);
-                if (category == null) throw new Exception("unknown land category");
-                lands.Add(new Land()
+                if(!cards.Any(c=> c.Name.ToLower().StartsWith(cardString.ToLower())))
                 {
-                    Name = line[0],
-                    Identity = line[1],
-                    Produces = line[2],
-                    Order = category.Order,
-                    Cutoff = category.Cutoff
-                });
+                    Console.WriteLine("could not find card " + cardString);
+                    missing.Add(cardString);
+                }
             }
+
+            var excluded = new List<string>();
+            for(var i = deckList.Count - 1; i >= 0; i--)
+            {
+                var c = deckList[i];
+                if (excludedCards.Contains(c.ToLower()))
+                {
+                    excluded.Add(c);
+                    deckList.RemoveAt(i);
+                }
+            }
+
 
             return new[] { new LandSuggestion() { Name = "my name is" + deckString.Substring(0,1) } };
         }
