@@ -7,10 +7,12 @@ namespace RainbowCalculator
 {
     public class CalculationFilesReader
     {
+        private const string Root = "CalcFiles/";
+
         public List<Land> GetLands()
         {
             List<Category> categories = new List<Category>();
-            var categoryLines = CsvUtil.ReadLines(@"Categories.csv");
+            var categoryLines = CsvUtil.ReadLines(@$"{Root}Categories.csv");
             foreach (var line in categoryLines)
             {
                 categories.Add(new Category()
@@ -23,7 +25,7 @@ namespace RainbowCalculator
             }
 
             List<Land> lands = new List<Land>();
-            var landLines = CsvUtil.ReadLines(@"Lands_Filtered.csv");
+            var landLines = CsvUtil.ReadLines(@$"{Root}Lands_Filtered.csv");
             foreach (var line in landLines)
             {
                 var category = categories.FirstOrDefault(c => c.Cycle == line[4]);
@@ -41,10 +43,10 @@ namespace RainbowCalculator
             return lands;
         }
 
-        public List<string> GetExcluded()
+        public List<string> GetExcludedCards()
         {
             List<string> exclude = new List<string>();
-            using (var reader = new StreamReader(@"exclude.txt"))
+            using (var reader = new StreamReader(@$"{Root}exclude.txt"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -54,13 +56,13 @@ namespace RainbowCalculator
             return exclude;
         }
 
-        public List<PipSources> GetPipsAndSources()
+        public List<ColorPipsRequirement> GetColorPipsRequirements()
         {
-            List<PipSources> pipSources = new List<PipSources>();
-            var lines = CsvUtil.ReadLines(@"PipsSources.csv");
+            List<ColorPipsRequirement> pipSources = new List<ColorPipsRequirement>();
+            var lines = CsvUtil.ReadLines(@$"{Root}PipsSources.csv");
             foreach (var line in lines)
             {
-                pipSources.Add(new PipSources()
+                pipSources.Add(new ColorPipsRequirement()
                 {
                     Cost = Convert.ToInt32(line[0]),
                     Pips = Convert.ToInt32(line[1]),
@@ -70,14 +72,15 @@ namespace RainbowCalculator
             return pipSources;
         }
 
-        public List<LandsAndRocksReq> GetLandsAndRocks()
+        public List<LandAndManarockRequirement> GetLandAndManarockRequirements()
         {
-            List<LandsAndRocksReq> landsAndRocksSources = new List<LandsAndRocksReq>();
-            var lines = CsvUtil.ReadLines(@"LandsAndRocks.csv");
+            List<LandAndManarockRequirement> landsAndRocksSources = new List<LandAndManarockRequirement>();
+            var lines = CsvUtil.ReadLines(@$"{Root}LandsAndRocks.csv");
             foreach (var line in lines)
             {
-                landsAndRocksSources.Add(new LandsAndRocksReq()
+                landsAndRocksSources.Add(new LandAndManarockRequirement()
                 {
+                    LandsWithoutRocks = Convert.ToInt32(line[0]),
                     MinMv = Convert.ToDouble(line[1]),
                     MaxMv = Convert.ToDouble(line[2]),
                     ManaRocks = Convert.ToInt32(line[3]),

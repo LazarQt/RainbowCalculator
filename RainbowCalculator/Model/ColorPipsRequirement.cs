@@ -1,6 +1,6 @@
 ﻿namespace RainbowCalculator.Model
 {
-    public class PipSources
+    public class ColorPipsRequirement
     {
         public int Cost { get; set; }
         public int Pips { get; set; }

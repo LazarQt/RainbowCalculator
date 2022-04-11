@@ -1,4 +1,5 @@
-﻿using RainbowCalculator.Model;
+﻿using RainbowCalculator.Extensions;
+using RainbowCalculator.Model;
 using RainbowCalculator.Util;
 
 namespace RainbowCalculator
@@ -9,47 +10,25 @@ namespace RainbowCalculator
         {
             var reader = new CalculationFilesReader();
 
+            // get all lands that can be included in deck
             var lands = reader.GetLands();
 
-            var pipSources = reader.GetPipsAndSources();
+            // get color requirements based on pips in deck (for example, 1BB requires higher count of sources than 2B)
+            var colorPipsRequirements = reader.GetColorPipsRequirements();
 
-            var landsAndRocks = reader.GetLandsAndRocks();
+            // get required land and manarock count, this will be derived from average mana value
+            var landAndManarockRequirements = reader.GetLandAndManarockRequirements();
 
-            var excludedCards = reader.GetExcluded();
+            // these cards are strictly excluded from calculation because they have X in costs or are regularly reduced in costs
+            var excludedCards = reader.GetExcludedCards();
 
-            var deckList = new List<string>();
-            var deckStringList = deckString.Split('|');
-            foreach (var s in deckStringList)
-            {
-                var cardName = s;
-
-                // trim
-                cardName = cardName.Trim();
-
-                // skip empty entries
-                if (cardName.Equals(string.Empty)) continue;
-
-                // remove leading numbers (in case someone enters '15 Island')
-                while (int.TryParse(cardName.FirstOrDefault().ToString(), out _))
-                {
-                    cardName = cardName.Remove(0, 1);
-                }
-
-                deckList.Add(cardName.Trim());
-            }
-
-            var cards = Task.Run(() => reader.GetCards(deckList)).Result;
-
+            // get actual cards from deck string
             var missing = new List<string>();
-            foreach (var cardString in deckList)
-            {
-                if (!cards.Any(c => c.Name.ToLower().StartsWith(cardString.ToLower())))
-                {
-                    Console.WriteLine("could not find card " + cardString);
-                    missing.Add(cardString);
-                }
-            }
+            var cards = new CardsParser().GetCards(deckString, out missing);
+            // report missing cards
+            Logger.Log("Missing cards", missing);
 
+            // remove all excluded cards which are not part of the equation
             var excluded = new List<string>();
             for (var i = cards.Count - 1; i >= 0; i--)
             {
@@ -60,8 +39,9 @@ namespace RainbowCalculator
                     cards.RemoveAt(i);
                 }
             }
+            Logger.Log("Removed due to X etc.", excluded);
 
-            // remove lands
+            // remove lands (if user gave list with lands in it already)
             var removedLands = new List<string>();
             for (var i = cards.Count - 1; i >= 0; i--)
             {
@@ -72,90 +52,85 @@ namespace RainbowCalculator
                     cards.RemoveAt(i);
                 }
             }
+            Logger.Log("Removed lands (why give lands with calculation?)", removedLands);
 
             var avgMv = cards.Average(c => c.Cmc);
-
-            var landsAndRocksRequirement = landsAndRocks.FirstOrDefault(r => avgMv >= r.MinMv && avgMv <= r.MaxMv);
-            if (landsAndRocksRequirement == null) throw new Exception("lands and rocks not found");
+            var landsAndRocksRequirement = landAndManarockRequirements.FirstOrDefault(r => avgMv >= r.MinMv && avgMv <= r.MaxMv);
+            if (landsAndRocksRequirement == null) throw new Exception("can't derive lands and mana rocks requirement");
+            Logger.Log($"Average MV: {avgMv}");
 
             // get requirements
-            var srcRequirements = new Dictionary<char, int>();
-            var ignoredCardsForRequirement = new List<string>();
-            var colors = new List<char>() { 'w', 'u', 'b', 'r', 'g' };
-            var harshesReqs = new Dictionary<char, string>();
+            var srcRequirements = new Dictionary<char, int>(); // how many sources of each color are needed
+            var ignoredCardsForRequirement = new List<string>(); // ignored cards because no color pip table entry exists (for example too high MV)
+            var harshesReqs = new Dictionary<char, string>(); // display which cards are responsible for harshest color requirement
             foreach (var card in cards)
             {
-                var pipCalc = pipSources.Where(p => p.Cost == card.Cmc);
+                // ignore cards
+                var pipCalc = colorPipsRequirements.Where(p => p.Cost == card.Cmc);
                 if (!pipCalc.Any())
                 {
                     ignoredCardsForRequirement.Add(card.Name);
                     continue;
                 }
 
-                var manaCost = card.ManaCost;
-                if (manaCost == null)
-                {
-                    manaCost = card.CardFaces.First().ManaCost;
-                }
-                manaCost = manaCost.ToLower();
-
-                // remove eldrain split card thingies
-                if (manaCost.Contains("//"))
-                {
-                    manaCost = manaCost.Substring(0, manaCost.IndexOf("//"));
-                }
-
-                foreach (var color in colors)
+                var manaCost = card.GetManaCost();
+                foreach (var color in Const.Colors)
                 {
                     var ofThisColor = manaCost.Count(m => m == color);
-                    var r = pipSources.Where(p => p.Cost == card.Cmc && p.Pips == ofThisColor);
-                    if (r.Any())
+                    var r = colorPipsRequirements.Where(p => p.Cost == card.Cmc && p.Pips == ofThisColor);
+                    if (r.Any() && r.Count() == 1) 
                     {
-                        if (r.Count() != 1)
+                        var sources = r.First().Sources;
+                        if (srcRequirements.ContainsKey(color))
                         {
-                            Console.WriteLine("Fil");
-                        }
-                        else
-                        {
-                            var sources = r.First().Sources;
-                            if (srcRequirements.ContainsKey(color))
-                            {
-                                var previousValue = srcRequirements[color];
-                                if (sources > previousValue)
-                                {
-                                    srcRequirements[color] = sources;
-                                    harshesReqs[color] = card.Name;
-                                }
-
-                            }
-                            else
+                            var previousValue = srcRequirements[color];
+                            if (sources > previousValue)
                             {
                                 srcRequirements[color] = sources;
                                 harshesReqs[color] = card.Name;
                             }
 
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Fil");
+                        else
+                        {
+                            srcRequirements[color] = sources;
+                            harshesReqs[color] = card.Name;
+                        }
                     }
                 }
-
-
-
             }
 
             var eligibleLands = lands.Where(l => l.Cutoff <= srcRequirements.Count && l.Identity.ToLower().ToArray().ToList().All(a => srcRequirements.ContainsKey(a))).OrderBy(x => x.Order).ToList();
 
             var deckLands = new List<Land>();
-            while(srcRequirements.Any(r => r.Value > 0))
+
+            //foreach (var req in srcRequirements)
+            //{
+            //    var added = 0;
+            //    while (added < req.Value)
+            //    {
+            //        if (req.Key == 'w') deckLands.Add(new Land() { Identity = "W", Name = "Plains", Produces = "W" });
+            //        if (req.Key == 'u') deckLands.Add(new Land() { Identity = "U", Name = "Island", Produces = "U" });
+            //        if (req.Key == 'b') deckLands.Add(new Land() { Identity = "B", Name = "Swamp", Produces = "B" });
+            //        if (req.Key == 'r') deckLands.Add(new Land() { Identity = "R", Name = "Mountain", Produces = "R" });
+            //        if (req.Key == 'g') deckLands.Add(new Land() { Identity = "G", Name = "Forest", Produces = "G" });
+            //        added++;
+            //    }
+            //}
+
+            //while(deckLands.Count > landsAndRocksRequirement.LandsWithoutRocks)
+            //{
+
+            //}
+
+            // fill up with lands until requirements are met
+            while (srcRequirements.Any(r => r.Value > 0))
             {
                 if (eligibleLands.Count <= 0) throw new Exception("no lands available");
                 var land = eligibleLands.First();
                 deckLands.Add(land);
 
-                foreach(var a in land.Produces.ToLower())
+                foreach (var a in land.Produces.ToLower())
                 {
                     if (!srcRequirements.ContainsKey(a)) continue;
                     srcRequirements[a] = srcRequirements[a] - 1;
@@ -165,11 +140,11 @@ namespace RainbowCalculator
             }
 
             var removedTooMany = new List<string>();
-            for(var i = deckLands.Count -1; i >= 0; i--)
+            for (var i = deckLands.Count - 1; i >= 0; i--)
             {
                 var deckLand = deckLands[i];
                 var remove = true;
-                foreach(var c in deckLand.Produces.ToLower().Replace("c","").ToArray())
+                foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
                 {
 
                     if (srcRequirements.ContainsKey(c) && srcRequirements[c] >= 0)
@@ -179,7 +154,7 @@ namespace RainbowCalculator
                     }
                 }
 
-                if(remove)
+                if (remove)
                 {
                     removedTooMany.Add(deckLand.Name);
                     deckLands.RemoveAt(i);
@@ -190,16 +165,52 @@ namespace RainbowCalculator
                 }
             }
 
+            var removedTooMany2 = new List<string>();
+            for (var i = deckLands.Count - 1; i >= 0; i--)
+            {
+                var deckLand = deckLands[i];
+                var leftOutColor = new List<char>();
+                var remove = true;
+                foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
+                {
+
+                    if (srcRequirements.ContainsKey(c) && srcRequirements[c] < 0)
+                    {
+                        leftOutColor.Add(c);
+                    } 
+                }
+
+                if (leftOutColor.Count == 1 && deckLand.Produces.ToLower().Replace("c", "").ToArray().Length == 2)
+                {
+                    removedTooMany2.Add(deckLand.Name);
+                    deckLands.RemoveAt(i);
+                    var x = deckLand.Produces.ToLower().Replace("c", "").ToArray().Except(leftOutColor).ToList();
+                    if (x.Count != 1) throw new Exception("this cant be true");
+                    deckLands.Add(GetBasic(x.FirstOrDefault()));
+                }
+            }
+
             var q = "";
-            foreach(var l in deckLands)
+            foreach (var l in deckLands)
             {
                 q += $"!\"{l.Name}\" or ";
             }
-            
+
             return new[] { new LandSuggestion() { Name = "my name is" + deckString.Substring(0, 1) } };
+        }
+
+        private Land GetBasic(char k)
+        {
+            if (k == 'w') return new Land() { Identity = "W", Name = "Plains", Produces = "W" };
+            if (k == 'u') return new Land() { Identity = "U", Name = "Island", Produces = "U" };
+            if (k == 'b') return new Land() { Identity = "B", Name = "Swamp", Produces = "B" };
+            if (k == 'r') return new Land() { Identity = "R", Name = "Mountain", Produces = "R" };
+            if (k == 'g') return new Land() { Identity = "G", Name = "Forest", Produces = "G" };
+            throw new Exception("no basic found with type" + k);
         }
     }
 
+   
     public class Face
     {
         public int Cmc { get; set; }

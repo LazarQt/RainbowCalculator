@@ -13,13 +13,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Categories.csv">
+    <None Update="CalcFiles\Categories.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="exclude.txt">
+    <None Update="CalcFiles\lands.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CalcFiles\LandsAndRocks.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CalcFiles\PipsSources.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CalcFiles\exclude.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Lands_Filtered.csv">
+    <None Update="CalcFiles\Lands_Filtered.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
