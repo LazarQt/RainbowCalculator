@@ -59,6 +59,130 @@ namespace RainbowCalculator
             if (landsAndRocksRequirement == null) throw new Exception("can't derive lands and mana rocks requirement");
             Logger.Log($"Average MV: {avgMv}");
 
+            var x = GetPrelimLands(cards, lands, colorPipsRequirements, landsAndRocksRequirement,
+                0);
+
+
+            //// rebalance ?
+            //while (srcRequirements.Any(s => s.Value != 0) && eligibleLands.Any())
+            //{
+            //    var requirements = srcRequirements.Where(s => s.Value > 0).Select(x => x.Key);
+            //    var strictNonRequirements = srcRequirements.Where(s => s.Value < 0).Select(x => x.Key);
+
+            //    var mostNeeded = srcRequirements.First(a => a.Value == srcRequirements.Max(s => s.Value)).Key;
+            //    var leastNeeded = srcRequirements.First(a => a.Value == srcRequirements.Min(s => s.Value)).Key;
+
+            //    var match = eligibleLands.FirstOrDefault(l => l.CanProduce(new char[] { mostNeeded }) && l.DoesNotProduce(new char[] { leastNeeded }));
+
+            //    if (srcRequirements.Any(r => r.Value == 0))
+            //    {
+            //        Logger.Log("arive aat 0");
+            //    }
+
+
+            //    if (srcRequirements.All(v => v.Value <= 0))
+            //    {
+            //        // basics after everything else done
+
+            //        Logger.Log("");
+            //    }
+            //    if (match == null)
+            //    {
+            //        if (requirements.Count() == 1)
+            //        {
+            //            match = GetBasic(requirements.First());
+            //        }
+            //        else
+            //        {
+            //            throw new Exception("no more lands!");
+            //        }
+            //    }//
+
+            //    var removeMatch = deckLands.LastOrDefault(l => l.CanProduce(new char[] { leastNeeded }));
+            //    if (removeMatch == null) throw new Exception("nothing to remove!");
+
+            //    deckLands.Remove(removeMatch);
+            //    deckLands.Add(match);
+
+            //    foreach (var removeReq in removeMatch.ProduceColors())
+            //    {
+            //        if (srcRequirements.ContainsKey(removeReq)) srcRequirements[removeReq] += 1;
+            //    }
+
+            //    foreach (var addReq in match.ProduceColors())
+            //    {
+            //        if (srcRequirements.ContainsKey(addReq)) srcRequirements[addReq] -= 1;
+            //    }
+
+            //    eligibleLands.Remove(match);
+            //}
+
+            //var removedTooMany = new List<string>();
+            //for (var i = deckLands.Count - 1; i >= 0; i--)
+            //{
+            //    var deckLand = deckLands[i];
+            //    var remove = true;
+            //    foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
+            //    {
+
+            //        if (srcRequirements.ContainsKey(c) && srcRequirements[c] >= 0)
+            //        {
+            //            remove = false;
+            //            break;
+            //        }
+            //    }
+
+            //    if (remove)
+            //    {
+            //        removedTooMany.Add(deckLand.Name);
+            //        deckLands.RemoveAt(i);
+            //        foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
+            //        {
+            //            srcRequirements[c] += 1;
+            //        }
+            //    }
+            //}
+
+            //var removedTooMany2 = new List<string>();
+            //for (var i = deckLands.Count - 1; i >= 0; i--)
+            //{
+            //    var deckLand = deckLands[i];
+            //    var leftOutColor = new List<char>();
+            //    var remove = true;
+            //    foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
+            //    {
+
+            //        if (srcRequirements.ContainsKey(c) && srcRequirements[c] < 0)
+            //        {
+            //            leftOutColor.Add(c);
+            //        }
+            //    }
+
+            //    if (leftOutColor.Count == 1 && deckLand.Produces.ToLower().Replace("c", "").ToArray().Length == 2)
+            //    {
+            //        removedTooMany2.Add(deckLand.Name);
+            //        deckLands.RemoveAt(i);
+            //        var x = deckLand.Produces.ToLower().Replace("c", "").ToArray().Except(leftOutColor).ToList();
+            //        if (x.Count != 1) throw new Exception("this cant be true");
+            //        deckLands.Add(GetBasic(x.FirstOrDefault()));
+            //    }
+            //}
+
+            //var q = "";
+            //foreach (var l in deckLands)
+            //{
+            //    q += $"!\"{l.Name}\" or ";
+            //}
+
+            return new[] { new LandSuggestion() { Name = "my name is" + deckString.Substring(0, 1) } };
+        }
+
+        private List<Land> GetPrelimLands(List<ScryfallCard> cards, List<Land> lands,
+            List<ColorPipsRequirement> colorPipsRequirements, LandAndManarockRequirement landsAndRocksRequirement,
+            int cuttOfCount)
+        {
+
+
             // get requirements
             var srcRequirements = new Dictionary<char, int>(); // how many sources of each color are needed
             var ignoredCardsForRequirement = new List<string>(); // ignored cards because no color pip table entry exists (for example too high MV)
@@ -74,6 +198,12 @@ namespace RainbowCalculator
                 }
 
                 var manaCost = card.GetManaCost();
+                if (manaCost.Contains("/"))
+                {
+                    // ignoring hybrid!
+                    Console.WriteLine("ignoring" + card.Name);
+                    continue;
+                }
                 foreach (var color in Const.Colors)
                 {
                     var ofThisColor = manaCost.Count(m => m == color);
@@ -100,37 +230,47 @@ namespace RainbowCalculator
                 }
             }
 
-            var eligibleLands = lands.Where(
-                l => l.Cutoff <= srcRequirements.Count && l.Identity.ToLower().ToArray().ToList().All(a => srcRequirements.ContainsKey(a))).
-                OrderByDescending(x => x.Cutoff).ThenBy(x => x.Order).ToList();
+
+            ////////////////////
+
 
             var deckLands = new List<Land>();
 
-            //foreach (var req in srcRequirements)
-            //{
-            //    var added = 0;
-            //    while (added < req.Value)
-            //    {
-            //        if (req.Key == 'w') deckLands.Add(new Land() { Identity = "W", Name = "Plains", Produces = "W" });
-            //        if (req.Key == 'u') deckLands.Add(new Land() { Identity = "U", Name = "Island", Produces = "U" });
-            //        if (req.Key == 'b') deckLands.Add(new Land() { Identity = "B", Name = "Swamp", Produces = "B" });
-            //        if (req.Key == 'r') deckLands.Add(new Land() { Identity = "R", Name = "Mountain", Produces = "R" });
-            //        if (req.Key == 'g') deckLands.Add(new Land() { Identity = "G", Name = "Forest", Produces = "G" });
-            //        added++;
-            //    }
-            //}
-
-            //while(deckLands.Count > landsAndRocksRequirement.LandsWithoutRocks)
-            //{
-
-            //}
-
+            var eligibleLands = lands.Where(
+                l => l.Cutoff <= srcRequirements.Count + cuttOfCount && l.Identity.ToLower().ToArray().ToList().All(a => srcRequirements.ContainsKey(a))).
+                OrderByDescending(x => x.Cutoff).ThenBy(x => x.Order).ToList();
+            foreach (var x in srcRequirements) deckLands.Add(GetBasic(x.Key));
+            if (srcRequirements.Count + cuttOfCount <= 5)
+            {
+                //eligibleLands = eligibleLands.Where(l => !l.Exclude).ToList();
+            }
 
             // fill up until land count met
-            while (deckLands.Count < landsAndRocksRequirement.LandsWithoutRocks)
+            while (eligibleLands.Any() && deckLands.Count < landsAndRocksRequirement.LandsWithoutRocks && srcRequirements.Any(r => r.Value > 0))
             {
-                if (eligibleLands.Count <= 0) throw new Exception("no lands available");
-                var land = eligibleLands.First();
+                Land land;
+                if (eligibleLands.Count <= 0)
+                {
+                    //throw new Exception("no lands available");
+                    land = GetBasic(srcRequirements.First(a => a.Value == srcRequirements.Max(s => s.Value)).Key);
+                }
+                else
+                {
+                    land = eligibleLands.First();
+                    if (eligibleLands.Any()) eligibleLands.RemoveAt(0);
+                }
+
+                var basics = new string[] { "Plains", "Island", "Swamp", "Mountain", "Forest" };
+                if (deckLands.Any(l => l.Name == land.Name && !basics.Contains(l.Name))) continue;
+
+                var mostNeeded = srcRequirements.First(a => a.Value == srcRequirements.Max(s => s.Value)).Key;
+                var leastNeeded = srcRequirements.First(a => a.Value == srcRequirements.Min(s => s.Value)).Key;
+
+                if (land.CanProduce(new char[] { leastNeeded }) && land.DoesNotProduce(new char[] { mostNeeded }))
+                {
+                    continue;
+                }
+
                 deckLands.Add(land);
 
                 foreach (var a in land.Produces.ToLower())
@@ -138,148 +278,53 @@ namespace RainbowCalculator
                     if (!srcRequirements.ContainsKey(a)) continue;
                     srcRequirements[a] = srcRequirements[a] - 1;
                 }
-
-                eligibleLands.RemoveAt(0);
             }
 
-            // rebalance ?
-            while (srcRequirements.Any(s => s.Value != 0) && eligibleLands.Any())
+            if (srcRequirements.Where(x => x.Value >= 0).Sum(s => s.Value) < landsAndRocksRequirement.LandsWithoutRocks - deckLands.Count)
             {
-                var requirements = srcRequirements.Where(s => s.Value > 0).Select(x => x.Key);
-                var strictNonRequirements = srcRequirements.Where(s => s.Value < 0).Select(x => x.Key);
-
-                var match = eligibleLands.FirstOrDefault(l => l.CanProduce(requirements) && l.DoesNotProduce(strictNonRequirements));
-
-                if (srcRequirements.Any(r => r.Value == 0))
+                // fill with basics!
+                foreach (var s in srcRequirements)
                 {
-                    Logger.Log("arive aat 0");
-                }
-
-
-                if(srcRequirements.All(v => v.Value <= 0))
-                {
-                    // basics after everything else done
-                    
-                    Logger.Log("");
-                }
-                if (match == null)
-                {
-                    if(requirements.Count() == 1)
+                    for (var i = 0; i < s.Value; i++)
                     {
-                        match = GetBasic(requirements.First());
-                    } else
-                    {
-                        throw new Exception("no more lands!");
-                    }
-                }//
-
-                var removeMatch = deckLands.LastOrDefault(l => l.CanProduce(strictNonRequirements));
-                if (removeMatch == null) throw new Exception("nothing to remove!");
-
-                deckLands.Remove(removeMatch);
-                deckLands.Add(match);
-
-                foreach(var removeReq in removeMatch.ProduceColors())
-                {
-                    if(srcRequirements.ContainsKey(removeReq)) srcRequirements[removeReq] += 1;
-                }
-
-                foreach (var addReq in match.ProduceColors())
-                {
-                    if (srcRequirements.ContainsKey(addReq)) srcRequirements[addReq] -= 1;
-                }
-
-                eligibleLands.Remove(match);
-                //foreach (var deckLand in deckLands)
-                //{
-
-                //}
-
-                //var land = eligibleLands.First();
-
-                //foreach (var c in land.ProduceColors())
-                //{
-
-                //}
-
-                //eligibleLands.RemoveAt(0);
-            }
-
-            // old code!
-            // fill up with lands until requirements are met up until max land count!
-            //while (srcRequirements.Any(r => r.Value > 0))
-            //{
-            //    if (eligibleLands.Count <= 0) throw new Exception("no lands available");
-            //    var land = eligibleLands.First();
-            //    deckLands.Add(land);
-
-            //    foreach (var a in land.Produces.ToLower())
-            //    {
-            //        if (!srcRequirements.ContainsKey(a)) continue;
-            //        srcRequirements[a] = srcRequirements[a] - 1;
-            //    }
-
-            //    eligibleLands.RemoveAt(0);
-            //}
-
-            var removedTooMany = new List<string>();
-            for (var i = deckLands.Count - 1; i >= 0; i--)
-            {
-                var deckLand = deckLands[i];
-                var remove = true;
-                foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
-                {
-
-                    if (srcRequirements.ContainsKey(c) && srcRequirements[c] >= 0)
-                    {
-                        remove = false;
-                        break;
-                    }
-                }
-
-                if (remove)
-                {
-                    removedTooMany.Add(deckLand.Name);
-                    deckLands.RemoveAt(i);
-                    foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
-                    {
-                        srcRequirements[c] += 1;
+                        deckLands.Add(GetBasic(s.Key));
+                        srcRequirements[s.Key] -= 1;
                     }
                 }
             }
-
-            var removedTooMany2 = new List<string>();
-            for (var i = deckLands.Count - 1; i >= 0; i--)
+            else if (srcRequirements.Any(r => r.Value > 0))
             {
-                var deckLand = deckLands[i];
-                var leftOutColor = new List<char>();
-                var remove = true;
-                foreach (var c in deckLand.Produces.ToLower().Replace("c", "").ToArray())
+                if (srcRequirements.Count + cuttOfCount >= 7)
                 {
+                    throw new Exception("can't create manabase with this configuration");
+                }
+                return GetPrelimLands(cards, lands, colorPipsRequirements, landsAndRocksRequirement,
+                    cuttOfCount + 1);
+            }
 
-                    if (srcRequirements.ContainsKey(c) && srcRequirements[c] < 0)
+
+            if (srcRequirements.All(s => s.Value <= 0))
+            {
+                var dFinal = deckLands.OrderByDescending(o => o.Order);
+                return deckLands;
+            }
+            else
+            {
+                if (srcRequirements.Sum(s => s.Value) <= landsAndRocksRequirement.LandsWithoutRocks - deckLands.Count)
+                {
+                    Console.WriteLine("fill with basics!");
+                    foreach (var s in srcRequirements)
                     {
-                        leftOutColor.Add(c);
+                        for (var i = 0; i < s.Value; i++)
+                        {
+                            deckLands.Add(GetBasic(s.Key));
+
+                        }
                     }
                 }
-
-                if (leftOutColor.Count == 1 && deckLand.Produces.ToLower().Replace("c", "").ToArray().Length == 2)
-                {
-                    removedTooMany2.Add(deckLand.Name);
-                    deckLands.RemoveAt(i);
-                    var x = deckLand.Produces.ToLower().Replace("c", "").ToArray().Except(leftOutColor).ToList();
-                    if (x.Count != 1) throw new Exception("this cant be true");
-                    deckLands.Add(GetBasic(x.FirstOrDefault()));
-                }
+                return GetPrelimLands(cards, lands, colorPipsRequirements, landsAndRocksRequirement,
+                    cuttOfCount + 1);
             }
-
-            var q = "";
-            foreach (var l in deckLands)
-            {
-                q += $"!\"{l.Name}\" or ";
-            }
-
-            return new[] { new LandSuggestion() { Name = "my name is" + deckString.Substring(0, 1) } };
         }
 
         private Land GetBasic(char k)

@@ -30,13 +30,19 @@ namespace RainbowCalculator
             {
                 var category = categories.FirstOrDefault(c => c.Cycle == line[4]);
                 if (category == null) throw new Exception("unknown land category");
+
+                // ignore expensive lands...  todo: create filter for this
+                //if (category.Cycle == "True Duals" || category.Cycle == "Fetchlands") continue;
+                var exclude =  category.Cycle == "True Duals" || category.Cycle == "Fetchlands";
+
                 lands.Add(new Land()
                 {
                     Name = line[0],
                     Identity = line[1],
                     Produces = line[2],
                     Order = category.Order,
-                    Cutoff = category.Cutoff
+                    Cutoff = category.Cutoff,
+                    Exclude = exclude
                 });
             }
 
