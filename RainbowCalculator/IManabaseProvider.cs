@@ -1,4 +1,6 @@
-﻿namespace RainbowCalculator
+﻿using RainbowCore;
+
+namespace RainbowCalculator
 {
     public interface IManabaseProvider
     {
