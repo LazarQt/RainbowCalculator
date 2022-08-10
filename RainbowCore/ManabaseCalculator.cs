@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
 using RainbowCore.Extensions;
 using RainbowCore.Model;
 using RainbowModel.Scryfall;
@@ -14,10 +16,18 @@ namespace RainbowCore
 
         public LandSuggestion[] Calculate(string deckString)
         {
-            return new LandSuggestion[] {new LandSuggestion(){Name = "why doesn thits how upp"} };
+            //return new LandSuggestion[] {new LandSuggestion(){Name = "why doesn thits how upp"} };
 
             var reader = new CalculationFilesReader();
 
+            var records = new List<LandProperty>();
+
+            using (var reader2 = new StreamReader("bin\\Debug\\net6.0\\CalcFiles\\lands.csv"))
+            using (var csv = new CsvReader(reader2, CultureInfo.InvariantCulture))
+            {
+                records = csv.GetRecords<LandProperty>().ToList();
+            }
+            return new LandSuggestion[] { new LandSuggestion() { Name = "why doesn thits how upp2" } };
             // get all lands that can be included in deck
             var lands = reader.GetLands();
 
