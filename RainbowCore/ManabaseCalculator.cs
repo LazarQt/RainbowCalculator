@@ -27,13 +27,13 @@ namespace RainbowCore
             //C:\Program Files\MyApplication
             string strWorkPath = System.IO.Path.GetDirectoryName(strExeFilePath);
 
-            string filename = System.IO.Path.Combine(strWorkPath, "CalcFiles\\lands.csv");
+            string filename = System.IO.Path.Combine(strWorkPath, "CalcFiles", "lands.csv");
             using (var reader2 = new StreamReader(filename))
             using (var csv = new CsvReader(reader2, CultureInfo.InvariantCulture))
             {
                 records = csv.GetRecords<LandProperty>().ToList();
             }
-            return new LandSuggestion[] { new LandSuggestion() { Name = "xdxdxdxd" } };
+            return new LandSuggestion[] { new LandSuggestion() { Name = "xdxdxdx2d" } };
             // get all lands that can be included in deck
             var lands = reader.GetLands();
 
