@@ -22,7 +22,7 @@ namespace RainbowCore
 
             var records = new List<LandProperty>();
 
-            using (var reader2 = new StreamReader("bin\\Debug\\net6.0\\CalcFiles\\lands.csv"))
+            using (var reader2 = new StreamReader("CalcFiles\\lands.csv"))
             using (var csv = new CsvReader(reader2, CultureInfo.InvariantCulture))
             {
                 records = csv.GetRecords<LandProperty>().ToList();
