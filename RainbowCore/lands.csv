@@ -1,0 +1,277 @@
+Name,Identity,Produces,Set,Cycle
+Darkmoss Bridge,BG,BG,mh2,Artifact Tap Duals
+Drossforge Bridge,BR,BR,mh2,Artifact Tap Duals
+Goldmire Bridge,BW,BW,mh2,Artifact Tap Duals
+Mistvault Bridge,BU,BU,mh2,Artifact Tap Duals
+Razortide Bridge,UW,UW,mh2,Artifact Tap Duals
+Rustvale Bridge,RW,RW,mh2,Artifact Tap Duals
+Silverbluff Bridge,RU,RU,mh2,Artifact Tap Duals
+Slagwoods Bridge,GR,GR,mh2,Artifact Tap Duals
+Tanglepool Bridge,GU,GU,mh2,Artifact Tap Duals
+Thornglint Bridge,GW,GW,mh2,Artifact Tap Duals
+Canopy Vista,GW,GW,bfz,Battle Lands
+Cinder Glade,GR,GR,bfz,Battle Lands
+Prairie Stream,UW,UW,bfz,Battle Lands
+Smoldering Marsh,BR,BR,bfz,Battle Lands
+Sunken Hollow,BU,BU,bfz,Battle Lands
+Bountiful Promenade,GW,GW,bbd,Bond Lands
+Luxury Suite,BR,BR,bbd,Bond Lands
+Morphic Pool,BU,BU,bbd,Bond Lands
+Sea of Clouds,UW,UW,bbd,Bond Lands
+Spire Garden,GR,GR,bbd,Bond Lands
+Rejuvenating Springs,GU,GU,cmr,Bond Lands
+Spectator Seating,RW,RW,cmr,Bond Lands
+Training Center,RU,RU,cmr,Bond Lands
+Undergrowth Stadium,BG,BG,cmr,Bond Lands
+Vault of Champions,BW,BW,cmr,Bond Lands
+Boros Garrison,RW,RW,rav,Bounce Duals
+Dimir Aqueduct,BU,BU,rav,Bounce Duals
+Golgari Rot Farm,BG,BG,rav,Bounce Duals
+Selesnya Sanctuary,GW,GW,rav,Bounce Duals
+Gruul Turf,GR,GR,gpt,Bounce Duals
+Izzet Boilerworks,RU,RU,gpt,Bounce Duals
+Orzhov Basilica,BW,BW,gpt,Bounce Duals
+Azorius Chancery,UW,UW,dis,Bounce Duals
+Rakdos Carnarium,BR,BR,dis,Bounce Duals
+Simic Growth Chamber,GU,GU,dis,Bounce Duals
+Dragonskull Summit,BR,BR,m10,Check Lands
+Drowned Catacomb,BU,BU,m10,Check Lands
+Glacial Fortress,UW,UW,m10,Check Lands
+Rootbound Crag,GR,GR,m10,Check Lands
+Sunpetal Grove,GW,GW,m10,Check Lands
+Clifftop Retreat,RW,RW,isd,Check Lands
+Hinterland Harbor,GU,GU,isd,Check Lands
+Isolated Chapel,BW,BW,isd,Check Lands
+Sulfur Falls,RU,RU,isd,Check Lands
+Woodland Cemetery,BG,BG,isd,Check Lands
+City of Brass,,BGRUW,arn,City of Brass
+Command Tower,,BGRUW,cmd,Command Tower
+Canyon Slough,BR,BR,akh,Cycling Duals
+Fetid Pools,BU,BU,akh,Cycling Duals
+Irrigated Farmland,UW,UW,akh,Cycling Duals
+Scattered Groves,GW,GW,akh,Cycling Duals
+Sheltered Thicket,GR,GR,akh,Cycling Duals
+Riveteers Overlook,,BGR,,Evolving Gain Lands
+Obscura Storefront ,,BUW,,Evolving Gain Lands
+Maestros Theater ,,BRU,,Evolving Gain Lands
+Cabaretti Courtyard ,,GRW,,Evolving Gain Lands
+Brokers Hideout ,,GUW,,Evolving Gain Lands
+Terramorphic Expanse,,WUBRG,,Evolving Wilds Variants
+Evolving Wilds,,WUBRG,,Evolving Wilds Variants
+Fabled Passage,,WUBRG,,Fabled Passage
+Blackcleave Cliffs,BR,BR,som,Fast Lands
+Copperline Gorge,GR,GR,som,Fast Lands
+Darkslick Shores,BU,BU,som,Fast Lands
+Razorverge Thicket,GW,GW,som,Fast Lands
+Seachrome Coast,UW,UW,som,Fast Lands
+Blooming Marsh,BG,BG,kld,Fast Lands
+Botanical Sanctum,GU,GU,kld,Fast Lands
+Concealed Courtyard,BW,BW,kld,Fast Lands
+Inspiring Vantage,RW,RW,kld,Fast Lands
+Spirebluff Canal,RU,RU,kld,Fast Lands
+Bloodstained Mire,,WUBRG,,Fetch Lands
+Flooded Strand,,WUBRG,,Fetch Lands
+Polluted Delta,,WUBRG,,Fetch Lands
+Windswept Heath,,WUBRG,,Fetch Lands
+Wooded Foothills,,WUBRG,,Fetch Lands
+Arid Mesa,,WUBRG,,Fetch Lands
+Marsh Flats,,WUBRG,,Fetch Lands
+Misty Rainforest,,WUBRG,,Fetch Lands
+Scalding Tarn,,WUBRG,,Fetch Lands
+Verdant Catacombs,,WUBRG,,Fetch Lands
+Graven Cairns,BR,BCR,fut,Filter Duals
+Fire-Lit Thicket,GR,CGR,shm,Filter Duals
+Mystic Gate,UW,CUW,shm,Filter Duals
+Sunken Ruins,BU,BCU,shm,Filter Duals
+Wooded Bastion,GW,CGW,shm,Filter Duals
+Cascade Bluffs,RU,CRU,eve,Filter Duals
+Fetid Heath,BW,BCW,eve,Filter Duals
+Flooded Grove,GU,CGU,eve,Filter Duals
+Rugged Prairie,RW,CRW,eve,Filter Duals
+Twilight Mire,BG,BCG,eve,Filter Duals
+Akoum Refuge,BR,BR,zen,Gain Lands
+Graypelt Refuge,GW,GW,zen,Gain Lands
+Jwar Isle Refuge,BU,BU,zen,Gain Lands
+Kazandu Refuge,GR,GR,zen,Gain Lands
+Sejiri Refuge,UW,UW,zen,Gain Lands
+Bloodfell Caves,BR,BR,ktk,Gain Lands
+Blossoming Sands,GW,GW,ktk,Gain Lands
+Dismal Backwater,BU,BU,ktk,Gain Lands
+Jungle Hollow,BG,BG,ktk,Gain Lands
+Rugged Highlands,GR,GR,ktk,Gain Lands
+Scoured Barrens,BW,BW,ktk,Gain Lands
+Swiftwater Cliffs,RU,RU,ktk,Gain Lands
+Thornwood Falls,GU,GU,ktk,Gain Lands
+Tranquil Cove,UW,UW,ktk,Gain Lands
+Wind-Scarred Crag,RW,RW,ktk,Gain Lands
+Azorius Guildgate,UW,UW,rtr,Gate Duals
+Golgari Guildgate,BG,BG,rtr,Gate Duals
+Izzet Guildgate,RU,RU,rtr,Gate Duals
+Rakdos Guildgate,BR,BR,rtr,Gate Duals
+Selesnya Guildgate,GW,GW,rtr,Gate Duals
+Boros Guildgate,RW,RW,gtc,Gate Duals
+Dimir Guildgate,BU,BU,gtc,Gate Duals
+Gruul Guildgate,GR,GR,gtc,Gate Duals
+Orzhov Guildgate,BW,BW,gtc,Gate Duals
+Simic Guildgate,GU,GU,gtc,Gate Duals
+Grand Coliseum,,BCGRUW,ons,Grand Coliseum
+Horizon Canopy,GW,GW,fut,Horizon Lands
+Fiery Islet,RU,RU,mh1,Horizon Lands
+Nurturing Peatland,BG,BG,mh1,Horizon Lands
+Silent Clearing,BW,BW,mh1,Horizon Lands
+Sunbaked Canyon,RW,RW,mh1,Horizon Lands
+Waterlogged Grove,GU,GU,mh1,Horizon Lands
+Mana Confluence,,BGRUW,jou,Mana Confluence
+Darkwater Catacombs,BU,BU,ody,Manaless Filters
+Mossfire Valley,GR,GR,ody,Manaless Filters
+Shadowblood Ridge,BR,BR,ody,Manaless Filters
+Skycloud Expanse,UW,UW,ody,Manaless Filters
+Sungrass Prairie,GW,GW,ody,Manaless Filters
+Bad River,,WUBRG,,Original Fetch Lands
+Flood Plain,,WUBRG,,Original Fetch Lands
+Grasslands,,WUBRG,,Original Fetch Lands
+Mountain Valley,,WUBRG,,Original Fetch Lands
+Rocky Tar Pit,,WUBRG,,Original Fetch Lands
+Adarkar Wastes,UW,CUW,ice,Pain Lands
+Brushland,GW,CGW,ice,Pain Lands
+Karplusan Forest,GR,CGR,ice,Pain Lands
+Sulfurous Springs,BR,BCR,ice,Pain Lands
+Underground River,BU,BCU,ice,Pain Lands
+Battlefield Forge,RW,CRW,apc,Pain Lands
+Caves of Koilos,BW,BCW,apc,Pain Lands
+Llanowar Wastes,BG,BCG,apc,Pain Lands
+Shivan Reef,RU,CRU,apc,Pain Lands
+Yavimaya Coast,GU,CGU,apc,Pain Lands
+Branchloft Pathway // Boulderloft Pathway,GW,GW,znr,Pathways
+Brightclimb Pathway // Grimclimb Pathway,BW,BW,znr,Pathways
+Clearwater Pathway // Murkwater Pathway,BU,BU,znr,Pathways
+Cragcrown Pathway // Timbercrown Pathway,GR,GR,znr,Pathways
+Needleverge Pathway // Pillarverge Pathway,RW,RW,znr,Pathways
+Riverglide Pathway // Lavaglide Pathway,RU,RU,znr,Pathways
+Barkchannel Pathway // Tidechannel Pathway,GU,GU,khm,Pathways
+Blightstep Pathway // Searstep Pathway,BR,BR,khm,Pathways
+Darkbore Pathway // Slitherbore Pathway,BG,BG,khm,Pathways
+Hengegate Pathway // Mistgate Pathway,UW,UW,khm,Pathways
+Prismatic Vista,,WUBRG,,Prismatic Vista
+Temple of Abandon,GR,GR,ths,Scry Lands
+Temple of Deceit,BU,BU,ths,Scry Lands
+Temple of Mystery,GU,GU,ths,Scry Lands
+Temple of Silence,BW,BW,ths,Scry Lands
+Temple of Triumph,RW,RW,ths,Scry Lands
+Temple of Enlightenment,UW,UW,bng,Scry Lands
+Temple of Malice,BR,BR,bng,Scry Lands
+Temple of Plenty,GW,GW,bng,Scry Lands
+Temple of Epiphany,RU,RU,jou,Scry Lands
+Temple of Malady,BG,BG,jou,Scry Lands
+Overgrown Tomb,BG,BG,rav,Shock Lands
+Sacred Foundry,RW,RW,rav,Shock Lands
+Temple Garden,GW,GW,rav,Shock Lands
+Watery Grave,BU,BU,rav,Shock Lands
+Godless Shrine,BW,BW,gpt,Shock Lands
+Steam Vents,RU,RU,gpt,Shock Lands
+Stomping Ground,GR,GR,gpt,Shock Lands
+Blood Crypt,BR,BR,dis,Shock Lands
+Breeding Pool,GU,GU,dis,Shock Lands
+Hallowed Fountain,UW,UW,dis,Shock Lands
+Choked Estuary,BU,BU,soi,Show Lands
+Foreboding Ruins,BR,BR,soi,Show Lands
+Fortified Village,GW,GW,soi,Show Lands
+Game Trail,GR,GR,soi,Show Lands
+Port Town,UW,UW,soi,Show Lands
+Frostboil Snarl,RU,RU,stx,Show Lands
+Furycalm Snarl,RW,RW,stx,Show Lands
+Necroblossom Snarl,BG,BG,stx,Show Lands
+Shineshadow Snarl,BW,BW,stx,Show Lands
+Vineglimmer Snarl,GU,GU,stx,Show Lands
+Deserted Beach,UW,UW,mid,Slow Lands
+Haunted Ridge,BR,BR,mid,Slow Lands
+Overgrown Farmland,GW,GW,mid,Slow Lands
+Rockfall Vale,GR,GR,mid,Slow Lands
+Shipwreck Marsh,BU,BU,mid,Slow Lands
+Deathcap Glade,BG,BG,vow,Slow Lands
+Dreamroot Cascade,GU,GU,vow,Slow Lands
+Shattered Sanctum,BW,BW,vow,Slow Lands
+Stormcarved Coast,RU,RU,vow,Slow Lands
+Sundown Pass,RW,RW,vow,Slow Lands
+Alpine Meadow,RW,RW,khm,Snow Duals
+Arctic Treeline,GW,GW,khm,Snow Duals
+Glacial Floodplain,UW,UW,khm,Snow Duals
+Highland Forest,GR,GR,khm,Snow Duals
+Ice Tunnel,BU,BU,khm,Snow Duals
+Rimewood Falls,GU,GU,khm,Snow Duals
+Snowfield Sinkhole,BW,BW,khm,Snow Duals
+Sulfurous Mire,BR,BR,khm,Snow Duals
+Woodland Chasm,BG,BG,khm,Snow Duals
+Arctic Flats,GW,GW,csp,Snow Tap Lands
+Boreal Shelf,UW,UW,csp,Snow Tap Lands
+Frost Marsh,BU,BU,csp,Snow Tap Lands
+Highland Weald,GR,GR,csp,Snow Tap Lands
+Tresserhorn Sinks,BR,BR,csp,Snow Tap Lands
+Volatile Fjord,RU,RU,khm,Snow Tap Lands
+Lorehold Campus,RW,RW,stx,Tap Dual Scry Lands
+Prismari Campus,RU,RU,stx,Tap Dual Scry Lands
+Quandrix Campus,GU,GU,stx,Tap Dual Scry Lands
+Silverquill Campus,BW,BW,stx,Tap Dual Scry Lands
+Witherbloom Campus,BG,BG,stx,Tap Dual Scry Lands
+Coastal Tower,UW,UW,inv,Tap Duals
+Elfhame Palace,GW,GW,inv,Tap Duals
+Salt Marsh,BU,BU,inv,Tap Duals
+Shivan Oasis,GR,GR,inv,Tap Duals
+Urborg Volcano,BR,BR,inv,Tap Duals
+Cinder Barrens,BR,BR,ogw,Tap Duals
+Meandering River,UW,UW,ogw,Tap Duals
+Submerged Boneyard,BU,BU,ogw,Tap Duals
+Timber Gorge,GR,GR,ogw,Tap Duals
+Tranquil Expanse,GW,GW,ogw,Tap Duals
+Forsaken Sanctuary,BW,BW,soi,Tap Duals
+Foul Orchard,BG,BG,soi,Tap Duals
+Highland Lake,RU,RU,soi,Tap Duals
+Stone Quarry,RW,RW,soi,Tap Duals
+Woodland Stream,GU,GU,soi,Tap Duals
+Shimmerdrift Vale,,BGRUW,khm,Tap Oneshot Rainbow Land
+Uncharted Haven,,BGRUW,neo,Tap Oneshot Rainbow Land
+Arcane Sanctum,BUW,BUW,ala,Tap Tri Lands
+Crumbling Necropolis,BRU,BRU,ala,Tap Tri Lands
+Jungle Shrine,GRW,GRW,ala,Tap Tri Lands
+Savage Lands,BGR,BGR,ala,Tap Tri Lands
+Seaside Citadel,GUW,GUW,ala,Tap Tri Lands
+Frontier Bivouac,GRU,GRU,ktk,Tap Tri Lands
+Mystic Monastery,RUW,RUW,ktk,Tap Tri Lands
+Nomad Outpost,BRW,BRW,ktk,Tap Tri Lands
+Opulent Palace,BGU,BGU,ktk,Tap Tri Lands
+Sandsteppe Citadel,BGW,BGW,ktk,Tap Tri Lands
+Sea Gate,U,WUBRG,,Thriving Gates
+Manor Gate,G,WUBRG,,Thriving Gates
+Cliffgate,R,WUBRG,,Thriving Gates
+Citadel Gate,W,WUBRG,,Thriving Gates
+Black Dragon Gate,B,WUBRG,,Thriving Gates
+Thriving Bluff,R,BGRUW,jmp,Thriving Lands
+Thriving Grove,G,BGRUW,jmp,Thriving Lands
+Thriving Heath,W,BGRUW,jmp,Thriving Lands
+Thriving Isle,U,BGRUW,jmp,Thriving Lands
+Thriving Moor,B,BGRUW,jmp,Thriving Lands
+Indatha Triome,BGW,BGW,iko,Triomes
+Ketria Triome,GRU,GRU,iko,Triomes
+Raugrin Triome,RUW,RUW,iko,Triomes
+Savai Triome,BRW,BRW,iko,Triomes
+Zagoth Triome,BGU,BGU,iko,Triomes
+Jetmir's Garden,GRW,GRW,snc,Triomes
+Raffine's Tower,BUW,BUW,snc,Triomes
+Spara's Headquarters,GUW,GUW,snc,Triomes
+Xander's Lounge,BRU,BRU,snc,Triomes
+Ziatora's Proving Ground,BGR,BGR,snc,Triomes
+Badlands,BR,BR,lea,True Duals
+Bayou,BG,BG,lea,True Duals
+Plateau,RW,RW,lea,True Duals
+Savannah,GW,GW,lea,True Duals
+Scrubland,BW,BW,lea,True Duals
+Taiga,GR,GR,lea,True Duals
+Tropical Island,GU,GU,lea,True Duals
+Tundra,UW,UW,lea,True Duals
+Underground Sea,BU,BU,lea,True Duals
+Volcanic Island,RU,RU,leb,True Duals
+Botanical Plaza,GW,GW,snc,Tap Draw Lands
+Waterfront District,UB,UB,snc,Tap Draw Lands
+Tramway Station ,RB,RB,snc,Tap Draw Lands
+Skybridge Towers ,UW,UW,snc,Tap Draw Lands
+Racers' Ring,RG,RG,snc,Tap Draw Lands

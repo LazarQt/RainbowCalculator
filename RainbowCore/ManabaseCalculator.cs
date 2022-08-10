@@ -22,7 +22,13 @@ namespace RainbowCore
 
             var records = new List<LandProperty>();
 
-            using (var reader2 = new StreamReader("CalcFiles\\lands.csv"))
+            string strExeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            //This will strip just the working path name:
+            //C:\Program Files\MyApplication
+            string strWorkPath = System.IO.Path.GetDirectoryName(strExeFilePath);
+
+            string filename = System.IO.Path.Combine(strWorkPath, "lands.csv");
+            using (var reader2 = new StreamReader(filename))
             using (var csv = new CsvReader(reader2, CultureInfo.InvariantCulture))
             {
                 records = csv.GetRecords<LandProperty>().ToList();
