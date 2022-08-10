@@ -16,7 +16,7 @@ namespace RainbowCore
 
         public LandSuggestion[] Calculate(string deckString)
         {
-            return new LandSuggestion[] {new LandSuggestion(){Name = "why doesn thits how upp3"} };
+            //return new LandSuggestion[] {new LandSuggestion(){Name = "why doesn thits how upp3"} };
 
             var reader = new CalculationFilesReader();
 
