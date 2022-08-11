@@ -1,6 +1,6 @@
-﻿namespace RainbowCore.Model
+﻿namespace RainbowModel
 {
-    public class LandAndManarockRequirement
+    public class ManarockRatio : ICsvProperty
     {
         public int LandsWithoutRocks { get; set; }
         public double MinMv { get; set; }

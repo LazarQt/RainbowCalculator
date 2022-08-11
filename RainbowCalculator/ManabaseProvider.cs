@@ -1,6 +1,5 @@
 ﻿using RainbowCore;
 using RainbowCore.Extensions;
-using RainbowCore.Model;
 using RainbowModel.Scryfall;
 
 namespace RainbowCalculator

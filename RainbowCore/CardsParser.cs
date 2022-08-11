@@ -18,6 +18,9 @@ namespace RainbowCore
                 // skip empty entries
                 if (cardName.Equals(string.Empty)) continue;
 
+                // skip existing entries
+                if (deckList.Any(i => i == cardName)) continue;
+
                 // remove leading numbers (in case someone enters '15 Island')
                 while (int.TryParse(cardName.FirstOrDefault().ToString(), out _))
                 {
@@ -28,7 +31,7 @@ namespace RainbowCore
             }
 
             // retrieve cards
-            var cards = Task.Run(() => new CalculationFilesReader().GetCards(deckList)).Result;
+            var cards = Task.Run(() => new ScryfallApi().GetCards(deckList)).Result;
 
             // make a list of missing cards (wrong user input?)
             var missing = new List<string>();

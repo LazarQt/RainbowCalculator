@@ -4,6 +4,8 @@ namespace RainbowModel.Scryfall
 {
     public class ScryfallCard
     {
+        public int ManaValue => Convert.ToInt32(Cmc);
+
         [JsonProperty("object")] public string Object { get; set; }
 
         [JsonProperty("id")] public string Id { get; set; }

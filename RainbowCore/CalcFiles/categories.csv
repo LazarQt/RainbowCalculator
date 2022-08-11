@@ -1,4 +1,4 @@
-Cycle,2C,3C,4C,5C
+Cycle,TwoColor,ThreeColor,FourColor,FiveColor
 Grand Coliseum,-1,-1,18.4,18.4
 Tap Tri Lands,-1,1.2,1.2,1.2
 Triomes,-1,1.1,1.1,1.1
@@ -30,7 +30,7 @@ Scry Lands,21,21,21,21
 Tap Draw Lands,22,22,22,22
 Gain Lands,24,24,24,24
 Tap Dual Scry Lands,24,24,24,24
-Original Fetch Lands,25,25,25,25
+Original Fetch Lands,25,25,25,1.3
 Evolving Wilds Variants,26,26,26,26
 Bounce Duals,27,27,27,27
 Snow Duals,28,28,28,28

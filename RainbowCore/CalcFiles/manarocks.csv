@@ -1,0 +1,36 @@
+Name,Identity,Produces,Order
+Arcane Signet,,WUBRG,1
+Fellwar Stone,,WUBRG,2
+Commander's Sphere,,WUBRG,3
+Chromatic Lantern,,WUBRG,4
+Dimir Signet,UB,UB,5
+Rakdos Signet,RB,RB,5
+Izzet Signet,UR,UR,5
+Orzhov Signet,WB,WB,5
+Boros Signet,RW,RW,5
+Azorius Signet,UW,UW,5
+Simic Signet,UG,UG,5
+Golgari Signet,BG,BG,5
+Gruul Signet,RG,RG,5
+Selesyna Signet,GW,GW,5
+Talisman of Dominance,UB,UB,6
+Talisman of Creativity,UR,UR,6
+Talisman of Hierarchy,WB,WB,6
+Talisman of Indulgence,RB,RB,6
+Talisman of Conviction,RW,RW,6
+Talisman of Progress,UW,UW,6
+Talisman of Resilience,GB,GB,6
+Talisman of Curiosity,UG,UG,6
+Talisman of Unity,GW,GW,6
+Talisman of Impulse,RG,U,6
+Coldsteel Heart,,WUBRG,7
+Sky Diamond,U,B,8
+Charcoal Diamond,B,R,8
+Fire Diamond,R,W,8
+Marble Diamond,W,G,8
+Moss Diamond,G,G,8
+Generic Rock 1,,WUBRG,9
+Generic Rock 2,,WUBRG,9
+Generic Rock 3,,WUBRG,9
+Generic Rock 4,,WUBRG,9
+Generic Rock 5,,WUBRG,9

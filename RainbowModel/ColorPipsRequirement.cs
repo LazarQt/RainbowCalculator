@@ -1,6 +1,6 @@
-﻿namespace RainbowCore.Model
+﻿namespace RainbowModel
 {
-    public class ColorPipsRequirement
+    public class ColorPipsRequirement : ICsvProperty
     {
         public int Cost { get; set; }
         public int Pips { get; set; }

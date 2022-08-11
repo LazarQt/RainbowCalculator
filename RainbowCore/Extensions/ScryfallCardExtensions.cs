@@ -13,12 +13,12 @@ namespace RainbowCore.Extensions
             }
             manaCost = manaCost.ToLower();
 
-            // remove eldrain split card thingies
+            // remove split card thingies from sets like "Eldraine"
             if (manaCost.Contains("//"))
             {
-                manaCost = manaCost.Substring(0, manaCost.IndexOf("//"));
+                manaCost = manaCost.Substring(0, manaCost.IndexOf("//", StringComparison.Ordinal));
             }
-            // todo: might have to deal with this later and include in calculation eldraine cards
+            // todo: might have to deal with this later and include the split card thingies
 
             return manaCost;
         }
