@@ -180,7 +180,12 @@ namespace RainbowCore
 
 
 
-            return new[] { new LandSuggestion() { Name = "my name is" + deckString.Substring(0, 1) } };
+            return new[] { new LandSuggestion()
+            {
+                Name = "your report",
+                Lands = landsSuggestion.Select(x => x.Name).ToList(),
+                Report = "xd"
+            } };
         }
 
         private Dictionary<char, int> CalculateSourceRequirements(List<ScryfallCard> cards)
