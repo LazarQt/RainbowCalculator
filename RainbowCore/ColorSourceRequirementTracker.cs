@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using RainbowModel;
 
-namespace RainbowModel
+namespace RainbowCore
 {
     public class ColorSourceRequirementTracker
     {
@@ -11,15 +11,8 @@ namespace RainbowModel
             Requirements = new List<ColorSourceRequirement>();
         }
 
-        public int TotalRequirementsCount => Requirements.Sum(r => r.Amount);
-
-        public char[] DeckIdentity => Requirements.Select(r => r.Color).ToArray();
-
-        public char HighestColorRequirement => Requirements.OrderBy(r => r.Amount).First().Color;
-
         public void ReduceRequirement(char color, int? amount = null)
         {
-            //Validate(color);
             var req = Get(color);
             if (req == null) return;
             if (amount != null)
@@ -30,22 +23,6 @@ namespace RainbowModel
             {
                 req.Amount -= 1;
             }
-
-        }
-
-        private void Validate(char color)
-        {
-            if (Requirements.All(r => r.Color != color)) throw new Exception("Calling non existent color");
-        }
-
-        public bool HasColor(char color) => Requirements.Any(r => r.Color == color);
-
-        public int GetColorRequirementCount(char color) => Get(color).Amount;
-
-        private ColorSourceRequirement Get(char color)
-        {
-            //Validate(color);
-            return Requirements.FirstOrDefault(r => r.Color == color);
         }
 
         public void SetColorRequirement(char color, int amount)
@@ -64,5 +41,17 @@ namespace RainbowModel
                 existingEntry.Amount = amount;
             }
         }
+
+        public int TotalRequirementsCount => Requirements.Sum(r => r.Amount);
+
+        public char[] DeckIdentity => Requirements.Select(r => r.Color).ToArray();
+
+        public char HighestColorRequirement => Requirements.OrderBy(r => r.Amount).First().Color;
+
+        public bool HasColor(char color) => Requirements.Any(r => r.Color == color);
+
+        public int GetColorRequirementCount(char color) => Get(color).Amount;
+
+        private ColorSourceRequirement Get(char color) => Requirements.FirstOrDefault(r => r.Color == color);
     }
 }

@@ -1,9 +1,6 @@
-﻿using CsvHelper;
-using RainbowCore.Extensions;
+﻿using RainbowCore.Extensions;
 using RainbowModel;
 using RainbowModel.Scryfall;
-using System.Drawing;
-using static RainbowCore.Const;
 
 namespace RainbowCore
 {
@@ -18,30 +15,18 @@ namespace RainbowCore
 
         public ManabaseSuggestion Calculate(string deckString)
         {
-            // edric
-            //deckString = "|Artificer's Assistant |Bad River |Barkchannel Pathway |Beastmaster Ascension |Bident of Thassa |Biomass Mutation |Botanical Sanctum |Breeding Pool |Caustic Caterpillar |Champion of Lambholt |Chasm Skulker |Cloud of Faeries |Cloud Pirates |Cloudfin Raptor |Coastal Piracy |Command Tower |Counterspell |Dowsing Dagger |Druids' Repository |Dryad Sophisticate |Edric, Spymaster of Trest |Elvish Mystic |Fabled Passage |Flying Men |Foil |Fyndhorn Elves |Grand Coliseum |Grasslands |Growing Rites of Itlimoc |Gudul Lurker |Heroic Intervention |Hinterland Harbor |Hope of Ghirapur |Horizon Chimera |Hypnotic Siren |Invisible Stalker |Jace's Phantasm |Jhessian Infiltrator |Jolrael, Mwonvuli Recluse |Kappa Tech-Wrecker |Lantern Bearer |Llanowar Elves |Looter il-Kor |Mausoleum Wanderer |Merfolk Windrobber |Mindshrieker |Mist-Cloaked Herald |Mountain Valley |Nature's Will |Nightveil Sprite |Notorious Throng |Part the Waterveil |Path of Ancestry |Pteramander |Ranger Class |Reconnaissance Mission |Rejuvenating Springs |Reliquary Tower |Shimmerdrift Vale |Silhana Ledgewalker |Silver Raven |Siren Stormtamer |Slither Blade |Spectral Sailor |Strixhaven Stadium |Sylvan Safekeeper |Temporal Trespass |Tetsuko Umezawa, Fugitive |Throne of the God-Pharaoh |Time Stop |Time Warp |Toski, Bearer of Secrets |Treetop Scout |Triton Shorestalker |Trygon Predator |Unified Will |Vineglimmer Snarl |Walk the Aeons |Waterlogged Grove |Wizard Class |Yavimaya Coast";
-            //deckString = "|Carpet of Flowers |Wild Growth |Natural Order |Rhystic Study |Sylvan Library |Howling Moon |Mana Vault |Sol Ring |Chrome Mox |Mana Crypt |Oko, Thief of Crowns |Nissa, Who Shakes the World |Garruk Wildspeaker |Mystic Remora |Karn's Temporal Sundering |Force of Vigor |Wash Away |Alrund's Epiphany |Walk the Aeons |Temporal Manipulation |Time Warp |Temporal Mastery |Green Sun's Zenith |Notorious Throng |Fierce Guardianship |Mystical Tutor |Submerge |Noxious Revival |Pongify |Flusterstorm |Mindbreak Trap |Rapid Hybridization |Force of Negation |Daze |An Offer You Can't Refuse |Crop Rotation |Misdirection |Force of Will |Cyclonic Rift |Swan Song |Mental Misstep |Endurance |Elvish Mystic |Jolrael, Mwonvuli Recluse |Arbor Elf |Boreal Druid |Ledger Shredder |Malevolent Hermit |Llanowar Elves |Master of the Wild Hunt |Craterhoof Behemoth |Elvish Spirit Guide |Oakhame Adversary |Toski, Bearer of Secrets |Manglehorn |Arasta of the Endless Web |Priest of Titania |Birds of Paradise |Lotus Cobra |Ghostly Pilferer |Sakura-Tribe Elder |Fyndhorn Elves |Tendershoot Dryad |Koma, Cosmos Serpent |Collector Ouphe |Sakura-Tribe Scout |Bloom Tender |Joraga Treespeaker |Prismatic Vista |Yavimaya Coast |Polluted Delta |Breeding Pool |Otawara, Soaring City |Command Tower |Waterlogged Grove |Mystic Sanctuary |Urza's Saga |Boseiju, Who Endures |Boseiju, Who Shelters All |Yavimaya, Cradle of Growth |Rejuvenating Springs |Windswept Heath |Mana Confluence |Wooded Foothills |Wirewood Lodge |Verdant Catacombs |Flooded Strand |Misty Rainforest |Dryad Arbor |Gemstone Caverns |Ancient Tomb |Scalding Tarn |Forest |Island |Edric, Spymaster of Trest ";
-            //deckString = "|Aurification |Axis of Mortality |Battlefield Forge |Blightstep Pathway |Blood Baron of Vizkopa |Bomb Squad |Boros Locket |Boros Signet |Bounty Agent |Bounty Hunter |Brightclimb Pathway |Caves of Koilos |Children of Korlis |Clifftop Retreat |Command Tower |Commander's Sphere |Concealed Courtyard |Devout Witness |Dragonskull Summit |Dread |Dwarven Miner |Enduring Angel |Exquisite Blood |Fabled Passage |Fire Covenant |Fires of Invention |Goblin Spymaster |Godless Shrine |Gorilla Shaman |Grand Abolisher |Haunted Ridge |High Priest of Penance |Hoard Robber |Idyllic Tutor |Inspiring Vantage |Island Sanctuary |Isolated Chapel |Kambal, Consul of Allocation |Luminarch Ascension |Maddening Imp |Master of Cruelties |Mathas, Fiend Seeker |Michiko Konda, Truth Seeker |Mortuary |Mother of Runes |Mountain |Necropotence |Needleverge Pathway |No Mercy |Nomad Outpost |Notorious Assassin |Ophiomancer |Oracle en-Vec |Orzhov Locket |Orzhov Signet |Phyrexian Arena |Plaguebearer |Plains |Price of Glory |Queen Marchesa |Rakdos Signet |Reliquary Tower |Royal Assassin |Rune-Tail, Kitsune Ascendant |Sacred Foundry |Savai Triome |Season of the Witch |Shadowblood Ridge |Silent Clearing |Skyline Despot |Smoldering Marsh |Smothering Tithe |Sol Ring |Solitary Confinement |Spectator Seating |Sulfurous Springs |Swamp |Talisman of Hierarchy |Temple of Malice |Teysa, Envoy of Ghosts |Torment of Hailfire |Tsabo's Assassin |Vault of Champions |Venser's Journal |Viashino Heretic |Vindicate |War's Toll |Worship";
-            //deckString = "|Arcane Sanctum |Argothian Wurm |Assemble the Legion |Bend or Break |Biomancer's Familiar |Boneyard Parley |Brash Taunter |Breena, the Demagogue |Canopy Vista |Capital Punishment |Captive Audience |Choice of Damnations |City of Brass |Clackbridge Troll |Clifftop Retreat |Command Tower |Cruel Entertainment |Curse of the Cabal |Death or Glory |Deserted Beach |Diaochan, Artful Beauty |Do or Die |Dryad of the Ilysian Grove |Epiphany at the Drownyard |Evolving Wilds |Exotic Orchard |Fabled Passage |Faeburrow Elder |Forbidden Orchard |Forest |Game Plan |Gang Up |Grand Coliseum |Haunted Ridge |Head Games |Humble Defector |Hunted Dragon |Hunted Horror |Hunted Lammasu |Hunted Phantasm |Hunted Troll |Hushbringer |Island |Isolated Chapel |Jungle Shrine |Kenrith, the Returned King |Kynaios and Tiro of Meletis |Kyodai, Soul of Kamigawa |Mana Confluence |Mountain |Nomad Outpost |Nyxbloom Ancient |Opulent Palace |Orzhov Advokist |Overgrown Farmland |Path of Ancestry |Pir's Whim |Plains |Prairie Stream |Rainbow Vale |Reflecting Pool |Scheming Symmetry |Secret Rendezvous |Selvala, Explorer Returned |Shadrix Silverquill |Shivan Wumpus |Smoldering Marsh |Smothering Tithe |Sol Ring |Split Decision |Steam Augury |Sulfur Falls |Swamp |Sylvan Offering |Tainted Remedy |Tempt with Discovery |The World Tree |Truth or Tale |Wheel and Deal |Wishclaw Talisman |Woodland Cemetery |Zirda, the Dawnwaker";
-            //deckString = "|Adeline, Resplendent Cathar |Akroma's Will |Alesha, Who Smiles at Death |Anafenza, the Foremost |Anguished Unmaking |Arcane Signet |Arid Mesa |Assassin's Trophy |Augur of Autumn |Aurelia, the Warleader |Avacyn's Pilgrim |Beast Within |Beastmaster Ascension |Birds of Paradise |Blood Crypt |Bloodstained Mire |Boros Charm |Boros Signet |Champion of Lambholt |Chromatic Lantern |Command Tower |Commander's Sphere |Cultivate |Demonic Tutor |Domri, Anarch of Bolas |Esper Sentinel |Eternal Witness |Evolving Wilds |Exotic Orchard |Faeburrow Elder |Farseek |Fellwar Stone |Flawless Maneuver |Forest |General Kudro of Drannith |General's Enforcer |Gisela, Blade of Goldnight |Godless Shrine |Gruul Signet |Guardian Project |Halana and Alena, Partners |Heroic Intervention |Heronblade Elite |Ignoble Hierarch |Indatha Triome |Iroas, God of Victory |Isshin, Two Heavens as One |Jetmir's Garden |Jungle Shrine |Karlach, Fury of Avernus |Katilda, Dawnhart Prime |Kodama's Reach |Kyler, Sigardian Emissary |Lightning Greaves |Marisi, Breaker of the Coil |Marsh Flats |Mirari's Wake |Mountain |Nature's Lore |Nomad Outpost |Odric, Lunarch Marshal |Overgrown Tomb |Path to Exile |Plains |Rampant Growth |Rhythm of the Wild |Ruinous Ultimatum |Sacred Foundry |Sakura-Tribe Elder |Samut, Voice of Dissent |Sandsteppe Citadel |Saryth, the Viper's Fang |Saskia the Unyielding |Savage Lands |Savai Triome |Shared Animosity |Sigarda, Champion of Light |Smothering Tithe |Sol Ring |Stomping Ground |Swamp |Swords to Plowshares |Sylvan Library |Temple Garden |Thalia, Heretic Cathar |Three Visits |Torens, Fist of the Angels |Toski, Bearer of Secrets |Tymna the Weaver |Verdant Catacombs |Windswept Heath |Wooded Foothills |Ziatora's Proving Ground";
+            // create suggestion, any relevant user information will be updated here
+            var suggestion = new ManabaseSuggestion();
 
-            // testing end
+            var cards = BuildCalculationDeck(deckString, suggestion);
 
-            var cards = BuildCalculationDeck(deckString);
+            // read initial files
             var manarockRatio = CalculateManarockRatio(cards);
             var requirementsTracker = InitializeSourceRequirements(cards);
 
-            var suggestion = new ManabaseSuggestion()
-            {
-                ColorRequirements = requirementsTracker.Requirements,
-                ManarockRatio = manarockRatio
-            };
-
-            //if (sourceRequirements.Count < 2)
-            //{
-            //    // mono colored decks
-            //}
-
+            suggestion.ManarockRatio = manarockRatio;
+            suggestion.ColorRequirements = requirementsTracker.Requirements;
+            
             // create possible land picks
             var landProperties = _csvReader.ReadFile<LandProperty>("lands");
             var categories = _csvReader.ReadFile<Category>("categories");
@@ -107,9 +92,8 @@ namespace RainbowCore
             // 1.5 iteration: add one single basic land of each color
             foreach (var req in requirementsTracker.Requirements)
             {
-                landsSuggestion.Add(GetBasic(req.Color));
+                landsSuggestion.Add(GenerateBasicLand(req.Color));
                 requirementsTracker.ReduceRequirement(req.Color);
-
             }
 
 
@@ -119,7 +103,7 @@ namespace RainbowCore
                 var illegalRequirements = new List<char>();
                 foreach (var r in requirementsTracker.Requirements)
                 {
-                    if(r.Amount <= 0) 
+                    if (r.Amount <= 0)
                         illegalRequirements.Add(r.Color);
                 }
 
@@ -132,39 +116,17 @@ namespace RainbowCore
                 }
             }
 
-            // third iteration: equalizer
-            
-
-            //while (sourceRequirements.Sum(s => s.Value) >= 0)
-            //{
-            //    var highReq = sourceRequirements.MaxBy(i => i.Value).Key;
-            //    var minReq = sourceRequirements.MinBy(i => i.Value).Key;
-
-            //    var land = lands.FirstOrDefault(l => l.CanProduce(highReq) && l.CanProduce(minReq));
-            //    if (land == null) throw new Exception("not enough lands!");
-            //    landsSuggestion.Add(land);
-            //    lands.Remove(land);
-            //    foreach (var c in land.Produces)
-            //    {
-            //        if (sourceRequirements.ContainsKey(c))
-            //        {
-            //            sourceRequirements[c] -= 1;
-            //        }
-            //    }
-            //}
-
             // last step: add basics to fill up
             foreach (var r in requirementsTracker.Requirements)
             {
                 var amount = r.Amount;
                 for (var i = 0; i < amount; i++)
                 {
-                    landsSuggestion.Add(GetBasic(r.Color));
+                    landsSuggestion.Add(GenerateBasicLand(r.Color));
                 }
 
                 requirementsTracker.ReduceRequirement(r.Color, amount);
             }
-
 
             suggestion.Lands = landsSuggestion.Select(x => x.Name).ToList();
             suggestion.Lands.AddRange(rocksSuggestion.Select(r => r.Name));
@@ -241,21 +203,19 @@ namespace RainbowCore
             var avgMv = cards.Average(c => c.Cmc);
             var manarockRatio = manarockRatios.FirstOrDefault(r => avgMv >= r.MinMv && avgMv <= r.MaxMv);
             if (manarockRatio == null) throw new Exception("can't derive lands and mana rocks requirement");
-            Logger.Log($"Average MV: {avgMv}");
 
             return manarockRatio;
         }
 
-        private List<ScryfallCard> BuildCalculationDeck(string deckString)
+        private List<ScryfallCard> BuildCalculationDeck(string deckString, ManabaseSuggestion suggestion)
         {
             // these cards are strictly excluded from calculation because they have X in costs or are regularly reduced in costs
             var excludedCards = _csvReader.ReadFile<SingleLine>("exclude");
 
             // get actual cards from deck string
             var cards = new CardsParser().GetCards(deckString, out var missing);
-            // report missing cards
-            Console.WriteLine($"Missing: {string.Join(",", missing)}");
-            Logger.Log("Missing cards", missing); // todo: this information should be reported to the user at some point
+
+            suggestion.CardsNotFound = missing;
 
             // remove all excluded cards which are not part of the equation
             var excluded = new List<string>();
@@ -268,8 +228,8 @@ namespace RainbowCore
                     cards.RemoveAt(i);
                 }
             }
-            Console.WriteLine($"Excluded: {string.Join(",", excluded)}");
-            Logger.Log("Removed due to X etc.", excluded);  // todo: this information should be reported to the user at some point
+
+            suggestion.ExcludedCards = excluded;
 
             // remove lands (if user gave list with lands in it already)
             var removedLands = new List<string>();
@@ -280,20 +240,23 @@ namespace RainbowCore
                 removedLands.Add(c.Name);
                 cards.RemoveAt(i);
             }
-            Console.WriteLine($"Removed lands: {string.Join(",", removedLands)}");
-            Logger.Log("Removed lands (why give lands with calculation?)", removedLands); // todo: this information should be reported to the user at some point
+
+            suggestion.RemovedLands = removedLands;
 
             return cards;
         }
 
-        private Land GetBasic(char k)
+        private Land GenerateBasicLand(char color)
         {
-            if (k == 'w') return new Land() { Identity = new[] { 'w' }, Name = "Plains", Produces = new[] { 'w' } };
-            if (k == 'u') return new Land() { Identity = new[] { 'u' }, Name = "Island", Produces = new[] { 'u' } };
-            if (k == 'b') return new Land() { Identity = new[] { 'b' }, Name = "Swamp", Produces = new[] { 'b' } };
-            if (k == 'r') return new Land() { Identity = new[] { 'r' }, Name = "Mountain", Produces = new[] { 'r' } };
-            if (k == 'g') return new Land() { Identity = new[] { 'g' }, Name = "Forest", Produces = new[] { 'g' } };
-            throw new Exception("no basic found with type" + k);
+            return color switch
+            {
+                'w' => new Land() { Identity = new[] { color }, Name = Const.Card.Plains, Produces = new[] { 'w' } },
+                'u' => new Land() { Identity = new[] { color }, Name = Const.Card.Island, Produces = new[] { 'u' } },
+                'b' => new Land() { Identity = new[] { color }, Name = Const.Card.Swamp, Produces = new[] { 'b' } },
+                'r' => new Land() { Identity = new[] { color }, Name = Const.Card.Mountain, Produces = new[] { 'r' } },
+                'g' => new Land() { Identity = new[] { color }, Name = Const.Card.Forest, Produces = new[] { 'g' } },
+                _ => throw new Exception("no basic land found with color" + color)
+            };
         }
     }
 }

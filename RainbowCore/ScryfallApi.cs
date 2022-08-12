@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RainbowModel.Scryfall;
 using RestSharp;
 
@@ -37,7 +32,6 @@ namespace RainbowCore
 
         private async Task<List<ScryfallCard>> ExecuteCardSearch(string request)
         {
-
             var result = new List<ScryfallCard>();
 
             var response = await new RestClient().GetAsync(new RestRequest(request));
@@ -50,7 +44,6 @@ namespace RainbowCore
             if (content.Data != null) result.AddRange(content.Data);
 
             return result;
-
         }
     }
 }

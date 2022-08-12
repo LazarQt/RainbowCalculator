@@ -39,7 +39,6 @@ namespace RainbowCore
             {
                 if (!cards.Any(c => c.Name.ToLower().StartsWith(cardString.ToLower())))
                 {
-                    Console.WriteLine("could not find card " + cardString);
                     missing.Add(cardString);
                 }
             }

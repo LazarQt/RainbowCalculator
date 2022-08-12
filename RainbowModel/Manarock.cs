@@ -2,10 +2,12 @@
 {
     public class Manarock
     {
-        public Manarock()
-        {
-            
-        }
+        public string Name { get; set; }
+        public char[] Identity { get; set; }
+        public char[] Produces { get; set; }
+        public float Order { get; set; }
+
+        public Manarock() { }
 
         public Manarock(Manarock manarock)
         {
@@ -14,10 +16,5 @@
             Produces = manarock.Produces;
             Order = manarock.Order;
         }
-
-        public string Name { get; set; }
-        public char[] Identity { get; set; }
-        public char[] Produces { get; set; }
-        public float Order { get; set; }
     }
 }

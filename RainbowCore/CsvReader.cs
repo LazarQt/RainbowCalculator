@@ -8,14 +8,11 @@ namespace RainbowCore
     {
         public List<T> ReadFile<T>(string file) where T : ICsvProperty
         {
-            var strWorkPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var workPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            if (strWorkPath == null)
-            {
-                throw new Exception("Execution path cannot be determined"); // this should be impossible to happen
-            }
+            if (workPath == null) throw new Exception("Execution path cannot be determined"); // this should be impossible to happen
 
-            string filename = Path.Combine(strWorkPath, "CalcFiles", $"{file}.csv");
+            var filename = Path.Combine(workPath, "CalcFiles", $"{file}.csv");
             using var reader = new StreamReader(filename);
             using var csv = new CsvHelper.CsvReader(reader, CultureInfo.InvariantCulture);
             return csv.GetRecords<T>().ToList();
