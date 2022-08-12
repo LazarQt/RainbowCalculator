@@ -2,6 +2,7 @@
 using RainbowCore.Extensions;
 using RainbowModel;
 using RainbowModel.Scryfall;
+using System.Drawing;
 using static RainbowCore.Const;
 
 namespace RainbowCore
@@ -15,24 +16,8 @@ namespace RainbowCore
             _csvReader = new CsvReader();
         }
 
-        public LandSuggestion[] Calculate(string deckString)
+        public ManabaseSuggestion Calculate(string deckString)
         {
-            // testing
-
-            // mono color low mana value
-            deckString = "";
-            for (var i = 0; i <= 60; i++)
-            {
-                deckString += "Brainstorm|";
-            }
-
-            // mono color high mana value
-            deckString = "";
-            for (var i = 0; i <= 60; i++)
-            {
-                deckString += "Gigantosaurus|";
-            }
-
             // edric
             deckString = "|Artificer's Assistant |Bad River |Barkchannel Pathway |Beastmaster Ascension |Bident of Thassa |Biomass Mutation |Botanical Sanctum |Breeding Pool |Caustic Caterpillar |Champion of Lambholt |Chasm Skulker |Cloud of Faeries |Cloud Pirates |Cloudfin Raptor |Coastal Piracy |Command Tower |Counterspell |Dowsing Dagger |Druids' Repository |Dryad Sophisticate |Edric, Spymaster of Trest |Elvish Mystic |Fabled Passage |Flying Men |Foil |Fyndhorn Elves |Grand Coliseum |Grasslands |Growing Rites of Itlimoc |Gudul Lurker |Heroic Intervention |Hinterland Harbor |Hope of Ghirapur |Horizon Chimera |Hypnotic Siren |Invisible Stalker |Jace's Phantasm |Jhessian Infiltrator |Jolrael, Mwonvuli Recluse |Kappa Tech-Wrecker |Lantern Bearer |Llanowar Elves |Looter il-Kor |Mausoleum Wanderer |Merfolk Windrobber |Mindshrieker |Mist-Cloaked Herald |Mountain Valley |Nature's Will |Nightveil Sprite |Notorious Throng |Part the Waterveil |Path of Ancestry |Pteramander |Ranger Class |Reconnaissance Mission |Rejuvenating Springs |Reliquary Tower |Shimmerdrift Vale |Silhana Ledgewalker |Silver Raven |Siren Stormtamer |Slither Blade |Spectral Sailor |Strixhaven Stadium |Sylvan Safekeeper |Temporal Trespass |Tetsuko Umezawa, Fugitive |Throne of the God-Pharaoh |Time Stop |Time Warp |Toski, Bearer of Secrets |Treetop Scout |Triton Shorestalker |Trygon Predator |Unified Will |Vineglimmer Snarl |Walk the Aeons |Waterlogged Grove |Wizard Class |Yavimaya Coast";
             deckString = "|Carpet of Flowers |Wild Growth |Natural Order |Rhystic Study |Sylvan Library |Howling Moon |Mana Vault |Sol Ring |Chrome Mox |Mana Crypt |Oko, Thief of Crowns |Nissa, Who Shakes the World |Garruk Wildspeaker |Mystic Remora |Karn's Temporal Sundering |Force of Vigor |Wash Away |Alrund's Epiphany |Walk the Aeons |Temporal Manipulation |Time Warp |Temporal Mastery |Green Sun's Zenith |Notorious Throng |Fierce Guardianship |Mystical Tutor |Submerge |Noxious Revival |Pongify |Flusterstorm |Mindbreak Trap |Rapid Hybridization |Force of Negation |Daze |An Offer You Can't Refuse |Crop Rotation |Misdirection |Force of Will |Cyclonic Rift |Swan Song |Mental Misstep |Endurance |Elvish Mystic |Jolrael, Mwonvuli Recluse |Arbor Elf |Boreal Druid |Ledger Shredder |Malevolent Hermit |Llanowar Elves |Master of the Wild Hunt |Craterhoof Behemoth |Elvish Spirit Guide |Oakhame Adversary |Toski, Bearer of Secrets |Manglehorn |Arasta of the Endless Web |Priest of Titania |Birds of Paradise |Lotus Cobra |Ghostly Pilferer |Sakura-Tribe Elder |Fyndhorn Elves |Tendershoot Dryad |Koma, Cosmos Serpent |Collector Ouphe |Sakura-Tribe Scout |Bloom Tender |Joraga Treespeaker |Prismatic Vista |Yavimaya Coast |Polluted Delta |Breeding Pool |Otawara, Soaring City |Command Tower |Waterlogged Grove |Mystic Sanctuary |Urza's Saga |Boseiju, Who Endures |Boseiju, Who Shelters All |Yavimaya, Cradle of Growth |Rejuvenating Springs |Windswept Heath |Mana Confluence |Wooded Foothills |Wirewood Lodge |Verdant Catacombs |Flooded Strand |Misty Rainforest |Dryad Arbor |Gemstone Caverns |Ancient Tomb |Scalding Tarn |Forest |Island |Edric, Spymaster of Trest ";
@@ -44,19 +29,25 @@ namespace RainbowCore
 
             var cards = BuildCalculationDeck(deckString);
             var manarockRatio = CalculateManarockRatio(cards);
-            var sourceRequirements = CalculateSourceRequirements(cards);
+            var requirementsTracker = InitializeSourceRequirements(cards);
 
-            if (sourceRequirements.Count < 2)
+            var suggestion = new ManabaseSuggestion()
             {
-                // mono colored decks
-            }
+                ColorRequirements = requirementsTracker.Requirements,
+                ManarockRatio = manarockRatio
+            };
+
+            //if (sourceRequirements.Count < 2)
+            //{
+            //    // mono colored decks
+            //}
 
             // create possible land picks
             var landProperties = _csvReader.ReadFile<LandProperty>("lands");
             var categories = _csvReader.ReadFile<Category>("categories");
 
             var lands = new List<Land>();
-            var deckIdentity = sourceRequirements.Keys.ToArray();
+            var deckIdentity = requirementsTracker.DeckIdentity;
             foreach (var p in landProperties)
             {
                 var land = p.TransformToLand();
@@ -103,47 +94,41 @@ namespace RainbowCore
             // first iteration: populate mana rocks
             while (rocksSuggestion.Count < manarockRatio.ManaRocks)
             {
-                var n = sourceRequirements.MaxBy(s => s.Value).Key;
-                var bestRock = manaRocks.First(r => r.Produces.Contains(n));
+                var bestRock = manaRocks.First(r => r.Produces.Contains(requirementsTracker.HighestColorRequirement));
                 rocksSuggestion.Add(new Manarock(bestRock));
 
                 foreach (var producedMana in bestRock.Produces)
                 {
-                    if (sourceRequirements.ContainsKey(producedMana))
-                    {
-                        sourceRequirements[producedMana] -= 1;
-                    }
+                    requirementsTracker.ReduceRequirement(producedMana);
                 }
                 manaRocks.Remove(bestRock);
             }
 
             // 1.5 iteration: add one single basic land of each color
-            foreach (var req in sourceRequirements)
+            foreach (var req in requirementsTracker.Requirements)
             {
-                landsSuggestion.Add(GetBasic(req.Key));
-                sourceRequirements[req.Key] -= 1;
+                landsSuggestion.Add(GetBasic(req.Color));
+                requirementsTracker.ReduceRequirement(req.Color);
 
             }
 
 
             // second iteration: add lands
-            while (sourceRequirements.Values.Sum(v => v) + landsSuggestion.Count > manarockRatio.Lands && lands.Any() && landsSuggestion.Count < manarockRatio.Lands)
+            while (requirementsTracker.TotalRequirementsCount + landsSuggestion.Count > manarockRatio.Lands && lands.Any() && landsSuggestion.Count < manarockRatio.Lands)
             {
                 var illegalRequirements = new List<char>();
-                foreach (var r in sourceRequirements)
+                foreach (var r in requirementsTracker.Requirements)
                 {
-                    if(r.Value <= 0) 
-                        illegalRequirements.Add(r.Key);
+                    if(r.Amount <= 0) 
+                        illegalRequirements.Add(r.Color);
                 }
+
                 var l = lands.First(i => i.DoesNotProduce(illegalRequirements));
                 landsSuggestion.Add(l);
                 lands.Remove(l);
                 foreach (var c in l.Produces)
                 {
-                    if (sourceRequirements.ContainsKey(c))
-                    {
-                        sourceRequirements[c] -= 1;
-                    }
+                    requirementsTracker.ReduceRequirement(c);
                 }
             }
 
@@ -169,32 +154,31 @@ namespace RainbowCore
             //}
 
             // last step: add basics to fill up
-            foreach (var r in sourceRequirements)
+            foreach (var r in requirementsTracker.Requirements)
             {
-                for (var i = 0; i < r.Value; i++)
+                var amount = r.Amount;
+                for (var i = 0; i < amount; i++)
                 {
-                    landsSuggestion.Add(GetBasic(r.Key));
+                    landsSuggestion.Add(GetBasic(r.Color));
                 }
+
+                requirementsTracker.ReduceRequirement(r.Color, amount);
             }
-  
 
 
+            suggestion.Lands = landsSuggestion.Select(x => x.Name).ToList();
+            suggestion.Lands.AddRange(rocksSuggestion.Select(r => r.Name));
 
-            return new[] { new LandSuggestion()
-            {
-                Name = "your report",
-                Lands = landsSuggestion.Select(x => x.Name).ToList(),
-                Report = "xd"
-            } };
+            return suggestion;
         }
 
-        private Dictionary<char, int> CalculateSourceRequirements(List<ScryfallCard> cards)
+        private ColorSourceRequirementTracker InitializeSourceRequirements(List<ScryfallCard> cards)
         {
             // get color requirements based on pips in deck (for example, 1BB requires higher count of sources than 2B)
             var colorPipsRequirements = _csvReader.ReadFile<ColorPipsRequirement>("pips");
 
             // get requirements
-            var sourceRequirements = new Dictionary<char, int>(); // how many sources of each color are needed
+            var colorSourceRequirementsTracker = new ColorSourceRequirementTracker();
             foreach (var card in cards)
             {
                 // ignore cards
@@ -229,24 +213,24 @@ namespace RainbowCore
                     }
 
                     var sources = currentPipsRequirement.First().Sources;
-                    if (sourceRequirements.ContainsKey(color))
+                    if (colorSourceRequirementsTracker.HasColor(color))
                     {
                         // if requirements for this color are already present, update if new value requires higher amount of sources
-                        var previousValue = sourceRequirements[color];
+                        var previousValue = colorSourceRequirementsTracker.GetColorRequirementCount(color);
                         if (sources > previousValue)
                         {
-                            sourceRequirements[color] = sources;
+                            colorSourceRequirementsTracker.SetColorRequirement(color, sources);
                         }
                     }
                     else
                     {
                         // if requirement for this color is new, add it to list of requirements
-                        sourceRequirements[color] = sources;
+                        colorSourceRequirementsTracker.SetColorRequirement(color, sources);
                     }
                 }
             }
 
-            return sourceRequirements;
+            return colorSourceRequirementsTracker;
         }
 
         private ManarockRatio CalculateManarockRatio(List<ScryfallCard> cards)
