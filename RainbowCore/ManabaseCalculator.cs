@@ -76,7 +76,7 @@ namespace RainbowCore
             var landsSuggestion = new List<Land>();
             var rocksSuggestion = new List<Manarock>();
 
-            // first iteration: populate mana rocks
+            // 1st step: Add required amount of mana rocks to deck
             while (rocksSuggestion.Count < manarockRatio.ManaRocks)
             {
                 var bestRock = manaRocks.First(r => r.Produces.Contains(requirementsTracker.HighestColorRequirement));
@@ -89,7 +89,7 @@ namespace RainbowCore
                 manaRocks.Remove(bestRock);
             }
 
-            // 1.5 iteration: add one single basic land of each color
+            // 2nd step: Add one basic land of each color in deck identity
             foreach (var req in requirementsTracker.Requirements)
             {
                 landsSuggestion.Add(GenerateBasicLand(req.Color));
@@ -97,7 +97,7 @@ namespace RainbowCore
             }
 
 
-            // second iteration: add lands
+            // 3rd step: add lands to meet requirements
             while (requirementsTracker.TotalRequirementsCount + landsSuggestion.Count > manarockRatio.Lands && lands.Any() && landsSuggestion.Count < manarockRatio.Lands)
             {
                 var illegalRequirements = new List<char>();
@@ -116,7 +116,7 @@ namespace RainbowCore
                 }
             }
 
-            // last step: add basics to fill up
+            // 4th step: fill up deck with basic lands if there is space left
             foreach (var r in requirementsTracker.Requirements)
             {
                 var amount = r.Amount;
@@ -222,7 +222,7 @@ namespace RainbowCore
             for (var i = cards.Count - 1; i >= 0; i--)
             {
                 var c = cards[i];
-                if (excludedCards.Any(x => x.Name == c.Name.ToLower()))
+                if (excludedCards.Any(x => x.Name.ToLower() == c.Name.ToLower()))
                 {
                     excluded.Add(c.Name);
                     cards.RemoveAt(i);
