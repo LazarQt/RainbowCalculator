@@ -13,7 +13,7 @@ namespace RainbowCore
             _csvReader = new CsvReader();
         }
 
-        public ManabaseSuggestion Calculate(string deckString)
+        public ManabaseSuggestion Calculate(string deckString, string excludedLands)
         {
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
@@ -30,6 +30,10 @@ namespace RainbowCore
             // create possible land picks
             var landProperties = _csvReader.ReadFile<LandProperty>("lands");
             var categories = _csvReader.ReadFile<Category>("categories");
+
+            // remove excluded lands (user argument)
+            var excludedLandObjects = excludedLands.Split('|');
+            landProperties = landProperties.Where(p => !excludedLandObjects.Contains(p.Name)).ToList();
 
             var lands = new List<Land>();
             var deckIdentity = requirementsTracker.DeckIdentity;
@@ -52,10 +56,6 @@ namespace RainbowCore
                     5 => category.FiveColor,
                     _ => land.Order
                 };
-
-                // ignore from ignore list // todo: user setting
-                if (category.Cycle == "True Duals") continue;
-                if (category.Cycle == "Fetch Lands") continue;
 
                 // exclude -1 order lands
                 if (land.Order > 0) lands.Add(land);
