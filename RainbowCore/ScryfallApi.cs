@@ -6,6 +6,11 @@ namespace RainbowCore
 {
     public class ScryfallApi
     {
+        /// <summary>
+        /// Generate list of cards based on string list
+        /// </summary>
+        /// <param name="sourceCardList">Cards to be looked for in Scryfall database</param>
+        /// <returns>Card list with Scryfall card objects</returns>
         public async Task<List<ScryfallCard>> GetCards(List<string> sourceCardList)
         {
             var result = new List<ScryfallCard>();

@@ -6,12 +6,15 @@ namespace RainbowCore
 {
     public class CsvReader
     {
+        /// <summary>
+        /// Reads csv file and create appropriate class objects
+        /// </summary>
+        /// <typeparam name="T">Class object that represents CSV data</typeparam>
+        /// <param name="file">File name</param>
+        /// <returns>Returns a list of class objects</returns>
         public List<T> ReadFile<T>(string file) where T : ICsvProperty
         {
             var workPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            if (workPath == null) throw new Exception("Execution path cannot be determined"); // this should be impossible to happen
-
             var filename = Path.Combine(workPath, "CalcFiles", $"{file}.csv");
             using var reader = new StreamReader(filename);
             using var csv = new CsvHelper.CsvReader(reader, CultureInfo.InvariantCulture);

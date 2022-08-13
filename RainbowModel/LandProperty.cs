@@ -1,4 +1,5 @@
-﻿namespace RainbowModel
+﻿// ReSharper disable UnusedMember.Global
+namespace RainbowModel
 {
     public class LandProperty : ICsvProperty
     {

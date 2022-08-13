@@ -11,6 +11,11 @@ namespace RainbowCore
             Requirements = new List<ColorSourceRequirement>();
         }
 
+        /// <summary>
+        /// Reduce requirement for a certain color
+        /// </summary>
+        /// <param name="color">The color a requirement should be reduced for</param>
+        /// <param name="amount">Optionally set the amount of reduced sources</param>
         public void ReduceRequirement(char color, int? amount = null)
         {
             var req = Get(color);
@@ -25,6 +30,11 @@ namespace RainbowCore
             }
         }
 
+        /// <summary>
+        /// Set a requirement for a certain color
+        /// </summary>
+        /// <param name="color">Color to set a requirement for</param>
+        /// <param name="amount">How many sources are needed</param>
         public void SetColorRequirement(char color, int amount)
         {
             var existingEntry = Get(color);

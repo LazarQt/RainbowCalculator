@@ -4,6 +4,11 @@ namespace RainbowCore.Extensions
 {
     public static class ScryfallCardExtensions
     {
+        /// <summary>
+        /// Get string representation of mana cost
+        /// </summary>
+        /// <param name="card">Card to derive mana cost from</param>
+        /// <returns>Mana cost as string</returns>
         public static string GetManaCost(this ScryfallCard card)
         {
             var manaCost = card.ManaCost;
@@ -13,7 +18,7 @@ namespace RainbowCore.Extensions
             }
             manaCost = manaCost.ToLower();
 
-            // remove split card thingies from sets like "Eldraine"
+            // remove split cards 
             if (manaCost.Contains("//"))
             {
                 manaCost = manaCost.Substring(0, manaCost.IndexOf("//", StringComparison.Ordinal));
