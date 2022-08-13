@@ -128,8 +128,16 @@ namespace RainbowCore
                 requirementsTracker.ReduceRequirement(r.Color, amount);
             }
 
-            suggestion.Lands = landsSuggestion.Select(x => x.Name).ToList();
-            suggestion.Lands.AddRange(rocksSuggestion.Select(r => r.Name));
+            suggestion.Lands = new List<string>();
+            var groups = landsSuggestion.GroupBy(i => i.Name);
+            foreach (var grp in groups)
+            {
+                var number = grp.Key;
+                var total = grp.Count();
+                suggestion.Lands.Add($"{total} {number}");
+            }
+            //suggestion.Lands = landsSuggestion.Select(x => x.Name).ToList();
+            suggestion.Lands.AddRange(rocksSuggestion.Select(r => "1" + r.Name));
 
             return suggestion;
         }
