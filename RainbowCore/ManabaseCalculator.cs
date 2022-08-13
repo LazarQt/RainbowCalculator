@@ -132,12 +132,9 @@ namespace RainbowCore
             var groups = landsSuggestion.GroupBy(i => i.Name);
             foreach (var grp in groups)
             {
-                var number = grp.Key;
-                var total = grp.Count();
-                suggestion.Lands.Add($"{total} {number}");
+                suggestion.Lands.Add($"{grp.Count()} {grp.Key}");
             }
-            //suggestion.Lands = landsSuggestion.Select(x => x.Name).ToList();
-            suggestion.Lands.AddRange(rocksSuggestion.Select(r => "1" + r.Name));
+            suggestion.Lands.AddRange(rocksSuggestion.Select(r => "1 " + r.Name));
 
             return suggestion;
         }
