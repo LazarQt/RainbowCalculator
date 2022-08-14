@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RainbowCore", "RainbowCore\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RainbowModel", "RainbowModel\RainbowModel.csproj", "{634BA41D-DFC1-44FE-A32A-EED9DE424B3A}"
 EndProject
-#Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckAnalytics", "DeckAnalytics\DeckAnalytics.csproj", "{7F7DA905-4A0C-46FF-B040-DA134BD9A630}"
-#EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
