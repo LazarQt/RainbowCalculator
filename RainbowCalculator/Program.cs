@@ -6,6 +6,6 @@ var app = builder.Build();
 
 app.MapGet("/api/ping", () => new { id = 1, name = "Ping Successful" });
 
-app.MapGet("/api/manabase/{deckString}/{excludedLands}", (string deckString, string excludedLands, [FromServices] IManabaseProvider manabaseProvider) => manabaseProvider.Retrieve(deckString, excludedLands));
+app.MapPost("/api/manabase", ([FromBody] string jsonstring, [FromServices] IManabaseProvider manabaseProvider) => new { id = 1, name = manabaseProvider.Retrieve(jsonstring, "") } );
 
 app.Run();

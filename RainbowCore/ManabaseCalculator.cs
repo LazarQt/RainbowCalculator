@@ -18,6 +18,8 @@ namespace RainbowCore
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
 
+            return suggestion;
+
             var cards = BuildCalculationDeck(deckString, suggestion);
 
             // read initial files
