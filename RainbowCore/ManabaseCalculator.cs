@@ -18,7 +18,11 @@ namespace RainbowCore
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
 
+            if (deck == null || !deck.Any()) return suggestion;
+
             var cards = BuildCalculationDeck(deck, suggestion);
+
+            suggestion.TotalRelevantCards = cards.Count;
 
             // read initial files
             var manarockRatio = CalculateManarockRatio(cards);

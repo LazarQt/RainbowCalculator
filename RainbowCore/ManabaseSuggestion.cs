@@ -4,6 +4,7 @@ namespace RainbowCore
 {
     public class ManabaseSuggestion
     {
+        public int TotalRelevantCards { get; set; }
         public List<string> CardsNotFound { get; set; }
         public List<string> ExcludedCards { get; set; }
         public List<string> RemovedLands { get; set; }
