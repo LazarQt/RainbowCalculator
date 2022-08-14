@@ -41,7 +41,10 @@ namespace RainbowCore
                 var categories = _csvReader.ReadFile<Category>("categories");
 
                 // remove excluded lands (user argument)
-                landProperties = landProperties.Where(p => !excludedLands.Contains(p.Name)).ToList();
+                if (excludedLands != null)
+                {
+                    landProperties = landProperties.Where(p => !excludedLands.Contains(p.Name)).ToList();
+                }
 
                 var lands = new List<Land>();
                 var deckIdentity = requirementsTracker.DeckIdentity;
