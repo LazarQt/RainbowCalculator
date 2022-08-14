@@ -30,7 +30,7 @@ namespace RainbowCore
                 suggestion.TotalRelevantCards = cards.Count;
 
                 // read initial files
-                var manarockRatio = CalculateManarockRatio(cards);
+                var manarockRatio = CalculateManarockRatio(cards, suggestion);
                 var requirementsTracker = InitializeSourceRequirements(cards);
 
                 suggestion.ManarockRatio = manarockRatio;
@@ -225,12 +225,13 @@ namespace RainbowCore
             return colorSourceRequirementsTracker;
         }
 
-        private ManarockRatio CalculateManarockRatio(List<ScryfallCard> cards)
+        private ManarockRatio CalculateManarockRatio(List<ScryfallCard> cards, ManabaseSuggestion suggestion)
         {
             // get required land and manarock count, this will be derived from average mana value
             var manarockRatios = _csvReader.ReadFile<ManarockRatio>("manarockratios");
 
             var avgMv = cards.Average(c => c.Cmc);
+            suggestion.AverageManaValue = avgMv.ToString();
             var manarockRatio = manarockRatios.FirstOrDefault(r => avgMv >= r.MinMv && avgMv <= r.MaxMv);
             if (manarockRatio == null) throw new Exception("can't derive lands and mana rocks requirement");
 
