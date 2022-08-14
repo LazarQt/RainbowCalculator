@@ -7,14 +7,13 @@ namespace RainbowCore
         /// <summary>
         /// Sanitize a list of cards and try to find them in Scryfall database
         /// </summary>
-        /// <param name="deckString">Un-sanitized deck list string</param>
+        /// <param name="deck">Un-sanitized deck list</param>
         /// <param name="missingCards">Cards that could not be found</param>
         /// <returns>List of Scryfall cards</returns>
-        public List<ScryfallCard> GetCards(string deckString, out List<string> missingCards)
+        public List<ScryfallCard> GetCards(string[] deck, out List<string> missingCards)
         {
             var deckList = new List<string>();
-            var deckStringList = deckString.Split('|');
-            foreach (var s in deckStringList)
+            foreach (var s in deck)
             {
                 var cardName = s;
 

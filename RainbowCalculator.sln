@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RainbowCalculator", "RainbowCalculator\RainbowCalculator.csproj", "{1783A750-F2C4-416A-9FFA-DA53CA8B48D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainbowCore", "RainbowCore\RainbowCore.csproj", "{535F894E-9B81-42CA-A018-021FE542F98F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RainbowCore", "RainbowCore\RainbowCore.csproj", "{535F894E-9B81-42CA-A018-021FE542F98F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainbowModel", "RainbowModel\RainbowModel.csproj", "{634BA41D-DFC1-44FE-A32A-EED9DE424B3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RainbowModel", "RainbowModel\RainbowModel.csproj", "{634BA41D-DFC1-44FE-A32A-EED9DE424B3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

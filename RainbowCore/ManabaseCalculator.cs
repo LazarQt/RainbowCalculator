@@ -13,14 +13,12 @@ namespace RainbowCore
             _csvReader = new CsvReader();
         }
 
-        public ManabaseSuggestion Calculate(string deckString, string excludedLands)
+        public ManabaseSuggestion Calculate(string[] deck, string[] excludedLands)
         {
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
 
-            return suggestion;
-
-            var cards = BuildCalculationDeck(deckString, suggestion);
+            var cards = BuildCalculationDeck(deck, suggestion);
 
             // read initial files
             var manarockRatio = CalculateManarockRatio(cards);
@@ -34,8 +32,7 @@ namespace RainbowCore
             var categories = _csvReader.ReadFile<Category>("categories");
 
             // remove excluded lands (user argument)
-            var excludedLandObjects = excludedLands.Split('|');
-            landProperties = landProperties.Where(p => !excludedLandObjects.Contains(p.Name)).ToList();
+            landProperties = landProperties.Where(p => !excludedLands.Contains(p.Name)).ToList();
 
             var lands = new List<Land>();
             var deckIdentity = requirementsTracker.DeckIdentity;
@@ -214,13 +211,13 @@ namespace RainbowCore
             return manarockRatio;
         }
 
-        private List<ScryfallCard> BuildCalculationDeck(string deckString, ManabaseSuggestion suggestion)
+        private List<ScryfallCard> BuildCalculationDeck(string[] deck, ManabaseSuggestion suggestion)
         {
             // these cards are strictly excluded from calculation because they have X in costs or are regularly reduced in costs
             var excludedCards = _csvReader.ReadFile<SingleLine>("exclude");
 
             // get actual cards from deck string
-            var cards = new CardsParser().GetCards(deckString, out var missing);
+            var cards = new CardsParser().GetCards(deck, out var missing);
 
             suggestion.CardsNotFound = missing;
 

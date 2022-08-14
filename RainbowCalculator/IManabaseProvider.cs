@@ -4,6 +4,6 @@ namespace RainbowCalculator
 {
     public interface IManabaseProvider
     {
-        ManabaseSuggestion Retrieve(string deckString, string excludedLands);
+        ManabaseSuggestion Retrieve(string[] deck, string[] excludedLands);
     }
 }
