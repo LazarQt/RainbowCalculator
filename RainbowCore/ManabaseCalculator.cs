@@ -18,128 +18,147 @@ namespace RainbowCore
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
 
-            if (deck == null || !deck.Any()) return suggestion;
-
-            var cards = BuildCalculationDeck(deck, suggestion);
-
-            suggestion.TotalRelevantCards = cards.Count;
-
-            // read initial files
-            var manarockRatio = CalculateManarockRatio(cards);
-            var requirementsTracker = InitializeSourceRequirements(cards);
-
-            suggestion.ManarockRatio = manarockRatio;
-            suggestion.ColorRequirements = requirementsTracker.Requirements;
-            
-            // create possible land picks
-            var landProperties = _csvReader.ReadFile<LandProperty>("lands");
-            var categories = _csvReader.ReadFile<Category>("categories");
-
-            // remove excluded lands (user argument)
-            landProperties = landProperties.Where(p => !excludedLands.Contains(p.Name)).ToList();
-
-            var lands = new List<Land>();
-            var deckIdentity = requirementsTracker.DeckIdentity;
-            foreach (var p in landProperties)
+            try
             {
-                var land = p.TransformToLand();
-                if (!deckIdentity.CanInclude(land.Identity)) continue;
 
-                // fetch-able sources need to have one intersection with identity otherwise there is nothing to fetch
-                if (!deckIdentity.Intersect(p.SingleMatch.ToLower().ToCharArray()).Any())
-                    continue;
 
-                var category = categories.First(c => c.Cycle == land.Cycle); // there can only ever be one cycle unless data is faulty
 
-                land.Order = deckIdentity.Length switch
+                if (deck == null || !deck.Any()) return suggestion;
+
+                var cards = BuildCalculationDeck(deck, suggestion);
+
+                suggestion.TotalRelevantCards = cards.Count;
+
+                // read initial files
+                var manarockRatio = CalculateManarockRatio(cards);
+                var requirementsTracker = InitializeSourceRequirements(cards);
+
+                suggestion.ManarockRatio = manarockRatio;
+                suggestion.ColorRequirements = requirementsTracker.Requirements;
+
+                // create possible land picks
+                var landProperties = _csvReader.ReadFile<LandProperty>("lands");
+                var categories = _csvReader.ReadFile<Category>("categories");
+
+                // remove excluded lands (user argument)
+                landProperties = landProperties.Where(p => !excludedLands.Contains(p.Name)).ToList();
+
+                var lands = new List<Land>();
+                var deckIdentity = requirementsTracker.DeckIdentity;
+                foreach (var p in landProperties)
                 {
-                    2 => category.TwoColor,
-                    3 => category.ThreeColor,
-                    4 => category.FourColor,
-                    5 => category.FiveColor,
-                    _ => land.Order
-                };
+                    var land = p.TransformToLand();
+                    if (!deckIdentity.CanInclude(land.Identity)) continue;
 
-                // exclude -1 order lands
-                if (land.Order > 0) lands.Add(land);
-            }
-            lands = lands.OrderBy(l => l.Order).ToList();
+                    // fetch-able sources need to have one intersection with identity otherwise there is nothing to fetch
+                    if (!deckIdentity.Intersect(p.SingleMatch.ToLower().ToCharArray()).Any())
+                        continue;
 
-            //manarock calculations
-            var manaRockProperties = _csvReader.ReadFile<ManarockProperty>("manarocks");
-            var manaRocks = new List<Manarock>();
-            foreach (var m in manaRockProperties)
-            {
-                var manaRock = m.TransformToManarock();
-                if (!deckIdentity.CanInclude(manaRock.Identity)) continue;
-                manaRocks.Add(manaRock);
-            }
-            manaRocks = manaRocks.OrderBy(l => l.Order).ToList();
+                    var category =
+                        categories.First(c =>
+                            c.Cycle == land.Cycle); // there can only ever be one cycle unless data is faulty
 
-            var landsSuggestion = new List<Land>();
-            var rocksSuggestion = new List<Manarock>();
+                    land.Order = deckIdentity.Length switch
+                    {
+                        2 => category.TwoColor,
+                        3 => category.ThreeColor,
+                        4 => category.FourColor,
+                        5 => category.FiveColor,
+                        _ => land.Order
+                    };
 
-            // 1st step: Add required amount of mana rocks to deck
-            while (rocksSuggestion.Count < manarockRatio.ManaRocks)
-            {
-                var bestRock = manaRocks.First(r => r.Produces.Contains(requirementsTracker.HighestColorRequirement));
-                rocksSuggestion.Add(new Manarock(bestRock));
-
-                foreach (var producedMana in bestRock.Produces)
-                {
-                    requirementsTracker.ReduceRequirement(producedMana);
+                    // exclude -1 order lands
+                    if (land.Order > 0) lands.Add(land);
                 }
-                manaRocks.Remove(bestRock);
-            }
 
-            // 2nd step: Add one basic land of each color in deck identity
-            foreach (var req in requirementsTracker.Requirements)
-            {
-                landsSuggestion.Add(GenerateBasicLand(req.Color));
-                requirementsTracker.ReduceRequirement(req.Color);
-            }
+                lands = lands.OrderBy(l => l.Order).ToList();
+
+                //manarock calculations
+                var manaRockProperties = _csvReader.ReadFile<ManarockProperty>("manarocks");
+                var manaRocks = new List<Manarock>();
+                foreach (var m in manaRockProperties)
+                {
+                    var manaRock = m.TransformToManarock();
+                    if (!deckIdentity.CanInclude(manaRock.Identity)) continue;
+                    manaRocks.Add(manaRock);
+                }
+
+                manaRocks = manaRocks.OrderBy(l => l.Order).ToList();
+
+                var landsSuggestion = new List<Land>();
+                var rocksSuggestion = new List<Manarock>();
+
+                // 1st step: Add required amount of mana rocks to deck
+                while (rocksSuggestion.Count < manarockRatio.ManaRocks)
+                {
+                    var bestRock =
+                        manaRocks.First(r => r.Produces.Contains(requirementsTracker.HighestColorRequirement));
+                    rocksSuggestion.Add(new Manarock(bestRock));
+
+                    foreach (var producedMana in bestRock.Produces)
+                    {
+                        requirementsTracker.ReduceRequirement(producedMana);
+                    }
+
+                    manaRocks.Remove(bestRock);
+                }
+
+                // 2nd step: Add one basic land of each color in deck identity
+                foreach (var req in requirementsTracker.Requirements)
+                {
+                    landsSuggestion.Add(GenerateBasicLand(req.Color));
+                    requirementsTracker.ReduceRequirement(req.Color);
+                }
 
 
-            // 3rd step: add lands to meet requirements
-            while (requirementsTracker.TotalRequirementsCount + landsSuggestion.Count > manarockRatio.Lands && lands.Any() && landsSuggestion.Count < manarockRatio.Lands)
-            {
-                var illegalRequirements = new List<char>();
+                // 3rd step: add lands to meet requirements
+                while (requirementsTracker.TotalRequirementsCount + landsSuggestion.Count > manarockRatio.Lands &&
+                       lands.Any() && landsSuggestion.Count < manarockRatio.Lands)
+                {
+                    var illegalRequirements = new List<char>();
+                    foreach (var r in requirementsTracker.Requirements)
+                    {
+                        if (r.Amount <= 0)
+                            illegalRequirements.Add(r.Color);
+                    }
+
+                    var l = lands.First(i => i.DoesNotProduce(illegalRequirements));
+                    landsSuggestion.Add(l);
+                    lands.Remove(l);
+                    foreach (var c in l.Produces)
+                    {
+                        requirementsTracker.ReduceRequirement(c);
+                    }
+                }
+
+                // 4th step: fill up deck with basic lands if there is space left
                 foreach (var r in requirementsTracker.Requirements)
                 {
-                    if (r.Amount <= 0)
-                        illegalRequirements.Add(r.Color);
+                    var amount = r.Amount;
+                    for (var i = 0; i < amount; i++)
+                    {
+                        landsSuggestion.Add(GenerateBasicLand(r.Color));
+                    }
+
+                    requirementsTracker.ReduceRequirement(r.Color, amount);
                 }
 
-                var l = lands.First(i => i.DoesNotProduce(illegalRequirements));
-                landsSuggestion.Add(l);
-                lands.Remove(l);
-                foreach (var c in l.Produces)
+                suggestion.Lands = new List<string>();
+                var groups = landsSuggestion.GroupBy(i => i.Name);
+                foreach (var grp in groups)
                 {
-                    requirementsTracker.ReduceRequirement(c);
-                }
-            }
-
-            // 4th step: fill up deck with basic lands if there is space left
-            foreach (var r in requirementsTracker.Requirements)
-            {
-                var amount = r.Amount;
-                for (var i = 0; i < amount; i++)
-                {
-                    landsSuggestion.Add(GenerateBasicLand(r.Color));
+                    suggestion.Lands.Add($"{grp.Count()} {grp.Key}");
                 }
 
-                requirementsTracker.ReduceRequirement(r.Color, amount);
-            }
+                suggestion.Lands.AddRange(rocksSuggestion.Select(r => "1 " + r.Name));
 
-            suggestion.Lands = new List<string>();
-            var groups = landsSuggestion.GroupBy(i => i.Name);
-            foreach (var grp in groups)
+                return suggestion;
+            }
+            catch (Exception e)
             {
-                suggestion.Lands.Add($"{grp.Count()} {grp.Key}");
+                suggestion.Error = e.Message;
+                return suggestion;
             }
-            suggestion.Lands.AddRange(rocksSuggestion.Select(r => "1 " + r.Name));
-
-            return suggestion;
         }
 
         private ColorSourceRequirementTracker InitializeSourceRequirements(List<ScryfallCard> cards)
