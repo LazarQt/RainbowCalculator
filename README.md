@@ -14,7 +14,7 @@ Note: Utility lands, man lands and other lands that do NOT produce colored mana,
 First calculate how many lands are needed, this is done by looking at Frank Karsten's calculations here: 
 https://strategy.channelfireball.com/all-strategy/mtg/channelmagic-articles/how-many-lands-do-you-need-to-consistently-hit-your-land-drops/
 
-Lands | Avg min MV | Avg max MV
+Lands | Avg min MV | Avg max MV 
 --- | --- | --- |
 30 | 0 | 0.80 
 32 | 0.80 | 1.12 
