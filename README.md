@@ -5,6 +5,12 @@ Epic.
 
 # Methodology 
 
+The goal is to find a set of lands that have enough sources for each color, taking curve and hard to cast cards into account. The following steps explains how the program tries to find this specific set of cards.
+
+Note: Utility lands, man lands and other lands that do NOT produce colored mana, are completely ignored. Feel free to include them by replacing a land with same produced mana.
+
+## Gathering data for calculation
+
 First calculate how many lands are needed, this is done by looking at Frank Karsten's calculations here: 
 https://strategy.channelfireball.com/all-strategy/mtg/channelmagic-articles/how-many-lands-do-you-need-to-consistently-hit-your-land-drops/
 
@@ -28,7 +34,7 @@ The higher the required land count (and therefore average mana value) the more m
 Lands | Avg min MV | Avg max MV | Mana Rocks | New Lands
 --- | --- | --- | --- | --- |
 30 | 0 | 0.80 | 0 | 30
-32 | 0.80 | 1.12  | 0 | 30
+32 | 0.80 | 1.12  | 0 | 32
 33 | 1.12 | 1.44  | 4 | 31
 35 | 1.44 | 1.76  | 4 | 33
 37 | 1.76 | 2.08  | 6 | 34	
@@ -141,116 +147,18 @@ Cost | Pips | Sources
 If there are errors feel free to point them out.
 Also, if a card has a completely different cost (or higher cost) it gets ignored.
 
-# Dillinger
-## _The Last Markdown Editor, Ever_
+## Add mana rocks to deck
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+First step is to include the mana rocks using previous calculations. The tool only considers all the dual colored 2-mana cost artifacts (Signets, Talismans) and WUBRG producing rocks like Arcane signet. If you see "Generic Rock X" in your results, this means you can include any 3-mana rock (there are too many of them, pick the one that fits your deck best).
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+## Add a basic land for each color
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
+As the title suggets, one of each basic land is added. This ensures that there's always a fetch-able source for cards like Evolving Wilds. (The inclusion of basic lands is up for debate)
 
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
+## Add lands
 
-## Features
+This is the most crucial step. The program now knows exactly how many sources of a given color is needed. By going through the "Best" lands (there is a separate list for 2, 3, 4 and 5-colored decks) and adding them to the deck, the amount of sources needed is being lowered. If there is no need for a specific color anymore, all the lands that produce this color are ignored (This is up for debate).
 
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+## Fill deck with basic lands
 
-As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-## Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-- [AngularJS] - HTML enhanced for web apps!
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-## Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-
-
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
-
-## Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-
-```sh
-node app
-```
-
-Second Tab:
-
-```sh
-gulp watch
-```
-
-(optional) Third:
-
-```sh
-karma test
-```
-
-#### Building for source
-
-For production release:
-
-```sh
-gulp build --prod
-```
-
-Generating pre-built zip archives for distribution:
-
-```sh
-gulp build dist --prod
-```
-
-## Docker
-
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 8080, so change this within the
-Dockerfile if necessary. When ready, simply use the Dockerfile to
-build the image.
-
-```sh
-cd dillinger
-docker build -t <youruser>/dillinger:${package.json.version} .
-```
-
-This will create the dillinger image and pull in the necessary dependencies.
-Be sure to swap out `${package.json.version}` with the actual
-version of Dillinger.
+At the end, deck is filled with basic lands if there's space left.
