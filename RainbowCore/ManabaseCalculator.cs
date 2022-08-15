@@ -13,15 +13,13 @@ namespace RainbowCore
             _csvReader = new CsvReader();
         }
 
-        public ManabaseSuggestion Calculate(string[] deck, string[] excludedLands)
+        public ManabaseSuggestion Calculate(string[] deck, string[] excludedLands, int? stepUp = null)
         {
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
 
             try
             {
-
-
 
                 if (deck == null || !deck.Any()) return suggestion;
 
@@ -61,12 +59,17 @@ namespace RainbowCore
                         categories.First(c =>
                             c.Cycle == land.Cycle); // there can only ever be one cycle unless data is faulty
 
-                    land.Order = deckIdentity.Length switch
+                    var length = deckIdentity.Length;
+                    if (stepUp != null) length += (int) stepUp;
+                    if (length > 6) throw new Exception("mana base can't be constructed (too difficult?)");
+
+                    land.Order = length switch
                     {
                         2 => category.TwoColor,
                         3 => category.ThreeColor,
                         4 => category.FourColor,
                         5 => category.FiveColor,
+                        6 => category.ExtremeCase,
                         _ => land.Order
                     };
 
@@ -132,6 +135,20 @@ namespace RainbowCore
                     {
                         requirementsTracker.ReduceRequirement(c);
                     }
+                }
+
+                if (requirementsTracker.Requirements.Sum(r => r.Amount) + landsSuggestion.Count > manarockRatio.Lands)
+                {
+                    int up;
+                    if (stepUp != null)
+                    {
+                        up = (int) stepUp + 1;
+                    }
+                    else
+                    {
+                        up = 1;
+                    }
+                    return Calculate(deck, excludedLands, up);
                 }
 
                 // 4th step: fill up deck with basic lands if there is space left

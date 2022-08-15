@@ -7,5 +7,6 @@
         public float ThreeColor { get; set; }
         public float FourColor { get; set; }
         public float FiveColor { get; set; }
+        public float ExtremeCase { get; set; }
     }
 }
