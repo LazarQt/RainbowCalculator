@@ -1,4 +1,5 @@
 ﻿using RainbowModel.Scryfall;
+using System.Text.RegularExpressions;
 
 namespace RainbowCore.Extensions
 {
@@ -27,5 +28,19 @@ namespace RainbowCore.Extensions
 
             return manaCost;
         }
+
+        public static bool IsThis(this ScryfallCard card, string cardName)
+        {
+            var removeNonAlphanumerics = new Regex("[^a-zA-Z0-9 -]");
+
+            var originalCardName = removeNonAlphanumerics.Replace(card.Name.ToLower().Trim(), string.Empty);
+            var searchTerm = removeNonAlphanumerics.Replace(cardName.ToLower().Trim(), string.Empty);
+
+            return originalCardName == searchTerm;
+        }
+
+        public static bool IsThis(this string cardName, ScryfallCard card) => card.IsThis(cardName);
+
+        public static bool IsLand(this ScryfallCard card) => card.TypeLine.ToLower().Contains(Const.Card.Land.ToLower());
     }
 }

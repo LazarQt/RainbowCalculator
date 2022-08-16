@@ -15,6 +15,7 @@ namespace RainbowCore.Extensions
             {
                 Name = landCategory.Name,
                 Cycle = landCategory.Cycle,
+                SingleMatch = landCategory.SingleMatch,
                 Identity = landCategory.Identity.ToLower().ToCharArray(),
                 Produces = landCategory.Produces.ToLower().ToCharArray()
             };

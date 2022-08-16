@@ -25,13 +25,7 @@ namespace RainbowCore
 
                 // skip existing entries
                 if (deckList.Any(i => i == cardName)) continue;
-
-                // remove leading numbers (in case someone enters '15 Island')
-                while (int.TryParse(cardName.FirstOrDefault().ToString(), out _))
-                {
-                    cardName = cardName.Remove(0, 1);
-                }
-
+                
                 deckList.Add(cardName.Trim());
             }
 

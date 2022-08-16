@@ -22,11 +22,11 @@ namespace RainbowCore
             if (req == null) return;
             if (amount != null)
             {
-                req.Amount -= (int)amount;
+                req.AmountFulfilled += (int)amount;
             }
             else
             {
-                req.Amount -= 1;
+                req.AmountFulfilled += 1;
             }
         }
 
@@ -52,7 +52,29 @@ namespace RainbowCore
             }
         }
 
-        public int TotalRequirementsCount => Requirements.Sum(r => r.Amount);
+        public void Reset()
+        {
+            foreach (var r in Requirements)
+            {
+                r.AmountFulfilled = 0;
+            }
+        }
+
+        public bool AllRequirementsFulfilled => TotalRequirementsCount() <= 0;
+
+
+        public int TotalRequirementsCount()
+        {
+            var total = 0;
+            foreach (var r in Requirements)
+            {
+                var i = r.Amount - r.AmountFulfilled;
+                if (i < 0) i = 0;
+                total += i;
+            }
+
+            return total;
+        }
 
         public char[] DeckIdentity => Requirements.Select(r => r.Color).ToArray();
 
