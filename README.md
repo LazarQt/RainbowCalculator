@@ -120,15 +120,25 @@ Endpoint to request mana base suggestion:
     }
 
 `error` If calculation throws an error, this is where it is shown
+
 `averageManaValue` Average mana value of deck
+
 `relevantCardList` All the cards that are "relevant" to the calculation (some cards are excluded, based on methodology)
+
 `cardsNotFound` Cards that are not found (typo?)
+
 `excludedCards` Cards taht are excluded because they are not required for calculation
+
 `removedLands` Lands that were removed prior to calculation in case user forgot to take them out
+
 `sources` Suggested sources
+
 `sourcesCount` How many sources there are
+
 `colorRequirementsErrors` If a card is NOT taken into account when it comes to calculations, this is where it is shown why
+
 `colorRequirements` Color requirements for each color
+
 `manarockRatio` How many lands and mana rocks are needed
 
 # Methodology
