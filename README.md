@@ -100,13 +100,15 @@ Endpoint to request mana base suggestion:
                     "color": "b",
                     "amount": 33,
                     "amountFulfilled": 33,
-                    "isFulfilled": true
+                    "isFulfilled": true,
+                    "cardResponsible": "Card Alpha"
                 },
                 {
                     "color": "g",
                     "amount": 29,
                     "amountFulfilled": 33,
-                    "isFulfilled": true
+                    "isFulfilled": true,
+                    "cardResponsible": "Card Beta"
                 }
             ],
             "manarockRatio": {
