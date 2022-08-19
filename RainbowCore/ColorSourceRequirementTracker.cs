@@ -35,7 +35,8 @@ namespace RainbowCore
         /// </summary>
         /// <param name="color">Color to set a requirement for</param>
         /// <param name="amount">How many sources are needed</param>
-        public void SetColorRequirement(char color, int amount)
+        /// <param name="cardName">Which card is responsible for this requirement</param>
+        public void SetColorRequirement(char color, int amount, string cardName)
         {
             var existingEntry = Get(color);
             if (existingEntry == null)
@@ -43,12 +44,14 @@ namespace RainbowCore
                 Requirements.Add(new ColorSourceRequirement()
                 {
                     Color = color,
-                    Amount = amount
+                    Amount = amount,
+                    CardResponsible = cardName
                 });
             }
             else
             {
                 existingEntry.Amount = amount;
+                existingEntry.CardResponsible = cardName;
             }
         }
 

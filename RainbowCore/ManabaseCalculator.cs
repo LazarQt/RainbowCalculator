@@ -260,13 +260,13 @@ namespace RainbowCore
                         var previousValue = colorSourceRequirementsTracker.GetColorRequirementCount(color);
                         if (sources > previousValue)
                         {
-                            colorSourceRequirementsTracker.SetColorRequirement(color, sources);
+                            colorSourceRequirementsTracker.SetColorRequirement(color, sources, card.Name);
                         }
                     }
                     else
                     {
                         // if requirement for this color is new, add it to list of requirements
-                        colorSourceRequirementsTracker.SetColorRequirement(color, sources);
+                        colorSourceRequirementsTracker.SetColorRequirement(color, sources, card.Name);
                     }
                 }
             }
