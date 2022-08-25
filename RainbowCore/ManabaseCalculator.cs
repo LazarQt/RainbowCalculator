@@ -14,7 +14,7 @@ namespace RainbowCore
             _csvReader = new CsvReader();
         }
 
-        public ManabaseSuggestion Calculate(string[] deck, string[] excludedLands, int? stepUp = null)
+        public ManabaseSuggestion Calculate(string[] deck, string[] excludedLands, string[] ignoreAverageMv, int? stepUp = null)
         {
             // create suggestion, any relevant user information will be updated here
             var suggestion = new ManabaseSuggestion();
@@ -44,7 +44,7 @@ namespace RainbowCore
                 suggestion.AverageManaValue = cards.Average(c => c.Cmc).ToString(CultureInfo.InvariantCulture);
 
                 // calculate mana rock ratios
-                var manarockRatio = CalculateManarockRatio(cards);
+                var manarockRatio = CalculateManarockRatio(cards, ignoreAverageMv);
                 suggestion.ManarockRatio = manarockRatio;
 
                 var requirementsTracker = InitializeSourceRequirements(cards, out List<string> errors);
@@ -274,12 +274,12 @@ namespace RainbowCore
             return colorSourceRequirementsTracker;
         }
 
-        private ManarockRatio CalculateManarockRatio(List<ScryfallCard> cards)
+        private ManarockRatio CalculateManarockRatio(List<ScryfallCard> cards, string[] ignoreAverageMv)
         {
             // get required land and manarock count, this will be derived from average mana value
             var manarockRatios = _csvReader.ReadFile<ManarockRatio>("manarockratios");
 
-            var avgMv = cards.Average(c => c.Cmc);
+            var avgMv = cards.Where(x => !ignoreAverageMv.Contains(x.Name)).Average(c => c.Cmc);
             var manarockRatio = manarockRatios.FirstOrDefault(r => avgMv >= r.MinMv && avgMv <= r.MaxMv);
             if (manarockRatio == null) throw new Exception("can't derive lands and mana rocks requirement");
 
