@@ -278,7 +278,7 @@ namespace RainbowCore
         {
             // get required land and manarock count, this will be derived from average mana value
             var manarockRatios = _csvReader.ReadFile<ManarockRatio>("manarockratios");
-
+            ignoreAverageMv ??= Array.Empty<string>();
             var avgMv = cards.Where(x => !ignoreAverageMv.Contains(x.Name)).Average(c => c.Cmc);
             var manarockRatio = manarockRatios.FirstOrDefault(r => avgMv >= r.MinMv && avgMv <= r.MaxMv);
             if (manarockRatio == null) throw new Exception("can't derive lands and mana rocks requirement");
